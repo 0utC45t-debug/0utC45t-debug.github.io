@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-github-blog-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/06/03/github-blog-tutorial/" class="article-date">
-  <time class="dt-published" datetime="2026-06-03T14:54:21.124Z" itemprop="datePublished">2026-06-03</time>
+    <a href="/2026/06/05/%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2026-06-05T15:36:24.046Z" itemprop="datePublished">2026-06-05</time>
 </a>
     
   </div>
@@ -83,20 +83,68 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="在github上搭建个人博客"><a href="#在github上搭建个人博客" class="headerlink" title="在github上搭建个人博客"></a>在github上搭建个人博客</h1><h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
+        <p>-–</p>
+<p>title: 在 GitHub 上搭建个人博客（保姆级教程）</p>
+<p>date: 2077-12-31 23:59:59   # &lt;—懒得改置顶于是玩梗</p>
+<p>tags: [Hexo, GitHub, 博客搭建]</p>
+<p>-–</p>
+<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
+<p>这个网站会记录学习计算机至今的历程，尝试居多，才疏学浅，欢迎指正。</p>
+<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/06/05/%E4%BB%8B%E7%BB%8D/" data-id="cmq13c76v0002r0v56fq7eano" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-github-blog-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/06/03/github-blog-tutorial/" class="article-date">
+  <time class="dt-published" datetime="2026-06-03T13:47:32.000Z" itemprop="datePublished">2026-06-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/06/03/github-blog-tutorial/">基于github搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-基于github搭建个人博客"><a href="#1-基于github搭建个人博客" class="headerlink" title="1. 基于github搭建个人博客"></a>1. 基于github搭建个人博客</h1><h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
 
 <p>安装验证</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
 
-<p>显示版号即可<img src="C:\Users\朱\AppData\Roaming\Typora\typora-user-images\image-20260603152131585.png" alt="image-20260603152131585"></p>
+<p>显示版号即可</p>
 <hr>
 <h2 id="2-本地搭建"><a href="#2-本地搭建" class="headerlink" title="2.本地搭建"></a>2.本地搭建</h2><p>(1) 初始化</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">powershellhexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-<p>myblog的文件夹内容如下，位置一般默认在C盘用户文件夹内</p>
-<img src="C:\Users\朱\AppData\Roaming\Typora\typora-user-images\image-20260603212108344.png" alt="image-20260603212108344" style="zoom:80%;" />
-
+<p>myblog的文件夹位置一般默认在C盘用户文件夹内</p>
 <blockquote>
 <p>[!NOTE]</p>
 <p>_config.yml 存放的是博客配置信息， source&#x2F;_posts 是存放文章的地方</p>
@@ -105,9 +153,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean     <span class="comment">#清除缓存文件，建议写完文章之后再执行一次降低负荷</span></span><br><span class="line">hexo generate  <span class="comment">#生成 public 文件夹，写完文章执行</span></span><br><span class="line">hexo server    <span class="comment">#启动 hexo 服务</span></span><br></pre></td></tr></table></figure>
 
 <p>运行最后一个之后得出部署在本地的服务器上</p>
-<p><img src="C:\Users\朱\AppData\Roaming\Typora\typora-user-images\image-20260603212947499.png" alt="image-20260603212947499"></p>
 <p>访问本地4000端口（默认）即可查看本地效果</p>
-<p><img src="C:\Users\朱\AppData\Roaming\Typora\typora-user-images\image-20260603213239330.png" alt="image-20260603213239330"></p>
 <hr>
 <h2 id="3-使用github-pages"><a href="#3-使用github-pages" class="headerlink" title="3.使用github pages"></a>3.使用github pages</h2><p> (1) 配置 SSH key</p>
 <blockquote>
@@ -258,66 +304,17 @@
 <p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
 </blockquote>
 <hr>
-<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>没有总结喵</p>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>谢谢你看到这里喵</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/06/03/github-blog-tutorial/" data-id="cmpy73zv80006r0v5cxshenif" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/06/03/github-blog-tutorial/" data-id="cmpy73zv80006r0v5cxshenif" data-title="基于github搭建个人博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-    </footer>
-  </div>
-  
-</article>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/05/31/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-05-31T14:30:55.555Z" itemprop="datePublished">2026-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/31/hello-world/" data-id="cmpy73zv70005r0v5360y6awk" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
     </footer>
   </div>
   
@@ -352,7 +349,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🐳-Docker"><a href="#🐳-Docker" class="headerlink" title="🐳 Docker"></a>🐳 Docker</h1><h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
+        <h1 id="2-🐳-Docker"><a href="#2-🐳-Docker" class="headerlink" title="2. 🐳 Docker"></a>2. 🐳 Docker</h1><h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
 <thead>
 <tr>
 <th>组件</th>
@@ -461,11 +458,11 @@
       <ul>
         
           <li>
-            <a href="/2026/06/03/github-blog-tutorial/">(no title)</a>
+            <a href="/2026/06/05/%E4%BB%8B%E7%BB%8D/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2026/05/31/hello-world/">Hello World</a>
+            <a href="/2026/06/03/github-blog-tutorial/">基于github搭建个人博客</a>
           </li>
         
           <li>
