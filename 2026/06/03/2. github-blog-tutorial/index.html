@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>02.基于github搭建个人博客 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.安装hexohexo是博客框架，具有简洁性 1npm install hexo-cli -g  安装验证 1hexo version  显示版号即可  2.本地搭建(1) 初始化 123powershellhexo init myblogcd myblognpm install  myblog的文件夹位置一般默认在C盘用户文件夹内  [!NOTE] _config.yml 存放的是博客配置信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02.基于github搭建个人博客">
+<meta property="og:url" content="http://example.com/2026/06/03/2.%20github-blog-tutorial/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.安装hexohexo是博客框架，具有简洁性 1npm install hexo-cli -g  安装验证 1hexo version  显示版号即可  2.本地搭建(1) 初始化 123powershellhexo init myblogcd myblognpm install  myblog的文件夹位置一般默认在C盘用户文件夹内  [!NOTE] _config.yml 存放的是博客配置信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-06-03T13:47:32.000Z">
+<meta property="article:modified_time" content="2026-06-06T17:32:18.916Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "02.基于github搭建个人博客",
+  "url": "http://example.com/2026/06/03/2.%20github-blog-tutorial/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-06-03T13:47:32.000Z",
+  "dateModified": "2026-06-06T17:32:18.916Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "John Doe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/06/03/2.%20github-blog-tutorial/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '02.基于github搭建个人博客',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">02.基于github搭建个人博客</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">02.基于github搭建个人博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-03T13:47:32.000Z" title="发表于 2026-06-03 21:47:32">2026-06-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-06T17:32:18.916Z" title="更新于 2026-06-07 01:32:18">2026-06-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
+
+<p>安装验证</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+
+<p>显示版号即可</p>
+<hr>
+<h2 id="2-本地搭建"><a href="#2-本地搭建" class="headerlink" title="2.本地搭建"></a>2.本地搭建</h2><p>(1) 初始化</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">powershellhexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>myblog的文件夹位置一般默认在C盘用户文件夹内</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>_config.yml 存放的是博客配置信息， source&#x2F;_posts 是存放文章的地方</p>
+</blockquote>
+<p>(2) 运行默认主题</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean     <span class="comment">#清除缓存文件，建议写完文章之后再执行一次降低负荷</span></span><br><span class="line">hexo generate  <span class="comment">#生成 public 文件夹，写完文章执行</span></span><br><span class="line">hexo server    <span class="comment">#启动 hexo 服务</span></span><br></pre></td></tr></table></figure>
+
+<p>运行最后一个之后得出部署在本地的服务器上</p>
+<p>访问本地4000端口（默认）即可查看本地效果</p>
+<hr>
+<h2 id="3-使用github-pages"><a href="#3-使用github-pages" class="headerlink" title="3.使用github pages"></a>3.使用github pages</h2><p> (1) 配置 SSH key</p>
+<blockquote>
+<p>目的：实现免密上传到 GitHub，无需每次都输入账号密码</p>
+</blockquote>
+<p>检查本地是否已有 SSH key：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果提示路径不存在，说明还没配置过，直接进行下一步。</p>
+<p>(2) 生成 SSH key：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-C</span> <span class="string">&quot;你的GitHub邮箱@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>连续按<strong>三次回车</strong>即可（使用默认设置，不设置密码）。</p>
+<p>生成成功后，会在 <code>C:\Users\你的用户名\.ssh</code> 目录下生成两个文件：</p>
+<ul>
+<li><code>id_rsa</code>（私钥，<strong>千万不要泄露</strong>）</li>
+<li><code>id_rsa.pub</code>（公钥，需要上传到 GitHub）</li>
+</ul>
+<p>(3) 获取公钥内容：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>或者手动进入 <code>.ssh</code> 文件夹，用记事本打开 <code>id_rsa.pub</code>，<strong>复制全部内容</strong>（从 <code>ssh-rsa</code> 开头到邮箱结尾，不要有多余空格或换行）。</p>
+<p><strong>添加到 GitHub：</strong></p>
+<ol>
+<li>登录 GitHub，点击右上角头像 → <strong>Settings</strong></li>
+<li>左侧菜单选择 <strong>SSH and GPG keys</strong></li>
+<li>点击绿色按钮 <strong>New SSH key</strong></li>
+<li>Title 随便填（如 <code>MyBlog</code>），Key 粘贴刚才复制的公钥内容</li>
+<li>点击 <strong>Add SSH key</strong>（可能需要输入 GitHub 密码确认）</li>
+</ol>
+<p><strong>测试连接：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次连接会提示确认，输入 <code>yes</code> 回车。如果看到类似这样的提示，说明配置成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi 你的用户名! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<p>(4) 创建 GitHub 仓库</p>
+<ol>
+<li>登录 GitHub，点击右上角 <strong>+</strong> → <strong>New repository</strong></li>
+<li><strong>Repository name</strong>（仓库名）：<strong>必须填写 <code>你的用户名.github.io</code></strong>,否则没有用喵。这个仓库名将作为你博客的访问地址</li>
+<li>保持 <strong>Public</strong>（公开）</li>
+<li><strong>不要勾选</strong> “Initialize this repository with a README”（保持空白）</li>
+<li>点击 <strong>Create repository</strong></li>
+</ol>
+<p>(5) 配置 Hexo 部署信息</p>
+<p>打开博客根目录（<code>myblog</code> 文件夹）下的 <strong><code>_config.yml</code></strong> 文件（注意是根目录的，不是 themes 里的），拉到<strong>文件最底部</strong>，添加或修改以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<p>(6) 安装部署插件</p>
+<p>在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>(7) 部署到 GitHub</p>
+<p>依次执行以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除缓存（建议每次部署前都执行）</span></span><br><span class="line">hexo generate  <span class="comment"># 生成静态网页（生成 public 文件夹）</span></span><br><span class="line">hexo deploy    <span class="comment"># 部署到 GitHub</span></span><br></pre></td></tr></table></figure>
+
+<p>或者简写为：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>第一次部署时，会提示确认连接，输入 <code>yes</code> 回车。</p>
+<p>看到 <code>INFO Deploy done: git</code> 说明部署成功！</p>
+<p>(8) 访问你的博客</p>
+<p>打开浏览器，访问：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⏱️ <strong>注意：</strong> 第一次部署后，GitHub 需要 1-2 分钟来生成网页。如果打开显示 404，请稍等片刻再刷新。</p>
+</blockquote>
+<hr>
+<h2 id="4-编写和发布文章"><a href="#4-编写和发布文章" class="headerlink" title="4. 编写和发布文章"></a>4. 编写和发布文章</h2><p>(1) 新建文章</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>文章会创建在 <code>source/_posts/文章标题.md</code></p>
+<p>(2) 编辑文章</p>
+<p>用 Markdown 编辑器（推荐 <strong>Typora</strong> 或 <strong>VS Code</strong>）打开 <code>.md</code> 文件，你会看到：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2026-06-03 22:40:00</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 <code>tags:</code> 后面可以添加标签，如：<code>tags: [网络安全, 学习笔记]</code></li>
+<li>在 <code>---</code> 下方写正文内容（使用 Markdown 语法）</li>
+<li>可以在正文中插入 <code>&lt;!-- more --&gt;</code>，实现首页摘要显示</li>
+</ul>
+<p>(3) 发布文章</p>
+<p>写完文章后，再次执行”素质三连”：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-常用命令速查"><a href="#5-常用命令速查" class="headerlink" title="5. 常用命令速查"></a>5. 常用命令速查</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hexo new &quot;文章名&quot;</code></td>
+<td>新建文章</td>
+</tr>
+<tr>
+<td><code>hexo clean</code></td>
+<td>清除缓存</td>
+</tr>
+<tr>
+<td><code>hexo generate</code> (或 <code>hexo g</code>)</td>
+<td>生成静态网页</td>
+</tr>
+<tr>
+<td><code>hexo server</code> (或 <code>hexo s</code>)</td>
+<td>本地预览（<a href="http://localhost:4000）">http://localhost:4000）</a></td>
+</tr>
+<tr>
+<td><code>hexo deploy</code> (或 <code>hexo d</code>)</td>
+<td>部署到 GitHub</td>
+</tr>
+<tr>
+<td><code>hexo version</code></td>
+<td>查看 Hexo 版本</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="6-常见问题解决"><a href="#6-常见问题解决" class="headerlink" title="6. 常见问题解决"></a>6. 常见问题解决</h2><p>问题1：部署时提示 <code>Permission denied</code></p>
+<p><strong>原因：</strong> SSH 配置问题或中文用户名导致的乱码</p>
+<p><strong>解决方法：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;C:/Windows/System32/OpenSSH/ssh.exe&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后重新执行 <code>hexo d</code></p>
+<p>问题2：访问博客显示 404</p>
+<p><strong>原因：</strong> GitHub Pages 需要时间生成</p>
+<p><strong>解决方法：</strong> 等待 1-2 分钟后刷新，检查仓库名是否正确（必须是 <code>用户名.github.io</code>）</p>
+<p>问题3：文章发布时间差8小时</p>
+<p><strong>原因：</strong> 时区设置问题</p>
+<p><strong>解决方法：</strong> 在 <code>_config.yml</code> 中设置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>问题4：本地预览正常，但部署后样式丢失</p>
+<p><strong>原因：</strong> 可能是缓存问题或部署不完整</p>
+<p><strong>解决方法：</strong> 执行 <code>hexo clean</code> 后重新 <code>hexo g &amp;&amp; hexo d</code></p>
+<hr>
+<h2 id="7-进阶：更换主题"><a href="#7-进阶：更换主题" class="headerlink" title="7. 进阶：更换主题"></a>7. 进阶：更换主题</h2><p>Hexo 默认主题比较简陋，可以更换更美观的主题。推荐主题：</p>
+<ul>
+<li><strong>Butterfly</strong>：功能最全、最华丽</li>
+<li><strong>NexT</strong>：经典、简洁、优雅</li>
+<li><strong>Fluid</strong>：现代化、高颜值</li>
+</ul>
+<p>以 NexT 为例：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载主题</span></span><br><span class="line">git clone https://github.com/next<span class="literal">-theme</span>/hexo<span class="literal">-theme-next</span> themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用主题（修改 _config.yml）</span></span><br><span class="line"><span class="comment"># 找到 theme: landscape，改成 theme: next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新生成并部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
+</blockquote>
+<hr>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>谢谢你看到这里喵</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/06/03/2.%20github-blog-tutorial/">http://example.com/2026/06/03/2.%20github-blog-tutorial/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2077/01/01/%E4%BB%8B%E7%BB%8D/" title="00.自我介绍喵"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">00.自我介绍喵</div></div><div class="info-2"><div class="info-item-1">您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。 这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。 (&#x3D;^･ω･^&#x3D;)و✧ 喵~ </div></div></div></a><a class="pagination-related" href="/2026/05/31/1.%20Docker/" title="01.Docker 入门教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">01.Docker 入门教程</div></div><div class="info-2"><div class="info-item-1">一、Docker Desktop 安装📋 环境信息   组件 版本    Windows 11 Insider Preview 26200.8457 (Canary)   WSL Ubuntu 24.04.3 LTS (WSL2)   Docker Desktop 4.43.2   Docker Engine 28.3.2    ⚠️ 遇到的问题1. 安装时 DISM 报错12错误: 0x800f080c功能名称 Microsoft-Hyper-V 未知。 原因：预览版系统移除了旧版功能名称，安装程序尝试启用 Microsoft-Hyper-V 失败。解决：忽略该错误，核心组件已安装完成。 2. 桌面图标点击无反应 &#x2F; 启动慢原因：Electron 前端与预览版系统兼容性差，静默崩溃。解决：  ✅ 使用系统托盘 🐳 图标管理 ✅ 使用网页版 localhost:8888（秒开） ✅ 命令行操作（推荐）  ✅ 验证成功12345$ docker --versionDocker version 28.3.2, build 578ccf6$ docker run --rm...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/05/31/1.%20Docker/" title="01.Docker 入门教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-31</div><div class="info-item-2">01.Docker 入门教程</div></div><div class="info-2"><div class="info-item-1">一、Docker Desktop 安装📋 环境信息   组件 版本    Windows 11 Insider Preview 26200.8457 (Canary)   WSL Ubuntu 24.04.3 LTS (WSL2)   Docker Desktop 4.43.2   Docker Engine 28.3.2    ⚠️ 遇到的问题1. 安装时 DISM 报错12错误: 0x800f080c功能名称 Microsoft-Hyper-V 未知。 原因：预览版系统移除了旧版功能名称，安装程序尝试启用 Microsoft-Hyper-V 失败。解决：忽略该错误，核心组件已安装完成。 2. 桌面图标点击无反应 &#x2F; 启动慢原因：Electron 前端与预览版系统兼容性差，静默崩溃。解决：  ✅ 使用系统托盘 🐳 图标管理 ✅ 使用网页版 localhost:8888（秒开） ✅ 命令行操作（推荐）  ✅ 验证成功12345$ docker --versionDocker version 28.3.2, build 578ccf6$ docker run --rm...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.</span> <span class="toc-text">1.安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">2.本地搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8github-pages"><span class="toc-number">3.</span> <span class="toc-text">3.使用github pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E5%86%99%E5%92%8C%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0"><span class="toc-number">4.</span> <span class="toc-text">4. 编写和发布文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5"><span class="toc-number">5.</span> <span class="toc-text">5. 常用命令速查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">6.</span> <span class="toc-text">6. 常见问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%BF%9B%E9%98%B6%EF%BC%9A%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">7. 进阶：更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">8. 总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2077/01/01/%E4%BB%8B%E7%BB%8D/" title="00.自我介绍喵">00.自我介绍喵</a><time datetime="2076-12-31T16:00:00.000Z" title="发表于 2077-01-01 00:00:00">2077-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/03/2.%20github-blog-tutorial/" title="02.基于github搭建个人博客">02.基于github搭建个人博客</a><time datetime="2026-06-03T13:47:32.000Z" title="发表于 2026-06-03 21:47:32">2026-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/31/1.%20Docker/" title="01.Docker 入门教程">01.Docker 入门教程</a><time datetime="2026-05-30T17:17:00.000Z" title="发表于 2026-05-31 01:17:00">2026-05-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
