@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>01.Docker 入门教程</title>
+    <url>/2026/05/31/1.%20Docker/</url>
+    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows</td>
+<td>11 Insider Preview 26200.8457 (Canary)</td>
+</tr>
+<tr>
+<td>WSL</td>
+<td>Ubuntu 24.04.3 LTS (WSL2)</td>
+</tr>
+<tr>
+<td>Docker Desktop</td>
+<td>4.43.2</td>
+</tr>
+<tr>
+<td>Docker Engine</td>
+<td>28.3.2</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
+<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
+<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
+<ul>
+<li>✅ 使用系统托盘 🐳 图标管理</li>
+<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
+<li>✅ 命令行操作（推荐）</li>
+</ul>
+<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>00.自我介绍喵</title>
+    <url>/2077/01/01/%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
+<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
+<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>02.基于github的个人博客搭建教程</title>
+    <url>/2026/06/03/2.%20github-blog-tutorial/</url>
+    <content><![CDATA[<h2 id="0-前置条件"><a href="#0-前置条件" class="headerlink" title="0.前置条件"></a>0.前置条件</h2><p>在安装Hexo之前需要先安装好Git和Node.js</p>
+<h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
+
+<p>安装验证</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+
+<p>显示版号即可</p>
+<hr>
+<h2 id="2-本地搭建"><a href="#2-本地搭建" class="headerlink" title="2.本地搭建"></a>2.本地搭建</h2><p>(1) 初始化</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powershellhexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>myblog的文件夹位置一般默认在C盘用户文件夹内</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>_config.yml 存放的是博客配置信息， source&#x2F;_posts 是存放文章的地方</p>
+</blockquote>
+<p>(2) 运行默认主题</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment">#清除缓存文件，建议写完文章之后再执行一次降低负荷</span></span><br><span class="line">hexo generate  <span class="comment">#生成 public 文件夹，写完文章执行</span></span><br><span class="line">hexo server    <span class="comment">#启动 hexo 服务</span></span><br></pre></td></tr></table></figure>
+
+<p>运行最后一个之后得出部署在本地的服务器上</p>
+<p>访问本地4000端口（默认）即可查看本地效果</p>
+<hr>
+<h2 id="3-使用github-pages"><a href="#3-使用github-pages" class="headerlink" title="3.使用github pages"></a>3.使用github pages</h2><p> (1) 配置 SSH key</p>
+<blockquote>
+<p>目的：实现免密上传到 GitHub，无需每次都输入账号密码</p>
+</blockquote>
+<p>检查本地是否已有 SSH key：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果提示路径不存在，说明还没配置过，直接进行下一步。</p>
+<p>(2) 生成 SSH key：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-C</span> <span class="string">&quot;你的GitHub邮箱@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>连续按<strong>三次回车</strong>即可（使用默认设置，不设置密码）。</p>
+<p>生成成功后，会在 <code>C:\Users\你的用户名\.ssh</code> 目录下生成两个文件：</p>
+<ul>
+<li><code>id_rsa</code>（私钥，<strong>千万不要泄露</strong>）</li>
+<li><code>id_rsa.pub</code>（公钥，需要上传到 GitHub）</li>
+</ul>
+<p>(3) 获取公钥内容：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>或者手动进入 <code>.ssh</code> 文件夹，用记事本打开 <code>id_rsa.pub</code>，<strong>复制全部内容</strong>（从 <code>ssh-rsa</code> 开头到邮箱结尾，不要有多余空格或换行）。</p>
+<p><strong>添加到 GitHub：</strong></p>
+<ol>
+<li>登录 GitHub，点击右上角头像 → <strong>Settings</strong></li>
+<li>左侧菜单选择 <strong>SSH and GPG keys</strong></li>
+<li>点击绿色按钮 <strong>New SSH key</strong></li>
+<li>Title 随便填（如 <code>MyBlog</code>），Key 粘贴刚才复制的公钥内容</li>
+<li>点击 <strong>Add SSH key</strong>（可能需要输入 GitHub 密码确认）</li>
+</ol>
+<p><strong>测试连接：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次连接会提示确认，输入 <code>yes</code> 回车。如果看到类似这样的提示，说明配置成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi 你的用户名! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<p>(4) 创建 GitHub 仓库</p>
+<ol>
+<li>登录 GitHub，点击右上角 <strong>+</strong> → <strong>New repository</strong></li>
+<li><strong>Repository name</strong>（仓库名）：<strong>必须填写 <code>你的用户名.github.io</code></strong>,否则没有用喵。这个仓库名将作为你博客的访问地址</li>
+<li>保持 <strong>Public</strong>（公开）</li>
+<li><strong>不要勾选</strong> “Initialize this repository with a README”（保持空白）</li>
+<li>点击 <strong>Create repository</strong></li>
+</ol>
+<p>(5) 配置 Hexo 部署信息</p>
+<p>打开博客根目录（<code>myblog</code> 文件夹）下的 <strong><code>_config.yml</code></strong> 文件（注意是根目录的，不是 themes 里的），拉到<strong>文件最底部</strong>，添加或修改以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<p>(6) 安装部署插件</p>
+<p>在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>(7) 部署到 GitHub</p>
+<p>依次执行以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除缓存（建议每次部署前都执行）</span></span><br><span class="line">hexo generate  <span class="comment"># 生成静态网页（生成 public 文件夹）</span></span><br><span class="line">hexo deploy    <span class="comment"># 部署到 GitHub</span></span><br></pre></td></tr></table></figure>
+
+<p>或者简写为：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>第一次部署时，会提示确认连接，输入 <code>yes</code> 回车。</p>
+<p>看到 <code>INFO Deploy done: git</code> 说明部署成功！</p>
+<p>(8) 访问你的博客</p>
+<p>打开浏览器，访问：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://你的用户名.github.io</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⏱️ <strong>注意：</strong> 第一次部署后，GitHub 需要 1-2 分钟来生成网页。如果打开显示 404，请稍等片刻再刷新。</p>
+</blockquote>
+<hr>
+<h2 id="4-编写和发布文章"><a href="#4-编写和发布文章" class="headerlink" title="4. 编写和发布文章"></a>4. 编写和发布文章</h2><p>(1) 新建文章</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>文章会创建在 <code>source/_posts/文章标题.md</code></p>
+<p>(2) 编辑文章</p>
+<p>用 Markdown 编辑器（推荐 <strong>Typora</strong> 或 <strong>VS Code</strong>）打开 <code>.md</code> 文件，你会看到：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2026-06-03 22:40:00</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 <code>tags:</code> 后面可以添加标签，如：<code>tags: [网络安全, 学习笔记]</code></li>
+<li>在 <code>---</code> 下方写正文内容（使用 Markdown 语法）</li>
+<li>可以在正文中插入 <code>&lt;!-- more --&gt;</code>，实现首页摘要显示</li>
+</ul>
+<p>(3) 发布文章</p>
+<p>写完文章后，再次执行”素质三连”：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-常用命令速查"><a href="#5-常用命令速查" class="headerlink" title="5. 常用命令速查"></a>5. 常用命令速查</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hexo new &quot;文章名&quot;</code></td>
+<td>新建文章</td>
+</tr>
+<tr>
+<td><code>hexo clean</code></td>
+<td>清除缓存</td>
+</tr>
+<tr>
+<td><code>hexo generate</code> (或 <code>hexo g</code>)</td>
+<td>生成静态网页</td>
+</tr>
+<tr>
+<td><code>hexo server</code> (或 <code>hexo s</code>)</td>
+<td>本地预览（<a href="http://localhost:4000）">http://localhost:4000）</a></td>
+</tr>
+<tr>
+<td><code>hexo deploy</code> (或 <code>hexo d</code>)</td>
+<td>部署到 GitHub</td>
+</tr>
+<tr>
+<td><code>hexo version</code></td>
+<td>查看 Hexo 版本</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="6-常见问题解决"><a href="#6-常见问题解决" class="headerlink" title="6. 常见问题解决"></a>6. 常见问题解决</h2><p>问题1：部署时提示 <code>Permission denied</code></p>
+<p><strong>原因：</strong> SSH 配置问题或中文用户名导致的乱码</p>
+<p><strong>解决方法：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;C:/Windows/System32/OpenSSH/ssh.exe&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后重新执行 <code>hexo d</code></p>
+<p>问题2：访问博客显示 404</p>
+<p><strong>原因：</strong> GitHub Pages 需要时间生成</p>
+<p><strong>解决方法：</strong> 等待 1-2 分钟后刷新，检查仓库名是否正确（必须是 <code>用户名.github.io</code>）</p>
+<p>问题3：文章发布时间差8小时</p>
+<p><strong>原因：</strong> 时区设置问题</p>
+<p><strong>解决方法：</strong> 在 <code>_config.yml</code> 中设置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>问题4：本地预览正常，但部署后样式丢失</p>
+<p><strong>原因：</strong> 可能是缓存问题或部署不完整</p>
+<p><strong>解决方法：</strong> 执行 <code>hexo clean</code> 后重新 <code>hexo g &amp;&amp; hexo d</code></p>
+<hr>
+<h2 id="7-进阶：更换主题"><a href="#7-进阶：更换主题" class="headerlink" title="7. 进阶：更换主题"></a>7. 进阶：更换主题</h2><p>Hexo 默认主题比较简陋，可以更换更美观的主题。推荐主题：</p>
+<ul>
+<li><strong>Butterfly</strong>：功能最全、最华丽</li>
+<li><strong>NexT</strong>：经典、简洁、优雅</li>
+<li><strong>Fluid</strong>：现代化、高颜值</li>
+</ul>
+<p>以 NexT 为例：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载主题</span></span><br><span class="line">git clone https://github.com/next<span class="literal">-theme</span>/hexo<span class="literal">-theme-next</span> themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用主题（修改 _config.yml）</span></span><br><span class="line"><span class="comment"># 找到 theme: landscape，改成 theme: next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新生成并部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
+</blockquote>
+<hr>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>谢谢你看到这里喵</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+</search>
