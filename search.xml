@@ -1,8 +1,838 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>01.Docker 入门教程</title>
-    <url>/2026/05/31/1.%20Docker/</url>
+    <title>00.自我介绍喵</title>
+    <url>/2077/01/01/%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
+<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
+<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01.Markdown语法</title>
+    <url>/2025/09/21/1.%20Markdown/</url>
+    <content><![CDATA[<blockquote>
+<p>一份详细、结构清晰的 Markdown 语法笔记，适合快速查询与学习。<br>保持简洁，专注内容，让排版自然生效。</p>
+</blockquote>
+<hr>
+<h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="1-标题（Headings）"><a href="#1-标题（Headings）" class="headerlink" title="1. 标题（Headings）"></a>1. 标题（Headings）</h3><p>使用 <code>#</code> 表示标题级别，从一级（最大）到六级（最小）。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-文本样式（Text-Styles）"><a href="#2-文本样式（Text-Styles）" class="headerlink" title="2. 文本样式（Text Styles）"></a>2. 文本样式（Text Styles）</h3><ul>
+<li><p><strong>粗体</strong>：用 <code>**</code> 或 <code>__</code> 包裹文本<br><code>**这是粗体**</code> 或 <code>__这也是粗体__</code></p>
+</li>
+<li><p><em>斜体</em>：用 <code>*</code> 或 <code>_</code> 包裹文本<br><code>*这是斜体*</code> 或 <code>_这也是斜体_</code></p>
+</li>
+<li><p><em><strong>粗斜体</strong></em>：用 <code>***</code> 或 <code>___</code> 包裹<br><code>***粗斜体文本***</code></p>
+</li>
+<li><p><del>删除线</del>：用 <code>~~</code> 包裹<br><code>~~删除线文本~~</code></p>
+</li>
+<li><p>高亮：部分渲染器支持，用 <code>==</code> 包裹<br><code>==高亮文本==</code></p>
+</li>
+</ul>
+<h3 id="3-列表（Lists）"><a href="#3-列表（Lists）" class="headerlink" title="3. 列表（Lists）"></a>3. 列表（Lists）</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>使用 <code>-</code>、<code>+</code> 或 <code>*</code> 后跟空格：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 项目一</span><br><span class="line"><span class="bullet">-</span> 项目二</span><br><span class="line"><span class="bullet">  -</span> 子项目（缩进2空格或1个制表符）</span><br></pre></td></tr></table></figure>
+
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>使用数字后跟 <code>.</code> 和空格：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一项</span><br><span class="line"><span class="bullet">2.</span> 第二项</span><br><span class="line"><span class="bullet">   1.</span> 子项一</span><br><span class="line"><span class="bullet">   2.</span> 子项二</span><br></pre></td></tr></table></figure>
+
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><p>使用 <code>- [ ]</code> 或 <code>- [x]</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [ ] 未完成任务</span><br><span class="line"><span class="bullet">-</span> [x] 已完成任务</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-链接与图片（Links-Images）"><a href="#4-链接与图片（Links-Images）" class="headerlink" title="4. 链接与图片（Links &amp; Images）"></a>4. 链接与图片（Links &amp; Images）</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>](<span class="link">URL &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>示例：<br><a href="https://www.google.com/" title="前往Google">Google</a></p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">替代文本</span>](<span class="link">图片URL &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>示例：<br><img src="https://markdown-here.com/img/icon256.png" alt="Markdown标志" title="Logo"></p>
+<h4 id="引用式链接"><a href="#引用式链接" class="headerlink" title="引用式链接"></a>引用式链接</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个[<span class="string">引用链接</span>][<span class="symbol">1</span>]的例子。</span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">https://example.com &quot;示例链接&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-引用（Blockquotes）"><a href="#5-引用（Blockquotes）" class="headerlink" title="5. 引用（Blockquotes）"></a>5. 引用（Blockquotes）</h3><p>使用 <code>&gt;</code> 开头：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一段引用。</span></span><br><span class="line"><span class="quote">&gt; </span></span><br><span class="line"><span class="quote">&gt; 这是引用的第二段。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-代码（Code）"><a href="#6-代码（Code）" class="headerlink" title="6. 代码（Code）"></a>6. 代码（Code）</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p>用反引号 <code>`</code> 包裹：<br><code>`print(&quot;Hello World&quot;)`</code> → <code>print(&quot;Hello World&quot;)</code></p>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p>用三个反引号 <code>```</code> 包裹，并可指定语言：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">```python</span></span><br><span class="line"><span class="code">def hello():</span></span><br><span class="line"><span class="code">    print(&quot;Hello, Markdown!&quot;)</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、高级语法与扩展"><a href="#二、高级语法与扩展" class="headerlink" title="二、高级语法与扩展"></a>二、高级语法与扩展</h2><h3 id="1-表格（Tables）"><a href="#1-表格（Tables）" class="headerlink" title="1. 表格（Tables）"></a>1. 表格（Tables）</h3><p>使用 <code>|</code> 分隔列，<code>-</code> 分隔表头与内容：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| :----- | :------: | -----: |</span><br><span class="line">| 单元格 | 单元格   | 单元格 |</span><br><span class="line">| 第二行 | 数据     | 数据   |</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-脚注（Footnotes）"><a href="#2-脚注（Footnotes）" class="headerlink" title="2. 脚注（Footnotes）"></a>2. 脚注（Footnotes）</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一段带有脚注的文字[^1]。</span><br><span class="line"></span><br><span class="line">[<span class="symbol">^1</span>]: <span class="link">这里是脚注的详细内容。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-分隔线（Horizontal-Rules）"><a href="#3-分隔线（Horizontal-Rules）" class="headerlink" title="3. 分隔线（Horizontal Rules）"></a>3. 分隔线（Horizontal Rules）</h3><p>使用三个或以上的 <code>-</code>、<code>*</code> 或 <code>_</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong">__<span class="emphasis">_</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-自动链接（Automatic-Links）"><a href="#4-自动链接（Automatic-Links）" class="headerlink" title="4. 自动链接（Automatic Links）"></a>4. 自动链接（Automatic Links）</h3><p>用 <code>&lt; &gt;</code> 包裹 URL 或邮箱地址：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">&lt;https://www.example.com&gt;</span></span><br><span class="line"><span class="language-xml">&lt;someone@example.com&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-HTML-支持"><a href="#5-HTML-支持" class="headerlink" title="5. HTML 支持"></a>5. HTML 支持</h3><p>Markdown 支持内嵌 HTML，如：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是 <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span></span>红色文字<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、扩展语法（部分渲染器支持）"><a href="#三、扩展语法（部分渲染器支持）" class="headerlink" title="三、扩展语法（部分渲染器支持）"></a>三、扩展语法（部分渲染器支持）</h2><h3 id="1-目录（Table-of-Contents）"><a href="#1-目录（Table-of-Contents）" class="headerlink" title="1. 目录（Table of Contents）"></a>1. 目录（Table of Contents）</h3><p>某些渲染器（如 Typora、GitHub）支持自动生成目录：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-定义列表（Definition-Lists）"><a href="#2-定义列表（Definition-Lists）" class="headerlink" title="2. 定义列表（Definition Lists）"></a>2. 定义列表（Definition Lists）</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">术语一</span><br><span class="line">: 定义一</span><br><span class="line"></span><br><span class="line">术语二</span><br><span class="line">: 定义二</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-上标与下标"><a href="#3-上标与下标" class="headerlink" title="3. 上标与下标"></a>3. 上标与下标</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">H~2~O  →  H₂O  </span><br><span class="line">X^2^   →  X²</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-注释（Comments）"><a href="#4-注释（Comments）" class="headerlink" title="4. 注释（Comments）"></a>4. 注释（Comments）</h3><p>不会被渲染的内容：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这是一个注释，不会显示 --&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、使用建议与技巧"><a href="#四、使用建议与技巧" class="headerlink" title="四、使用建议与技巧"></a>四、使用建议与技巧</h2><ol>
+<li><strong>兼容性</strong>：不同平台（GitHub、Typora、VS Code 等）对 Markdown 的支持可能略有差异，建议先测试。</li>
+<li><strong>转义字符</strong>：使用 <code>\</code> 来显示原本有特殊意义的字符，如 <code>\*</code> 显示为 *。</li>
+<li><strong>保持简洁</strong>：Markdown 的设计哲学是易于读写，避免过度使用 HTML 或复杂结构。</li>
+<li><strong>工具推荐</strong>：<ul>
+<li>编辑器：Typora、VS Code、Obsidian</li>
+<li>在线工具：Markdown Here、StackEdit</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>Markdown 是一种轻量级标记语言，通过简单的符号实现优雅的排版。掌握基础语法后，可以应对大多数写作场景，再根据需要学习扩展语法。</p>
+<blockquote>
+<p>🐱 祝你使用愉快，高效创作！<br>如有疑问，可随时查阅官方文档或社区资源。</p>
+</blockquote>
+<hr>
+<p><strong>最后更新</strong>：2026年1月<br><strong>编写者</strong>：<code>0utC@5t</code><br><strong>致谢</strong>：感谢所有为 Markdown 生态做出贡献的开发者和用户！</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>02.Linux 操作系统指令</title>
+    <url>/2025/09/22/2.%20Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="📋-一、基础环境与操作准备"><a href="#📋-一、基础环境与操作准备" class="headerlink" title="📋 一、基础环境与操作准备"></a>📋 一、基础环境与操作准备</h2><h3 id="1-虚拟机连接与配置"><a href="#1-虚拟机连接与配置" class="headerlink" title="1. 虚拟机连接与配置"></a>1. 虚拟机连接与配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 查看虚拟机IP地址</span></span><br><span class="line">ifconfig</span><br><span class="line"><span class="comment"># 或使用新命令</span></span><br><span class="line">ip addr show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通过FinalShell连接</span></span><br><span class="line"><span class="comment"># IP地址: 虚拟机IP</span></span><br><span class="line"><span class="comment"># 端口: 22 (默认SSH端口)</span></span><br><span class="line"><span class="comment"># 用户名: 虚拟机用户名</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-连接验证"><a href="#2-连接验证" class="headerlink" title="2. 连接验证"></a>2. 连接验证</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输入以下命令验证连接</span></span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 若显示结果与虚拟机终端一致，则连接成功</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重要注意事项"><a href="#3-重要注意事项" class="headerlink" title="3. 重要注意事项"></a>3. 重要注意事项</h3><ul>
+<li>⚠️ <strong>虚拟机IP变化</strong>：重启后需重新运行 <code>ifconfig</code> 检查IP</li>
+<li>🔧 <strong>WSL子系统</strong>：硬件虚拟化，资源占用较少</li>
+<li>🔄 <strong>快照功能</strong>：保存系统状态，便于恢复<ul>
+<li>制作快照：虚拟机管理界面操作</li>
+<li>查看快照：快照列表查看历史状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-常用快捷操作"><a href="#4-常用快捷操作" class="headerlink" title="4. 常用快捷操作"></a>4. 常用快捷操作</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl + L</code></td>
+<td>清屏（同 <code>clear</code> 命令）</td>
+</tr>
+<tr>
+<td><code>Ctrl + C</code></td>
+<td>终止当前命令</td>
+</tr>
+<tr>
+<td><code>Ctrl + D</code></td>
+<td>退出终端&#x2F;结束输入</td>
+</tr>
+<tr>
+<td><code>Tab</code></td>
+<td>自动补全命令&#x2F;文件名</td>
+</tr>
+<tr>
+<td><code>↑</code> &#x2F; <code>↓</code></td>
+<td>查看历史命令</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📁-二、Linux目录结构与命令基础"><a href="#📁-二、Linux目录结构与命令基础" class="headerlink" title="📁 二、Linux目录结构与命令基础"></a>📁 二、Linux目录结构与命令基础</h2><h3 id="1-目录结构对比"><a href="#1-目录结构对比" class="headerlink" title="1. 目录结构对比"></a>1. 目录结构对比</h3><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>根目录</th>
+<th>路径分隔符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Linux</td>
+<td>单一根目录 <code>/</code></td>
+<td>正斜杠 <code>/</code></td>
+<td><code>/usr/local/hello.txt</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>多根目录（C:，D:）</td>
+<td>反斜杠 <code>\</code></td>
+<td><code>D:\data\work\hello.txt</code></td>
+</tr>
+</tbody></table>
+<h3 id="2-Linux标准目录结构"><a href="#2-Linux标准目录结构" class="headerlink" title="2. Linux标准目录结构"></a>2. Linux标准目录结构</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/</span><br><span class="line">├── /home      # 用户主目录</span><br><span class="line">├── /root      # 超级用户目录</span><br><span class="line">├── /etc       # 配置文件</span><br><span class="line">├── /var       # 可变数据</span><br><span class="line">├── /usr       # 用户程序</span><br><span class="line">├── /bin       # 二进制命令</span><br><span class="line">├── /sbin      # 系统管理命令</span><br><span class="line">├── /tmp       # 临时文件</span><br><span class="line">└── /dev       # 设备文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-命令通用格式"><a href="#3-命令通用格式" class="headerlink" title="3. 命令通用格式"></a>3. 命令通用格式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">command</span> [options] [parameter]</span><br><span class="line"><span class="comment">#  命令    选项       参数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="示例解析："><a href="#示例解析：" class="headerlink" title="示例解析："></a>示例解析：</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例1：显示目录内容</span></span><br><span class="line"><span class="built_in">ls</span> -l /home/itheima</span><br><span class="line"><span class="comment">#  ls：命令主体</span></span><br><span class="line"><span class="comment">#  -l：选项（长格式显示）</span></span><br><span class="line"><span class="comment">#  /home/itheima：参数（目标路径）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例2：递归复制目录</span></span><br><span class="line"><span class="built_in">cp</span> -r test1 test2</span><br><span class="line"><span class="comment">#  cp：命令主体</span></span><br><span class="line"><span class="comment">#  -r：选项（递归复制）</span></span><br><span class="line"><span class="comment">#  test1：源路径参数</span></span><br><span class="line"><span class="comment">#  test2：目标路径参数</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="⚡-三、核心基础命令详解"><a href="#⚡-三、核心基础命令详解" class="headerlink" title="⚡ 三、核心基础命令详解"></a>⚡ 三、核心基础命令详解</h2><h3 id="1-📂-目录查看与切换"><a href="#1-📂-目录查看与切换" class="headerlink" title="1. 📂 目录查看与切换"></a>1. 📂 目录查看与切换</h3><h4 id="ls-列出目录内容"><a href="#ls-列出目录内容" class="headerlink" title="ls - 列出目录内容"></a><strong>ls</strong> - 列出目录内容</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-a</code></td>
+<td>显示所有文件（包括隐藏文件）</td>
+<td><code>ls -a</code></td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>长格式显示（详细信息）</td>
+<td><code>ls -l</code></td>
+</tr>
+<tr>
+<td><code>-h</code></td>
+<td>人性化显示文件大小</td>
+<td><code>ls -lh</code></td>
+</tr>
+<tr>
+<td><code>-t</code></td>
+<td>按修改时间排序</td>
+<td><code>ls -lt</code></td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>反向排序</td>
+<td><code>ls -lr</code></td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>按文件大小排序</td>
+<td><code>ls -lS</code></td>
+</tr>
+</tbody></table>
+<p><strong>组合使用示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 常用组合</span></span><br><span class="line"><span class="built_in">ls</span> -la          <span class="comment"># 显示所有文件的详细信息</span></span><br><span class="line"><span class="built_in">ls</span> -lh          <span class="comment"># 人性化显示文件大小</span></span><br><span class="line"><span class="built_in">ls</span> -ltr         <span class="comment"># 按时间反向排序（最新在最后）</span></span><br><span class="line"><span class="built_in">ls</span> -alh         <span class="comment"># 组合选项（顺序可调换）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定目录</span></span><br><span class="line"><span class="built_in">ls</span> /home        <span class="comment"># 查看home目录内容</span></span><br><span class="line"><span class="built_in">ls</span> ..           <span class="comment"># 查看上级目录</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="cd-切换工作目录"><a href="#cd-切换工作目录" class="headerlink" title="cd - 切换工作目录"></a><strong>cd</strong> - 切换工作目录</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cd</code> 或 <code>cd ~</code></td>
+<td>返回用户主目录</td>
+<td><code>cd</code></td>
+</tr>
+<tr>
+<td><code>cd -</code></td>
+<td>返回上次所在目录</td>
+<td><code>cd -</code></td>
+</tr>
+<tr>
+<td><code>cd ..</code></td>
+<td>返回上级目录</td>
+<td><code>cd ..</code></td>
+</tr>
+<tr>
+<td><code>cd ../..</code></td>
+<td>返回上两级目录</td>
+<td><code>cd ../..</code></td>
+</tr>
+<tr>
+<td><code>cd /</code></td>
+<td>返回根目录</td>
+<td><code>cd /</code></td>
+</tr>
+</tbody></table>
+<p><strong>路径类型示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 绝对路径（从根目录开始）</span></span><br><span class="line"><span class="built_in">cd</span> /home/itheima/Desktop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相对路径（从当前目录开始）</span></span><br><span class="line"><span class="built_in">cd</span> Desktop          <span class="comment"># 进入当前目录下的Desktop</span></span><br><span class="line"><span class="built_in">cd</span> ../Downloads     <span class="comment"># 进入上级目录的Downloads</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊路径符</span></span><br><span class="line"><span class="built_in">cd</span> ~/Desktop        <span class="comment"># 进入主目录的Desktop</span></span><br><span class="line"><span class="built_in">cd</span> ./documents      <span class="comment"># 进入当前目录的documents（与直接cd documents相同）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="pwd-显示当前目录"><a href="#pwd-显示当前目录" class="headerlink" title="pwd - 显示当前目录"></a><strong>pwd</strong> - 显示当前目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="comment"># 输出示例：/home/itheima/Documents</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-📁-目录创建与管理"><a href="#2-📁-目录创建与管理" class="headerlink" title="2. 📁 目录创建与管理"></a>2. 📁 目录创建与管理</h3><h4 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir - 创建目录"></a><strong>mkdir</strong> - 创建目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本创建</span></span><br><span class="line"><span class="built_in">mkdir</span> new_folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个目录</span></span><br><span class="line"><span class="built_in">mkdir</span> dir1 dir2 dir3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归创建多级目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p parent/child/grandchild</span><br><span class="line"><span class="comment"># 创建结构：parent/ → child/ → grandchild/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建带权限的目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -m 755 secure_dir</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-📄-文件操作命令"><a href="#3-📄-文件操作命令" class="headerlink" title="3. 📄 文件操作命令"></a>3. 📄 文件操作命令</h3><h4 id="touch-创建空文件-更新时间戳"><a href="#touch-创建空文件-更新时间戳" class="headerlink" title="touch - 创建空文件&#x2F;更新时间戳"></a><strong>touch</strong> - 创建空文件&#x2F;更新时间戳</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建单个文件</span></span><br><span class="line"><span class="built_in">touch</span> file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个文件</span></span><br><span class="line"><span class="built_in">touch</span> file1.txt file2.txt file3.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新时间戳（文件不存在则创建）</span></span><br><span class="line"><span class="built_in">touch</span> existing_file.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件类型识别"><a href="#文件类型识别" class="headerlink" title="文件类型识别"></a><strong>文件类型识别</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用ls -l查看文件类型</span></span><br><span class="line"><span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 输出示例：</span></span><br><span class="line"><span class="comment"># -rw-r--r-- 1 user group 1234 Jan 1 10:00 file.txt   # - 表示普通文件</span></span><br><span class="line"><span class="comment"># drwxr-xr-x 2 user group 4096 Jan 1 10:00 directory/  # d 表示目录</span></span><br><span class="line"><span class="comment"># lrwxrwxrwx 1 user group    7 Jan 1 10:00 link -&gt; target  # l 表示链接</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="cat-查看文件内容"><a href="#cat-查看文件内容" class="headerlink" title="cat - 查看文件内容"></a><strong>cat</strong> - 查看文件内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看单个文件</span></span><br><span class="line"><span class="built_in">cat</span> filename.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看多个文件</span></span><br><span class="line"><span class="built_in">cat</span> file1.txt file2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示行号</span></span><br><span class="line"><span class="built_in">cat</span> -n filename.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示非打印字符</span></span><br><span class="line"><span class="built_in">cat</span> -A filename.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="more-less-分页查看"><a href="#more-less-分页查看" class="headerlink" title="more&#x2F;less - 分页查看"></a><strong>more&#x2F;less</strong> - 分页查看</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># more - 基本分页</span></span><br><span class="line">more long_file.txt</span><br><span class="line"><span class="comment"># 操作键：空格(下一页) 回车(下一行) q(退出)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># less - 更强大的分页器（推荐）</span></span><br><span class="line">less long_file.txt</span><br><span class="line"><span class="comment"># 操作键：</span></span><br><span class="line"><span class="comment"># 空格/f: 下一页  b: 上一页  ↑/↓: 上下滚动</span></span><br><span class="line"><span class="comment"># /关键字: 搜索  n: 下一个匹配 N: 上一个匹配</span></span><br><span class="line"><span class="comment"># q: 退出</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="cp-复制文件-目录"><a href="#cp-复制文件-目录" class="headerlink" title="cp - 复制文件&#x2F;目录"></a><strong>cp</strong> - 复制文件&#x2F;目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="built_in">cp</span> source.txt destination.txt</span><br><span class="line"><span class="built_in">cp</span> file1.txt file2.txt backup/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制目录（必须使用-r）</span></span><br><span class="line"><span class="built_in">cp</span> -r source_dir/ destination_dir/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保留文件属性</span></span><br><span class="line"><span class="built_in">cp</span> -p source.txt destination.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制覆盖（不提示）</span></span><br><span class="line"><span class="built_in">cp</span> -f source.txt destination.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 交互模式（覆盖前提示）</span></span><br><span class="line"><span class="built_in">cp</span> -i source.txt destination.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示复制进度</span></span><br><span class="line"><span class="built_in">cp</span> -v source.txt destination.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="mv-移动-重命名"><a href="#mv-移动-重命名" class="headerlink" title="mv - 移动&#x2F;重命名"></a><strong>mv</strong> - 移动&#x2F;重命名</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重命名文件</span></span><br><span class="line"><span class="built_in">mv</span> old_name.txt new_name.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动文件</span></span><br><span class="line"><span class="built_in">mv</span> file.txt /target/directory/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动并重命名</span></span><br><span class="line"><span class="built_in">mv</span> file.txt /target/directory/new_name.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动多个文件</span></span><br><span class="line"><span class="built_in">mv</span> file1.txt file2.txt file3.txt /target/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制移动（覆盖不提示）</span></span><br><span class="line"><span class="built_in">mv</span> -f source.txt destination.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="rm-删除文件-目录"><a href="#rm-删除文件-目录" class="headerlink" title="rm - 删除文件&#x2F;目录"></a><strong>rm</strong> - 删除文件&#x2F;目录</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>危险等级</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-r</code></td>
+<td>递归删除目录</td>
+<td>⚠️</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>强制删除（无提示）</td>
+<td>⚠️⚠️</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>交互模式（删除前确认）</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>显示删除过程</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安全删除示例</span></span><br><span class="line"><span class="built_in">rm</span> file.txt                    <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -i important.txt           <span class="comment"># 删除前确认</span></span><br><span class="line"><span class="built_in">rm</span> -r directory/              <span class="comment"># 删除目录（有提示）</span></span><br><span class="line"><span class="built_in">rm</span> -rf empty_dir/             <span class="comment"># 强制删除空目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ⚠️ 危险命令（绝对不要执行！）</span></span><br><span class="line"><span class="comment"># rm -rf /                    # 删除整个系统！</span></span><br><span class="line"><span class="comment"># rm -rf /*                   # 删除根目录所有文件！</span></span><br><span class="line"><span class="comment"># rm -rf .                    # 删除当前目录所有内容！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-🔍-查找命令"><a href="#4-🔍-查找命令" class="headerlink" title="4. 🔍 查找命令"></a>4. 🔍 查找命令</h3><h4 id="which-查找命令位置"><a href="#which-查找命令位置" class="headerlink" title="which - 查找命令位置"></a><strong>which</strong> - 查找命令位置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> <span class="built_in">ls</span>      <span class="comment"># 输出：/bin/ls</span></span><br><span class="line"><span class="built_in">which</span> python  <span class="comment"># 查看python命令位置</span></span><br><span class="line"><span class="built_in">which</span> -a bash <span class="comment"># 显示所有匹配的路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="find-高级文件查找"><a href="#find-高级文件查找" class="headerlink" title="find - 高级文件查找"></a><strong>find</strong> - 高级文件查找</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按名称查找</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span>          <span class="comment"># 查找.txt文件</span></span><br><span class="line">find / -name <span class="string">&quot;config.*&quot;</span>           <span class="comment"># 查找config.*文件</span></span><br><span class="line">find . -iname <span class="string">&quot;readme.txt&quot;</span>        <span class="comment"># 忽略大小写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按类型查找</span></span><br><span class="line">find /home -<span class="built_in">type</span> f                <span class="comment"># 只找文件</span></span><br><span class="line">find /home -<span class="built_in">type</span> d                <span class="comment"># 只找目录</span></span><br><span class="line">find /home -<span class="built_in">type</span> l                <span class="comment"># 只找链接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按大小查找</span></span><br><span class="line">find / -size +100M                <span class="comment"># 大于100MB</span></span><br><span class="line">find / -size -1k                  <span class="comment"># 小于1KB</span></span><br><span class="line">find /var/log -size +10M -size -100M  <span class="comment"># 10MB到100MB之间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按时间查找</span></span><br><span class="line">find /home -mtime -7              <span class="comment"># 7天内修改过</span></span><br><span class="line">find /home -mtime +30             <span class="comment"># 30天前修改过</span></span><br><span class="line">find /var/log -amin -60           <span class="comment"># 60分钟内访问过</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按权限查找</span></span><br><span class="line">find /home -perm 644              <span class="comment"># 权限为644</span></span><br><span class="line">find / -perm /u=s                 <span class="comment"># 查找SUID文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组合条件</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span> -<span class="built_in">type</span> f -size +1M</span><br><span class="line">find /var/log -name <span class="string">&quot;*.log&quot;</span> -mtime +30 -delete  <span class="comment"># 找到并删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">exec</span> <span class="built_in">rm</span> &#123;&#125; \;      <span class="comment"># 删除所有.tmp文件</span></span><br><span class="line">find . -name <span class="string">&quot;*.jpg&quot;</span> -<span class="built_in">exec</span> <span class="built_in">cp</span> &#123;&#125; /backup \;  <span class="comment"># 复制所有jpg文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="grep-文本搜索"><a href="#grep-文本搜索" class="headerlink" title="grep - 文本搜索"></a><strong>grep</strong> - 文本搜索</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本搜索</span></span><br><span class="line">grep <span class="string">&quot;keyword&quot;</span> file.txt</span><br><span class="line">grep -n <span class="string">&quot;error&quot;</span> logfile.log      <span class="comment"># 显示行号</span></span><br><span class="line">grep -i <span class="string">&quot;warning&quot;</span> file.txt       <span class="comment"># 忽略大小写</span></span><br><span class="line">grep -v <span class="string">&quot;exclude&quot;</span> file.txt       <span class="comment"># 反向匹配（不包含）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归搜索</span></span><br><span class="line">grep -r <span class="string">&quot;function&quot;</span> /project/     <span class="comment"># 递归搜索目录</span></span><br><span class="line">grep -r -l <span class="string">&quot;TODO&quot;</span> src/           <span class="comment"># 只显示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正则表达式</span></span><br><span class="line">grep <span class="string">&quot;^Start&quot;</span> file.txt           <span class="comment"># 以Start开头</span></span><br><span class="line">grep <span class="string">&quot;end$&quot;</span> file.txt             <span class="comment"># 以end结尾</span></span><br><span class="line">grep <span class="string">&quot;file[0-9]&quot;</span> data.txt        <span class="comment"># file后跟数字</span></span><br><span class="line">grep -E <span class="string">&quot;(error|warning)&quot;</span> log.txt  <span class="comment"># 扩展正则</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下文显示</span></span><br><span class="line">grep -B2 -A2 <span class="string">&quot;crash&quot;</span> log.txt     <span class="comment"># 显示前后2行</span></span><br><span class="line">grep -C3 <span class="string">&quot;exception&quot;</span> log.txt     <span class="comment"># 显示前后3行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 与管道结合</span></span><br><span class="line">ps aux | grep python             <span class="comment"># 查找Python进程</span></span><br><span class="line"><span class="built_in">history</span> | grep <span class="string">&quot;ssh&quot;</span>             <span class="comment"># 查找历史命令中的ssh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-📊-文本处理"><a href="#5-📊-文本处理" class="headerlink" title="5. 📊 文本处理"></a>5. 📊 文本处理</h3><h4 id="wc-文本统计"><a href="#wc-文本统计" class="headerlink" title="wc - 文本统计"></a><strong>wc</strong> - 文本统计</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本统计</span></span><br><span class="line"><span class="built_in">wc</span> file.txt</span><br><span class="line"><span class="comment"># 输出：行数 单词数 字节数 文件名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 选项</span></span><br><span class="line"><span class="built_in">wc</span> -l file.txt      <span class="comment"># 只统计行数</span></span><br><span class="line"><span class="built_in">wc</span> -w file.txt      <span class="comment"># 只统计单词数</span></span><br><span class="line"><span class="built_in">wc</span> -c file.txt      <span class="comment"># 只统计字节数</span></span><br><span class="line"><span class="built_in">wc</span> -m file.txt      <span class="comment"># 只统计字符数</span></span><br><span class="line"><span class="built_in">wc</span> -L file.txt      <span class="comment"># 最长行的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计多个文件</span></span><br><span class="line"><span class="built_in">wc</span> *.txt            <span class="comment"># 统计所有txt文件</span></span><br><span class="line"><span class="built_in">wc</span> -l *.<span class="built_in">log</span>         <span class="comment"># 统计所有log文件行数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="echo-输出文本"><a href="#echo-输出文本" class="headerlink" title="echo - 输出文本"></a><strong>echo</strong> - 输出文本</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本输出</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello Linux&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Path is: <span class="variable">$PATH</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不换行输出</span></span><br><span class="line"><span class="built_in">echo</span> -n <span class="string">&quot;Processing...&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 转义特殊字符</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;Line1\nLine2\tTab&quot;</span></span><br><span class="line"><span class="comment"># \n: 换行  \t: 制表符  \\: 反斜杠</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出到文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;content&quot;</span> &gt; file.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;追加内容&quot;</span> &gt;&gt; file.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-🔄-重定向与管道"><a href="#6-🔄-重定向与管道" class="headerlink" title="6. 🔄 重定向与管道"></a>6. 🔄 重定向与管道</h3><h4 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 覆盖写入</span></span><br><span class="line"><span class="built_in">ls</span> -l &gt; list.txt          <span class="comment"># 将ls结果写入文件（覆盖）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;New content&quot;</span> &gt; file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加写入</span></span><br><span class="line"><span class="built_in">date</span> &gt;&gt; log.txt           <span class="comment"># 追加日期到日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;DEBUG&quot;</span> &gt;&gt; output.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误重定向</span></span><br><span class="line"><span class="built_in">command</span> 2&gt; error.log      <span class="comment"># 错误信息重定向到文件</span></span><br><span class="line"><span class="built_in">command</span> 2&gt;&amp;1              <span class="comment"># 错误和标准输出合并</span></span><br><span class="line"><span class="built_in">command</span> &amp;&gt; all_output.txt <span class="comment"># 所有输出重定向</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="管道符应用"><a href="#管道符应用" class="headerlink" title="管道符应用"></a>管道符应用</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本管道</span></span><br><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;.txt&quot;</span>       <span class="comment"># 查找txt文件</span></span><br><span class="line">ps aux | grep python      <span class="comment"># 查找Python进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多重管道</span></span><br><span class="line"><span class="built_in">cat</span> log.txt | grep <span class="string">&quot;ERROR&quot;</span> | <span class="built_in">wc</span> -l</span><br><span class="line"><span class="comment"># 1. 查看文件 → 2. 过滤ERROR → 3. 统计行数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序和去重</span></span><br><span class="line"><span class="built_in">cat</span> data.txt | <span class="built_in">sort</span> | <span class="built_in">uniq</span></span><br><span class="line"><span class="built_in">cat</span> log.txt | <span class="built_in">cut</span> -d<span class="string">&#x27; &#x27;</span> -f1 | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -nr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实用组合</span></span><br><span class="line"><span class="comment"># 统计最常用的10个命令</span></span><br><span class="line"><span class="built_in">history</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -rn | <span class="built_in">head</span> -10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 监视日志变化</span></span><br><span class="line"><span class="built_in">tail</span> -f access.log | grep <span class="string">&quot;404&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-📈-文件尾部查看"><a href="#7-📈-文件尾部查看" class="headerlink" title="7. 📈 文件尾部查看"></a>7. 📈 文件尾部查看</h3><h4 id="tail-查看文件尾部"><a href="#tail-查看文件尾部" class="headerlink" title="tail - 查看文件尾部"></a><strong>tail</strong> - 查看文件尾部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看最后10行（默认）</span></span><br><span class="line"><span class="built_in">tail</span> file.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定行数</span></span><br><span class="line"><span class="built_in">tail</span> -n 20 file.log</span><br><span class="line"><span class="built_in">tail</span> -20 file.log          <span class="comment"># 简写形式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时监控文件变化</span></span><br><span class="line"><span class="built_in">tail</span> -f access.log         <span class="comment"># 实时查看日志</span></span><br><span class="line"><span class="built_in">tail</span> -f -n 50 app.log      <span class="comment"># 实时查看最后50行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监控多个文件</span></span><br><span class="line"><span class="built_in">tail</span> -f log1.log log2.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从指定行开始显示</span></span><br><span class="line"><span class="built_in">tail</span> -n +50 file.log       <span class="comment"># 从第50行显示到末尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示文件名标题</span></span><br><span class="line"><span class="built_in">tail</span> -q -f *.<span class="built_in">log</span>           <span class="comment"># -q: 不显示文件名</span></span><br><span class="line"><span class="built_in">tail</span> -F server.log         <span class="comment"># -F: 跟踪文件（文件重命名后继续跟踪）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="head-查看文件头部"><a href="#head-查看文件头部" class="headerlink" title="head - 查看文件头部"></a><strong>head</strong> - 查看文件头部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">head</span> file.log              <span class="comment"># 查看前10行</span></span><br><span class="line"><span class="built_in">head</span> -n 20 file.log        <span class="comment"># 查看前20行</span></span><br><span class="line"><span class="built_in">head</span> -c 100 file.log       <span class="comment"># 查看前100字节</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="✏️-四、Vim编辑器完全指南"><a href="#✏️-四、Vim编辑器完全指南" class="headerlink" title="✏️ 四、Vim编辑器完全指南"></a>✏️ 四、Vim编辑器完全指南</h2><h3 id="1-Vim模式说明"><a href="#1-Vim模式说明" class="headerlink" title="1. Vim模式说明"></a>1. Vim模式说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通模式（命令模式） → 按 i,a,o,I,A,O 进入 → 插入模式</span><br><span class="line">      ↓                                      ↓</span><br><span class="line">  按 : 进入                              按 ESC 返回</span><br><span class="line">      ↓</span><br><span class="line">  命令行模式</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-模式切换快捷键"><a href="#2-模式切换快捷键" class="headerlink" title="2. 模式切换快捷键"></a>2. 模式切换快捷键</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>i</code></td>
+<td>插入模式（当前位置）</td>
+<td>最常用</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>插入模式（光标后）</td>
+<td>append</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>插入模式（新行）</td>
+<td>open new line</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>插入模式（行首）</td>
+<td>大写 i</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>插入模式（行尾）</td>
+<td>大写 a</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>插入模式（上一行）</td>
+<td>大写 o</td>
+</tr>
+<tr>
+<td><code>ESC</code></td>
+<td>返回普通模式</td>
+<td></td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>进入命令行模式</td>
+<td></td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>进入可视模式</td>
+<td></td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td>进入可视行模式</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="3-普通模式命令大全"><a href="#3-普通模式命令大全" class="headerlink" title="3. 普通模式命令大全"></a>3. 普通模式命令大全</h3><h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>助记</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>h</code> <code>j</code> <code>k</code> <code>l</code></td>
+<td>左 下 上 右</td>
+<td></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>下一个单词开头</td>
+<td>word</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>上一个单词开头</td>
+<td>back</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>单词末尾</td>
+<td>end</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>行首</td>
+<td>数字0</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>行首第一个非空白字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>行尾</td>
+<td></td>
+</tr>
+<tr>
+<td><code>gg</code></td>
+<td>文件开头</td>
+<td></td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>文件末尾</td>
+<td>Go</td>
+</tr>
+<tr>
+<td><code>:n</code> 或 <code>nG</code></td>
+<td>跳转到第n行</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Ctrl+f</code></td>
+<td>向下翻页</td>
+<td>forward</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td>向上翻页</td>
+<td>backward</td>
+</tr>
+<tr>
+<td><code>Ctrl+d</code></td>
+<td>向下半页</td>
+<td>down</td>
+</tr>
+<tr>
+<td><code>Ctrl+u</code></td>
+<td>向上半页</td>
+<td>up</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>屏幕顶部</td>
+<td>High</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>屏幕中间</td>
+<td>Middle</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>屏幕底部</td>
+<td>Low</td>
+</tr>
+</tbody></table>
+<h4 id="编辑操作"><a href="#编辑操作" class="headerlink" title="编辑操作"></a>编辑操作</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x</code></td>
+<td>删除光标处字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>删除光标前字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除整行</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ndd</code></td>
+<td>删除n行</td>
+<td>如 <code>5dd</code></td>
+</tr>
+<tr>
+<td><code>dw</code></td>
+<td>删除单词</td>
+<td>delete word</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>删除至行尾</td>
+<td></td>
+</tr>
+<tr>
+<td><code>yy</code></td>
+<td>复制整行</td>
+<td>yank</td>
+</tr>
+<tr>
+<td><code>nyy</code></td>
+<td>复制n行</td>
+<td>如 <code>3yy</code></td>
+</tr>
+<tr>
+<td><code>yw</code></td>
+<td>复制单词</td>
+<td>yank word</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>粘贴到光标后</td>
+<td>paste</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>粘贴到光标前</td>
+<td></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>撤销</td>
+<td>undo</td>
+</tr>
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>重做</td>
+<td>redo</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>重复上次操作</td>
+<td></td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>替换单个字符</td>
+<td>replace</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>进入替换模式</td>
+<td></td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td>合并下一行到当前行</td>
+<td>Join</td>
+</tr>
+</tbody></table>
+<h4 id="搜索与替换"><a href="#搜索与替换" class="headerlink" title="搜索与替换"></a>搜索与替换</h4><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">/pattern       # 向前搜索</span><br><span class="line">?pattern       # 向后搜索</span><br><span class="line">n              # 下一个匹配项</span><br><span class="line"><span class="keyword">N</span>              # 上一个匹配项</span><br><span class="line">*              # 搜索当前单词</span><br><span class="line">#              # 反向搜索当前单词</span><br><span class="line"></span><br><span class="line"># 替换命令（命令行模式）</span><br><span class="line">:s/old/<span class="keyword">new</span>/        # 替换当前行第一个</span><br><span class="line">:s/old/<span class="keyword">new</span>/g       # 替换当前行所有</span><br><span class="line">:%s/old/<span class="keyword">new</span>/g      # 替换全文</span><br><span class="line">:%s/old/<span class="keyword">new</span>/gc     # 替换全文（每次确认）</span><br><span class="line">:<span class="number">5</span>,<span class="number">10</span>s/old/<span class="keyword">new</span>/g   # 替换<span class="number">5</span>-<span class="number">10</span>行</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-可视模式操作"><a href="#4-可视模式操作" class="headerlink" title="4. 可视模式操作"></a>4. 可视模式操作</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">v        # 进入字符可视模式</span><br><span class="line">V        # 进入行可视模式</span><br><span class="line">Ctrl+v   # 进入块可视模式</span><br><span class="line"></span><br><span class="line"># 可视模式下操作</span><br><span class="line"><span class="keyword">y</span>        # 复制选中内容</span><br><span class="line">d        # 删除选中内容</span><br><span class="line">&gt;        # 向右缩进</span><br><span class="line">&lt;        # 向左缩进</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-命令行模式常用命令"><a href="#5-命令行模式常用命令" class="headerlink" title="5. 命令行模式常用命令"></a>5. 命令行模式常用命令</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">:<span class="keyword">w</span>                  # 保存</span><br><span class="line">:q                  # 退出</span><br><span class="line">:<span class="keyword">wq</span> 或 :<span class="keyword">x</span> 或 ZZ    # 保存并退出</span><br><span class="line">:q!                 # 强制退出（不保存）</span><br><span class="line">:<span class="keyword">w</span> newfile.txt      # 另存为</span><br><span class="line">:<span class="keyword">e</span> filename         # 打开文件</span><br><span class="line"></span><br><span class="line"># 设置选项</span><br><span class="line">:<span class="keyword">set</span> <span class="keyword">nu</span>             # 显示行号</span><br><span class="line">:<span class="keyword">set</span> nonu           # 隐藏行号</span><br><span class="line">:<span class="keyword">set</span> hlsearch       # 高亮搜索</span><br><span class="line">:<span class="keyword">set</span> <span class="keyword">nohlsearch</span>     # 取消高亮</span><br><span class="line">:<span class="keyword">set</span> paste          # 粘贴模式（避免自动缩进）</span><br><span class="line">:<span class="keyword">set</span> nopaste        # 关闭粘贴模式</span><br><span class="line"></span><br><span class="line"># 文件操作</span><br><span class="line">:r filename         # 插入文件内容</span><br><span class="line">:!command           # 执行<span class="keyword">shell</span>命令</span><br><span class="line">:<span class="keyword">sh</span>                 # 临时切换到<span class="keyword">shell</span></span><br><span class="line"></span><br><span class="line"># 窗口分割</span><br><span class="line">:<span class="keyword">split</span> filename     # 水平分割</span><br><span class="line">:<span class="keyword">vsplit</span> filename    # 垂直分割</span><br><span class="line">Ctrl+<span class="keyword">w</span> + 方向键      # 切换窗口</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Vim配置示例"><a href="#6-Vim配置示例" class="headerlink" title="6. Vim配置示例"></a>6. Vim配置示例</h3><p>创建 <code>~/.vimrc</code> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; 显示设置</span><br><span class="line">set number              &quot; 显示行号</span><br><span class="line">set relativenumber      &quot; 显示相对行号</span><br><span class="line">set cursorline          &quot; 高亮当前行</span><br><span class="line">set showmatch           &quot; 显示匹配的括号</span><br><span class="line">set ruler               &quot; 显示光标位置</span><br><span class="line"></span><br><span class="line">&quot; 搜索设置</span><br><span class="line">set hlsearch            &quot; 高亮搜索结果</span><br><span class="line">set ignorecase          &quot; 搜索忽略大小写</span><br><span class="line">set smartcase           &quot; 智能大小写</span><br><span class="line"></span><br><span class="line">&quot; 缩进设置</span><br><span class="line">set autoindent          &quot; 自动缩进</span><br><span class="line">set tabstop=4           &quot; Tab宽度</span><br><span class="line">set shiftwidth=4        &quot; 自动缩进宽度</span><br><span class="line">set expandtab           &quot; Tab转空格</span><br><span class="line">set smarttab            &quot; 智能Tab</span><br><span class="line"></span><br><span class="line">&quot; 其他设置</span><br><span class="line">set mouse=a             &quot; 启用鼠标</span><br><span class="line">set clipboard=unnamed   &quot; 共享剪贴板</span><br><span class="line">syntax on               &quot; 语法高亮</span><br><span class="line">filetype on             &quot; 文件类型检测</span><br><span class="line">filetype plugin on      &quot; 加载文件类型插件</span><br><span class="line">filetype indent on      &quot; 加载缩进文件</span><br><span class="line"></span><br><span class="line">&quot; 快捷键映射</span><br><span class="line">nnoremap &lt;C-s&gt; :w&lt;CR&gt;   &quot; Ctrl+s保存</span><br><span class="line">inoremap &lt;C-s&gt; &lt;Esc&gt;:w&lt;CR&gt;i</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🎯-五、实用技巧与最佳实践"><a href="#🎯-五、实用技巧与最佳实践" class="headerlink" title="🎯 五、实用技巧与最佳实践"></a>🎯 五、实用技巧与最佳实践</h2><h3 id="1-命令组合技巧"><a href="#1-命令组合技巧" class="headerlink" title="1. 命令组合技巧"></a>1. 命令组合技巧</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 备份当前目录</span></span><br><span class="line">tar -czf backup_$(<span class="built_in">date</span> +%Y%m%d).tar.gz .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 查找并处理文件</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">exec</span> <span class="built_in">rm</span> &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 统计代码行数</span></span><br><span class="line">find . -name <span class="string">&quot;*.py&quot;</span> -<span class="built_in">exec</span> <span class="built_in">wc</span> -l &#123;&#125; + | <span class="built_in">tail</span> -1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 监控目录变化</span></span><br><span class="line">watch -n 1 <span class="string">&#x27;ls -l | tail -20&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 快速返回常用目录</span></span><br><span class="line"><span class="built_in">alias</span> cdproj=<span class="string">&#x27;cd /home/user/projects&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安全操作建议"><a href="#2-安全操作建议" class="headerlink" title="2. 安全操作建议"></a>2. 安全操作建议</h3><ol>
+<li>**谨慎使用 <code>rm -rf</code>**：先使用 <code>ls</code> 确认文件，再删除</li>
+<li><strong>使用别名保护</strong>：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> <span class="built_in">rm</span>=<span class="string">&#x27;rm -i&#x27;</span>      <span class="comment"># 删除前确认</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">cp</span>=<span class="string">&#x27;cp -i&#x27;</span>      <span class="comment"># 覆盖前确认</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">mv</span>=<span class="string">&#x27;mv -i&#x27;</span>      <span class="comment"># 移动前确认</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>重要文件备份</strong>：定期备份配置文件和数据</li>
+<li><strong>权限最小化</strong>：不要随意使用 <code>sudo</code> 或 <code>root</code></li>
+</ol>
+<h3 id="3-效率提升技巧"><a href="#3-效率提升技巧" class="headerlink" title="3. 效率提升技巧"></a>3. 效率提升技巧</h3><ol>
+<li><p><strong>命令历史</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">history</span>                <span class="comment"># 查看历史命令</span></span><br><span class="line">!n                    <span class="comment"># 执行第n条历史命令</span></span><br><span class="line">!!                    <span class="comment"># 执行上一条命令</span></span><br><span class="line">!str                  <span class="comment"># 执行最近以str开头的命令</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Tab补全</strong>：输入部分命令&#x2F;文件名后按Tab</p>
+</li>
+<li><p><strong>通配符使用</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">*.txt                 <span class="comment"># 所有txt文件</span></span><br><span class="line">file[1-3].txt        <span class="comment"># file1.txt, file2.txt, file3.txt</span></span><br><span class="line">file?.txt            <span class="comment"># file1.txt, fileA.txt等</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="4-学习资源推荐"><a href="#4-学习资源推荐" class="headerlink" title="4. 学习资源推荐"></a>4. 学习资源推荐</h3><ul>
+<li><strong>在线手册</strong>：<code>man 命令名</code> 或 <code>命令名 --help</code></li>
+<li><strong>信息查询</strong>：<code>info 命令名</code></li>
+<li><strong>内置帮助</strong>：Vim中输入 <code>:help</code></li>
+</ul>
+<hr>
+<h2 id="📚-附录：常用命令速查表"><a href="#📚-附录：常用命令速查表" class="headerlink" title="📚 附录：常用命令速查表"></a>📚 附录：常用命令速查表</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>命令</th>
+<th>功能</th>
+<th>常用选项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文件操作</td>
+<td><code>ls</code></td>
+<td>列出目录</td>
+<td><code>-l</code>, <code>-a</code>, <code>-h</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>cd</code></td>
+<td>切换目录</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>pwd</code></td>
+<td>显示当前目录</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>cp</code></td>
+<td>复制</td>
+<td><code>-r</code>, <code>-i</code>, <code>-v</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>mv</code></td>
+<td>移动&#x2F;重命名</td>
+<td><code>-i</code>, <code>-v</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>rm</code></td>
+<td>删除</td>
+<td><code>-r</code>, <code>-f</code>, <code>-i</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>touch</code></td>
+<td>创建文件</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>mkdir</code></td>
+<td>创建目录</td>
+<td><code>-p</code></td>
+</tr>
+<tr>
+<td>内容查看</td>
+<td><code>cat</code></td>
+<td>显示文件</td>
+<td><code>-n</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>more</code></td>
+<td>分页查看</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>less</code></td>
+<td>高级分页</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>head</code></td>
+<td>查看头部</td>
+<td><code>-n</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>tail</code></td>
+<td>查看尾部</td>
+<td><code>-f</code>, <code>-n</code></td>
+</tr>
+<tr>
+<td>文本处理</td>
+<td><code>grep</code></td>
+<td>文本搜索</td>
+<td><code>-i</code>, <code>-n</code>, <code>-r</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>wc</code></td>
+<td>统计</td>
+<td><code>-l</code>, <code>-w</code>, <code>-c</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>echo</code></td>
+<td>输出</td>
+<td><code>-n</code>, <code>-e</code></td>
+</tr>
+<tr>
+<td>查找定位</td>
+<td><code>find</code></td>
+<td>文件查找</td>
+<td><code>-name</code>, <code>-type</code>, <code>-size</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>which</code></td>
+<td>命令定位</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>whereis</code></td>
+<td>查找文件</td>
+<td></td>
+</tr>
+<tr>
+<td>权限管理</td>
+<td><code>chmod</code></td>
+<td>修改权限</td>
+<td><code>u+x</code>, <code>755</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>chown</code></td>
+<td>修改所有者</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>sudo</code></td>
+<td>提权执行</td>
+<td></td>
+</tr>
+<tr>
+<td>进程管理</td>
+<td><code>ps</code></td>
+<td>查看进程</td>
+<td><code>aux</code>, <code>-ef</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>top</code></td>
+<td>动态查看</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>kill</code></td>
+<td>终止进程</td>
+<td><code>-9</code></td>
+</tr>
+<tr>
+<td>网络相关</td>
+<td><code>ping</code></td>
+<td>测试连通</td>
+<td><code>-c</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>ifconfig</code></td>
+<td>网络配置</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>netstat</code></td>
+<td>网络状态</td>
+<td><code>-tuln</code></td>
+</tr>
+<tr>
+<td>压缩解压</td>
+<td><code>tar</code></td>
+<td>归档</td>
+<td><code>-czf</code>, <code>-xzf</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>gzip</code></td>
+<td>压缩</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>zip</code></td>
+<td>压缩</td>
+<td><code>-r</code></td>
+</tr>
+</tbody></table>
+<hr>
+<blockquote>
+<p><strong>📌 使用提示</strong>：</p>
+<ol>
+<li>新命令先在测试环境尝试</li>
+<li>善用 <code>--help</code> 查看帮助</li>
+<li>复杂操作前先备份数据</li>
+<li>定期整理自己的命令笔记</li>
+</ol>
+</blockquote>
+<hr>
+<p><strong>最后更新</strong>：2026年1月<br><strong>适用系统</strong>：Ubuntu&#x2F;CentOS&#x2F;Debian等主流Linux发行版  </p>
+<hr>
+<div align="center">
+  <strong>💡 记住：熟练来自实践，每天练习5个新命令！</strong>
+</div>]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>03.Docker 入门教程</title>
+    <url>/2026/05/31/3.%20Docker/</url>
     <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
 <thead>
 <tr>
@@ -51,22 +881,8 @@
       </tags>
   </entry>
   <entry>
-    <title>00.自我介绍喵</title>
-    <url>/2077/01/01/%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
-<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
-<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>02.基于github的个人博客搭建教程</title>
-    <url>/2026/06/03/2.%20github-blog-tutorial/</url>
+    <title>04.基于github的个人博客搭建教程</title>
+    <url>/2026/06/03/4.%20github-blog-tutorial/</url>
     <content><![CDATA[<h2 id="0-前置条件"><a href="#0-前置条件" class="headerlink" title="0.前置条件"></a>0.前置条件</h2><p>在安装Hexo之前需要先安装好Git和Node.js</p>
 <h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
