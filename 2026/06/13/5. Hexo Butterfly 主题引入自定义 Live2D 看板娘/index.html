@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>05.Hexo Butterfly 主题引入自定义 Live2D 看板娘 | 0utC45t's Blog</title><meta name="author" content="0utC45t"><meta name="copyright" content="0utC45t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、前言本文旨在解决 Hexo Butterfly 主题下引入新版 moc3 格式（Cubism 3&#x2F;4） Live2D 模型的技术痛点。传统的 hexo-helper-live2d 插件已无法兼容新版模型，导致许多博主无法使用自己心仪的自定义看板娘。 本教程基于 live2d-widget-v3 开源方案，通过 “核心库 CDN 加载 + 模型资源本地化” 的混合架构，手把手教你在 H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="05.Hexo Butterfly 主题引入自定义 Live2D 看板娘">
+<meta property="og:url" content="https://0utc45t-debug.github.io/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/index.html">
+<meta property="og:site_name" content="0utC45t&#39;s Blog">
+<meta property="og:description" content="一、前言本文旨在解决 Hexo Butterfly 主题下引入新版 moc3 格式（Cubism 3&#x2F;4） Live2D 模型的技术痛点。传统的 hexo-helper-live2d 插件已无法兼容新版模型，导致许多博主无法使用自己心仪的自定义看板娘。 本教程基于 live2d-widget-v3 开源方案，通过 “核心库 CDN 加载 + 模型资源本地化” 的混合架构，手把手教你在 H">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://0utc45t-debug.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-06-13T12:15:32.000Z">
+<meta property="article:modified_time" content="2026-06-13T12:37:32.044Z">
+<meta property="article:author" content="0utC45t">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://0utc45t-debug.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "05.Hexo Butterfly 主题引入自定义 Live2D 看板娘",
+  "url": "https://0utc45t-debug.github.io/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/",
+  "image": "https://0utc45t-debug.github.io/img/butterfly-icon.png",
+  "datePublished": "2026-06-13T12:15:32.000Z",
+  "dateModified": "2026-06-13T12:37:32.044Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "0utC45t",
+      "url": "https://0utC45t-debug.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://0utc45t-debug.github.io/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '05.Hexo Butterfly 主题引入自定义 Live2D 看板娘',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-color: #1A5380;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">0utC45t's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">05.Hexo Butterfly 主题引入自定义 Live2D 看板娘</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">05.Hexo Butterfly 主题引入自定义 Live2D 看板娘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-13T12:15:32.000Z" title="发表于 2026-06-13 20:15:32">2026-06-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-13T12:37:32.044Z" title="更新于 2026-06-13 20:37:32">2026-06-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本文旨在解决 Hexo Butterfly 主题下引入新版 <strong>moc3 格式（Cubism 3&#x2F;4）</strong> Live2D 模型的技术痛点。传统的 <code>hexo-helper-live2d</code> 插件已无法兼容新版模型，导致许多博主无法使用自己心仪的自定义看板娘。</p>
+<p>本教程基于 <code>live2d-widget-v3</code> 开源方案，通过 <strong>“核心库 CDN 加载 + 模型资源本地化”</strong> 的混合架构，手把手教你在 Hexo 博客中完美部署自定义 moc3 模型。</p>
+<p><strong>通过本文，你将实现以下效果：</strong></p>
+<ol>
+<li><strong>完美兼容新模型</strong>：支持 <code>.moc3</code> 和 <code>.model3.json</code> 格式的 Live2D 模型。</li>
+<li><strong>丰富的交互体验</strong>：看板娘不仅会跟随鼠标转动头部和眼睛，还支持鼠标拖拽、点击触发动作。</li>
+<li><strong>多功能工具栏</strong>：自带一言、截图、切换表情、隐藏看板娘等实用按钮。</li>
+<li><strong>性能优化</strong>：核心库通过 CDN 加速，模型文件本地托管，兼顾加载速度与稳定性。</li>
+</ol>
+<hr>
+<h2 id="二、-准备工作"><a href="#二、-准备工作" class="headerlink" title="二、 准备工作"></a>二、 准备工作</h2><h3 id="1-准备模型文件"><a href="#1-准备模型文件" class="headerlink" title="1. 准备模型文件"></a>1. 准备模型文件</h3><p>确保你已经下载了 moc3 格式的 Live2D 模型，模型文件夹内应包含：</p>
+<ul>
+<li><code>xxx.model3.json</code>（模型主文件）</li>
+<li><code>xxx.moc3</code>（模型核心数据）</li>
+<li><code>xxx.physics3.json</code>（物理效果文件）</li>
+<li>其他相关配置文件</li>
+</ul>
+<h3 id="2-确认博客环境"><a href="#2-确认博客环境" class="headerlink" title="2. 确认博客环境"></a>2. 确认博客环境</h3><ul>
+<li>Hexo 框架</li>
+<li>Butterfly 主题</li>
+</ul>
+<hr>
+<h2 id="三、第一步：搭建文件结构"><a href="#三、第一步：搭建文件结构" class="headerlink" title="三、第一步：搭建文件结构"></a>三、第一步：搭建文件结构</h2><h3 id="1-创建-Resources-目录"><a href="#1-创建-Resources-目录" class="headerlink" title="1. 创建 Resources 目录"></a>1. 创建 Resources 目录</h3><p>在你的博客根目录下，进入 <code>source</code> 文件夹，新建一个文件夹命名为 <code>Resources</code>。</p>
+<p><strong>最终路径：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myblog/</span><br><span class="line">└── source/</span><br><span class="line">    └── Resources/</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-放入模型文件"><a href="#2-放入模型文件" class="headerlink" title="2. 放入模型文件"></a>2. 放入模型文件</h3><p>在 <code>Resources</code> 文件夹内新建 <code>model</code> 文件夹，把你的模型文件夹（例如 <code>yumi</code>）放进去。</p>
+<p><strong>最终路径：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myblog/</span><br><span class="line">└── source/</span><br><span class="line">    └── Resources/</span><br><span class="line">        └── model/</span><br><span class="line">            └── yumi/</span><br><span class="line">                ├── yumi.model3.json</span><br><span class="line">                ├── yumi.moc3</span><br><span class="line">                └── ...其他文件</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、第二步：创建配置文件"><a href="#四、第二步：创建配置文件" class="headerlink" title="四、第二步：创建配置文件"></a>四、第二步：创建配置文件</h2><h3 id="1-创建-model-list-json"><a href="#1-创建-model-list-json" class="headerlink" title="1. 创建 model_list.json"></a>1. 创建 model_list.json</h3><p>在 <code>source/Resources/</code> 目录下（注意：不是 model 文件夹里），新建文件 <code>model_list.json</code>，写入以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;yumi&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 yumi 喵！&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li><code>models</code>：数组，里面填你的模型文件夹名称</li>
+<li><code>messages</code>：问候语数组</li>
+</ul>
+<h3 id="2-创建-config-json（调整模型大小）"><a href="#2-创建-config-json（调整模型大小）" class="headerlink" title="2. 创建 config.json（调整模型大小）"></a>2. 创建 config.json（调整模型大小）</h3><p>在 <code>source/Resources/model/yumi/</code> 目录下（你的模型文件夹内），新建文件 <code>config.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scale&quot;</span><span class="punctuation">:</span> <span class="number">1.3</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;translate&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;x&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;y&quot;</span><span class="punctuation">:</span> <span class="number">-0.3</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><code>scale</code>：模型缩放倍率（0.15 表示缩小到 15%，根据模型大小调整）</li>
+<li><code>translate.x</code>：模型 X 轴偏移量</li>
+<li><code>translate.y</code>：模型 Y 轴偏移量</li>
+</ul>
+<hr>
+<h2 id="五、第三步：编写核心脚本"><a href="#五、第三步：编写核心脚本" class="headerlink" title="五、第三步：编写核心脚本"></a>五、第三步：编写核心脚本</h2><h3 id="1-创建-JS-文件"><a href="#1-创建-JS-文件" class="headerlink" title="1. 创建 JS 文件"></a>1. 创建 JS 文件</h3><p>在 <code>source/js/</code> 目录下（如果没有 <code>js</code> 文件夹就新建即可），新建文件 <code>live2d-widget-v3.js</code>。</p>
+<h3 id="2-写入代码"><a href="#2-写入代码" class="headerlink" title="2. 写入代码"></a>2. 写入代码</h3><p>用记事本打开该文件，复制粘贴以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义 CDN 路径（使用原作者的 CDN 加载核心库和样式）</span></span><br><span class="line"><span class="keyword">const</span> cdnPath = <span class="string">&quot;https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="comment">// 资源路径配置</span></span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">homePath</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">    <span class="comment">// 关键修改：把模型路径指向我们本地的 source/Resources/</span></span><br><span class="line">    <span class="attr">modelPath</span>: <span class="string">&quot;/Resources/&quot;</span>, </span><br><span class="line">    <span class="attr">cssPath</span>: cdnPath + <span class="string">&quot;/waifu.css&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsonPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.json&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dCorePath</span>: cdnPath + <span class="string">&quot;/Core/live2dcubismcore.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dSdkPath</span>: cdnPath + <span class="string">&quot;/live2d-sdk.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 工具栏按钮</span></span><br><span class="line">  <span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;express&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>],</span><br><span class="line">  <span class="comment">// 允许拖拽模型</span></span><br><span class="line">  <span class="attr">drag</span>: &#123;</span><br><span class="line">    <span class="attr">enable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">direction</span>: [<span class="string">&quot;x&quot;</span>, <span class="string">&quot;y&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 切换模式</span></span><br><span class="line">  <span class="attr">switchType</span>: <span class="string">&quot;order&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 仅在电脑端（屏幕宽度大于768px）加载，防止手机端挡视线</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">  <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">cssPath</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dCorePath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dSdkPath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">tipsJsPath</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">  ]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">initWidget</span>(&#123;</span><br><span class="line">      <span class="attr">waifuPath</span>: config.<span class="property">path</span>.<span class="property">tipsJsonPath</span>,</span><br><span class="line">      <span class="attr">cdnPath</span>: config.<span class="property">path</span>.<span class="property">modelPath</span>,</span><br><span class="line">      <span class="attr">tools</span>: config.<span class="property">tools</span>,</span><br><span class="line">      <span class="attr">dragEnable</span>: config.<span class="property">drag</span>.<span class="property">enable</span>,</span><br><span class="line">      <span class="attr">dragDirection</span>: config.<span class="property">drag</span>.<span class="property">direction</span>,</span><br><span class="line">      <span class="attr">switchType</span>: config.<span class="property">switchType</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步加载外部资源的通用函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">loadExternalResource</span>(<span class="params">url, type</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> tag;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="string">&quot;css&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;link&quot;</span>);</span><br><span class="line">      tag.<span class="property">rel</span> = <span class="string">&quot;stylesheet&quot;</span>;</span><br><span class="line">      tag.<span class="property">href</span> = url;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&quot;js&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">      tag.<span class="property">src</span> = url;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (tag) &#123;</span><br><span class="line">      tag.<span class="property">onload</span> = <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(url);</span><br><span class="line">      tag.<span class="property">onerror</span> = <span class="function">() =&gt;</span> <span class="title function_">reject</span>(url);</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(tag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、第四步：修改主题配置"><a href="#六、第四步：修改主题配置" class="headerlink" title="六、第四步：修改主题配置"></a>六、第四步：修改主题配置</h2><p>打开 <code>themes/butterfly/_config.yml</code>，找到 <code>inject:</code> 部分，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/live2d-widget-v3.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>这会在网页底部引入我们刚才写的脚本</li>
+<li>核心库（Pixi.js、Cubism 运行时等）会通过 CDN 自动加载</li>
+</ul>
+<hr>
+<h2 id="七、第五步：生成并预览"><a href="#七、第五步：生成并预览" class="headerlink" title="七、第五步：生成并预览"></a>七、第五步：生成并预览</h2><p>在 PowerShell 中执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问 <code>http://localhost:4000</code>，效果应该如右下角所示。</p>
+<hr>
+<h2 id="八、常见问题与优化"><a href="#八、常见问题与优化" class="headerlink" title="八、常见问题与优化"></a>八、常见问题与优化</h2><h3 id="1-模型太大或太小"><a href="#1-模型太大或太小" class="headerlink" title="1. 模型太大或太小"></a>1. 模型太大或太小</h3><p>修改 <code>source/Resources/model/yumi/config.json</code> 中的 <code>scale</code> 值：</p>
+<ul>
+<li>太大：调小（如 0.1、0.15）</li>
+<li>太小：调大（如 0.2、0.3）</li>
+</ul>
+<h3 id="2-模型位置不对"><a href="#2-模型位置不对" class="headerlink" title="2. 模型位置不对"></a>2. 模型位置不对</h3><p>修改 <code>config.json</code> 中的 <code>translate</code>：</p>
+<ul>
+<li><code>x</code>：正值向右移，负值向左移</li>
+<li><code>y</code>：正值向下移，负值向上移</li>
+</ul>
+<h3 id="3-看板娘不出现"><a href="#3-看板娘不出现" class="headerlink" title="3. 看板娘不出现"></a>3. 看板娘不出现</h3><ul>
+<li>检查浏览器控制台（F12）是否有报错</li>
+<li>确认 <code>source/js/live2d-widget-v3.js</code> 文件后缀是 <code>.js</code> 而不是 <code>.js.txt</code></li>
+<li>按 <code>Ctrl + F5</code> 强制刷新浏览器缓存</li>
+</ul>
+<h3 id="4-添加多个模型"><a href="#4-添加多个模型" class="headerlink" title="4. 添加多个模型"></a>4. 添加多个模型</h3><p>在 <code>model_list.json</code> 中添加更多模型：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model1&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model2&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model3&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model1！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model2！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model3！&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h2><ul>
+<li>原教程：<a target="_blank" rel="noopener" href="https://lyrashore.com/computer-science/technical-sharing/2025-3-8-1/">【Hugo】博客引入 moc3 类型的 live2d 模型</a></li>
+<li>GitHub 仓库：<a target="_blank" rel="noopener" href="https://github.com/letere-gzj/live2d-widget-v3">live2d-widget-v3</a></li>
+<li>模型来自：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LM41137vK/?spm_id_from=333.337.search-card.all.click&vd_source=9c10ac145858bba2198e47bd934146b6">【免费模型】这么可爱的小狗免费带回家！_哔哩哔哩_bilibili</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://0utC45t-debug.github.io">0utC45t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://0utc45t-debug.github.io/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/">https://0utc45t-debug.github.io/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://0utC45t-debug.github.io" target="_blank">0utC45t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related  no-desc" href="/2077/01/01/%E4%BB%8B%E7%BB%8D/" title="00.自我介绍喵"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">00.自我介绍喵</div></div></div></a><a class="pagination-related  no-desc" href="/2026/06/03/4.%20github-blog-tutorial/" title="04.基于github的个人博客搭建教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">04.基于github的个人博客搭建教程</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related no-desc" href="/2026/06/03/4.%20github-blog-tutorial/" title="04.基于github的个人博客搭建教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-03</div><div class="info-item-2">04.基于github的个人博客搭建教程</div></div></div></a><a class="pagination-related no-desc" href="/2025/09/22/2.%20Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/" title="02.Linux 操作系统指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-22</div><div class="info-item-2">02.Linux 操作系统指令</div></div></div></a><a class="pagination-related no-desc" href="/2025/09/21/1.%20Markdown/" title="01.Markdown语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-21</div><div class="info-item-2">01.Markdown语法</div></div></div></a><a class="pagination-related no-desc" href="/2026/05/31/3.%20Docker/" title="03.Docker 入门教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-31</div><div class="info-item-2">03.Docker 入门教程</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">0utC45t</div><div class="author-info-description">A billion burns. One orbit around Jupiter.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">二、 准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87%E6%A8%A1%E5%9E%8B%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.</span> <span class="toc-text">1. 准备模型文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A1%AE%E8%AE%A4%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">2.2.</span> <span class="toc-text">2. 确认博客环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%90%AD%E5%BB%BA%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">三、第一步：搭建文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA-Resources-%E7%9B%AE%E5%BD%95"><span class="toc-number">3.1.</span> <span class="toc-text">1. 创建 Resources 目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%94%BE%E5%85%A5%E6%A8%A1%E5%9E%8B%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2. 放入模型文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">四、第二步：创建配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA-model-list-json"><span class="toc-number">4.1.</span> <span class="toc-text">1. 创建 model_list.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA-config-json%EF%BC%88%E8%B0%83%E6%95%B4%E6%A8%A1%E5%9E%8B%E5%A4%A7%E5%B0%8F%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">2. 创建 config.json（调整模型大小）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E7%BC%96%E5%86%99%E6%A0%B8%E5%BF%83%E8%84%9A%E6%9C%AC"><span class="toc-number">5.</span> <span class="toc-text">五、第三步：编写核心脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA-JS-%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">1. 创建 JS 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%86%99%E5%85%A5%E4%BB%A3%E7%A0%81"><span class="toc-number">5.2.</span> <span class="toc-text">2. 写入代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">六、第四步：修改主题配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%9A%E7%94%9F%E6%88%90%E5%B9%B6%E9%A2%84%E8%A7%88"><span class="toc-number">7.</span> <span class="toc-text">七、第五步：生成并预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">8.</span> <span class="toc-text">八、常见问题与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A8%A1%E5%9E%8B%E5%A4%AA%E5%A4%A7%E6%88%96%E5%A4%AA%E5%B0%8F"><span class="toc-number">8.1.</span> <span class="toc-text">1. 模型太大或太小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E4%B8%8D%E5%AF%B9"><span class="toc-number">8.2.</span> <span class="toc-text">2. 模型位置不对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%9C%8B%E6%9D%BF%E5%A8%98%E4%B8%8D%E5%87%BA%E7%8E%B0"><span class="toc-number">8.3.</span> <span class="toc-text">3. 看板娘不出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.4.</span> <span class="toc-text">4. 添加多个模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2077/01/01/%E4%BB%8B%E7%BB%8D/" title="00.自我介绍喵">00.自我介绍喵</a><time datetime="2076-12-31T16:00:00.000Z" title="发表于 2077-01-01 00:00:00">2077-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/" title="05.Hexo Butterfly 主题引入自定义 Live2D 看板娘">05.Hexo Butterfly 主题引入自定义 Live2D 看板娘</a><time datetime="2026-06-13T12:15:32.000Z" title="发表于 2026-06-13 20:15:32">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/03/4.%20github-blog-tutorial/" title="04.基于github的个人博客搭建教程">04.基于github的个人博客搭建教程</a><time datetime="2026-06-03T13:47:32.000Z" title="发表于 2026-06-03 21:47:32">2026-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/31/3.%20Docker/" title="03.Docker 入门教程">03.Docker 入门教程</a><time datetime="2026-05-30T17:17:00.000Z" title="发表于 2026-05-31 01:17:00">2026-05-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/22/2.%20Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/" title="02.Linux 操作系统指令">02.Linux 操作系统指令</a><time datetime="2025-09-21T17:17:00.000Z" title="发表于 2025-09-22 01:17:00">2025-09-22</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 0utC45t</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script src="/js/live2d-widget-v3.js"></script><script src="/js/title-change.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

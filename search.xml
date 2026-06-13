@@ -97,6 +97,56 @@
       </tags>
   </entry>
   <entry>
+    <title>03.Docker 入门教程</title>
+    <url>/2026/05/31/3.%20Docker/</url>
+    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows</td>
+<td>11 Insider Preview 26200.8457 (Canary)</td>
+</tr>
+<tr>
+<td>WSL</td>
+<td>Ubuntu 24.04.3 LTS (WSL2)</td>
+</tr>
+<tr>
+<td>Docker Desktop</td>
+<td>4.43.2</td>
+</tr>
+<tr>
+<td>Docker Engine</td>
+<td>28.3.2</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
+<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
+<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
+<ul>
+<li>✅ 使用系统托盘 🐳 图标管理</li>
+<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
+<li>✅ 命令行操作（推荐）</li>
+</ul>
+<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>02.Linux 操作系统指令</title>
     <url>/2025/09/22/2.%20Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="📋-一、基础环境与操作准备"><a href="#📋-一、基础环境与操作准备" class="headerlink" title="📋 一、基础环境与操作准备"></a>📋 一、基础环境与操作准备</h2><h3 id="1-虚拟机连接与配置"><a href="#1-虚拟机连接与配置" class="headerlink" title="1. 虚拟机连接与配置"></a>1. 虚拟机连接与配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 查看虚拟机IP地址</span></span><br><span class="line">ifconfig</span><br><span class="line"><span class="comment"># 或使用新命令</span></span><br><span class="line">ip addr show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通过FinalShell连接</span></span><br><span class="line"><span class="comment"># IP地址: 虚拟机IP</span></span><br><span class="line"><span class="comment"># 端口: 22 (默认SSH端口)</span></span><br><span class="line"><span class="comment"># 用户名: 虚拟机用户名</span></span><br></pre></td></tr></table></figure>
@@ -817,70 +867,6 @@
       </tags>
   </entry>
   <entry>
-    <title>00.自我介绍喵</title>
-    <url>/2077/01/01/%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
-<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
-<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>03.Docker 入门教程</title>
-    <url>/2026/05/31/3.%20Docker/</url>
-    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
-<thead>
-<tr>
-<th>组件</th>
-<th>版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Windows</td>
-<td>11 Insider Preview 26200.8457 (Canary)</td>
-</tr>
-<tr>
-<td>WSL</td>
-<td>Ubuntu 24.04.3 LTS (WSL2)</td>
-</tr>
-<tr>
-<td>Docker Desktop</td>
-<td>4.43.2</td>
-</tr>
-<tr>
-<td>Docker Engine</td>
-<td>28.3.2</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
-<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
-<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
-<ul>
-<li>✅ 使用系统托盘 🐳 图标管理</li>
-<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
-<li>✅ 命令行操作（推荐）</li>
-</ul>
-<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>04.基于github的个人博客搭建教程</title>
     <url>/2026/06/03/4.%20github-blog-tutorial/</url>
     <content><![CDATA[<h2 id="0-前置条件"><a href="#0-前置条件" class="headerlink" title="0.前置条件"></a>0.前置条件</h2><p>在安装Hexo之前需要先安装好Git和Node.js</p>
@@ -1062,6 +1048,123 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>05.Hexo Butterfly 主题引入自定义 Live2D 看板娘</title>
+    <url>/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/</url>
+    <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本文旨在解决 Hexo Butterfly 主题下引入新版 <strong>moc3 格式（Cubism 3&#x2F;4）</strong> Live2D 模型的技术痛点。传统的 <code>hexo-helper-live2d</code> 插件已无法兼容新版模型，导致许多博主无法使用自己心仪的自定义看板娘。</p>
+<p>本教程基于 <code>live2d-widget-v3</code> 开源方案，通过 <strong>“核心库 CDN 加载 + 模型资源本地化”</strong> 的混合架构，手把手教你在 Hexo 博客中完美部署自定义 moc3 模型。</p>
+<p><strong>通过本文，你将实现以下效果：</strong></p>
+<ol>
+<li><strong>完美兼容新模型</strong>：支持 <code>.moc3</code> 和 <code>.model3.json</code> 格式的 Live2D 模型。</li>
+<li><strong>丰富的交互体验</strong>：看板娘不仅会跟随鼠标转动头部和眼睛，还支持鼠标拖拽、点击触发动作。</li>
+<li><strong>多功能工具栏</strong>：自带一言、截图、切换表情、隐藏看板娘等实用按钮。</li>
+<li><strong>性能优化</strong>：核心库通过 CDN 加速，模型文件本地托管，兼顾加载速度与稳定性。</li>
+</ol>
+<hr>
+<h2 id="二、-准备工作"><a href="#二、-准备工作" class="headerlink" title="二、 准备工作"></a>二、 准备工作</h2><h3 id="1-准备模型文件"><a href="#1-准备模型文件" class="headerlink" title="1. 准备模型文件"></a>1. 准备模型文件</h3><p>确保你已经下载了 moc3 格式的 Live2D 模型，模型文件夹内应包含：</p>
+<ul>
+<li><code>xxx.model3.json</code>（模型主文件）</li>
+<li><code>xxx.moc3</code>（模型核心数据）</li>
+<li><code>xxx.physics3.json</code>（物理效果文件）</li>
+<li>其他相关配置文件</li>
+</ul>
+<h3 id="2-确认博客环境"><a href="#2-确认博客环境" class="headerlink" title="2. 确认博客环境"></a>2. 确认博客环境</h3><ul>
+<li>Hexo 框架</li>
+<li>Butterfly 主题</li>
+</ul>
+<hr>
+<h2 id="三、第一步：搭建文件结构"><a href="#三、第一步：搭建文件结构" class="headerlink" title="三、第一步：搭建文件结构"></a>三、第一步：搭建文件结构</h2><h3 id="1-创建-Resources-目录"><a href="#1-创建-Resources-目录" class="headerlink" title="1. 创建 Resources 目录"></a>1. 创建 Resources 目录</h3><p>在你的博客根目录下，进入 <code>source</code> 文件夹，新建一个文件夹命名为 <code>Resources</code>。</p>
+<p><strong>最终路径：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">myblog/</span><br><span class="line">└── source/</span><br><span class="line">    └── Resources/</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-放入模型文件"><a href="#2-放入模型文件" class="headerlink" title="2. 放入模型文件"></a>2. 放入模型文件</h3><p>在 <code>Resources</code> 文件夹内新建 <code>model</code> 文件夹，把你的模型文件夹（例如 <code>yumi</code>）放进去。</p>
+<p><strong>最终路径：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">myblog/</span><br><span class="line">└── source/</span><br><span class="line">    └── Resources/</span><br><span class="line">        └── model/</span><br><span class="line">            └── yumi/</span><br><span class="line">                ├── yumi.model3.json</span><br><span class="line">                ├── yumi.moc3</span><br><span class="line">                └── ...其他文件</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、第二步：创建配置文件"><a href="#四、第二步：创建配置文件" class="headerlink" title="四、第二步：创建配置文件"></a>四、第二步：创建配置文件</h2><h3 id="1-创建-model-list-json"><a href="#1-创建-model-list-json" class="headerlink" title="1. 创建 model_list.json"></a>1. 创建 model_list.json</h3><p>在 <code>source/Resources/</code> 目录下（注意：不是 model 文件夹里），新建文件 <code>model_list.json</code>，写入以下内容：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;yumi&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 yumi 喵！&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li><code>models</code>：数组，里面填你的模型文件夹名称</li>
+<li><code>messages</code>：问候语数组</li>
+</ul>
+<h3 id="2-创建-config-json（调整模型大小）"><a href="#2-创建-config-json（调整模型大小）" class="headerlink" title="2. 创建 config.json（调整模型大小）"></a>2. 创建 config.json（调整模型大小）</h3><p>在 <code>source/Resources/model/yumi/</code> 目录下（你的模型文件夹内），新建文件 <code>config.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scale&quot;</span><span class="punctuation">:</span> <span class="number">1.3</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;translate&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;x&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;y&quot;</span><span class="punctuation">:</span> <span class="number">-0.3</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><code>scale</code>：模型缩放倍率（0.15 表示缩小到 15%，根据模型大小调整）</li>
+<li><code>translate.x</code>：模型 X 轴偏移量</li>
+<li><code>translate.y</code>：模型 Y 轴偏移量</li>
+</ul>
+<hr>
+<h2 id="五、第三步：编写核心脚本"><a href="#五、第三步：编写核心脚本" class="headerlink" title="五、第三步：编写核心脚本"></a>五、第三步：编写核心脚本</h2><h3 id="1-创建-JS-文件"><a href="#1-创建-JS-文件" class="headerlink" title="1. 创建 JS 文件"></a>1. 创建 JS 文件</h3><p>在 <code>source/js/</code> 目录下（如果没有 <code>js</code> 文件夹就新建即可），新建文件 <code>live2d-widget-v3.js</code>。</p>
+<h3 id="2-写入代码"><a href="#2-写入代码" class="headerlink" title="2. 写入代码"></a>2. 写入代码</h3><p>用记事本打开该文件，复制粘贴以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义 CDN 路径（使用原作者的 CDN 加载核心库和样式）</span></span><br><span class="line"><span class="keyword">const</span> cdnPath = <span class="string">&quot;https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="comment">// 资源路径配置</span></span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">homePath</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">    <span class="comment">// 关键修改：把模型路径指向我们本地的 source/Resources/</span></span><br><span class="line">    <span class="attr">modelPath</span>: <span class="string">&quot;/Resources/&quot;</span>, </span><br><span class="line">    <span class="attr">cssPath</span>: cdnPath + <span class="string">&quot;/waifu.css&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsonPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.json&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dCorePath</span>: cdnPath + <span class="string">&quot;/Core/live2dcubismcore.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dSdkPath</span>: cdnPath + <span class="string">&quot;/live2d-sdk.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 工具栏按钮</span></span><br><span class="line">  <span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;express&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>],</span><br><span class="line">  <span class="comment">// 允许拖拽模型</span></span><br><span class="line">  <span class="attr">drag</span>: &#123;</span><br><span class="line">    <span class="attr">enable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">direction</span>: [<span class="string">&quot;x&quot;</span>, <span class="string">&quot;y&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 切换模式</span></span><br><span class="line">  <span class="attr">switchType</span>: <span class="string">&quot;order&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 仅在电脑端（屏幕宽度大于768px）加载，防止手机端挡视线</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">  <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">cssPath</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dCorePath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dSdkPath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">tipsJsPath</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">  ]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">initWidget</span>(&#123;</span><br><span class="line">      <span class="attr">waifuPath</span>: config.<span class="property">path</span>.<span class="property">tipsJsonPath</span>,</span><br><span class="line">      <span class="attr">cdnPath</span>: config.<span class="property">path</span>.<span class="property">modelPath</span>,</span><br><span class="line">      <span class="attr">tools</span>: config.<span class="property">tools</span>,</span><br><span class="line">      <span class="attr">dragEnable</span>: config.<span class="property">drag</span>.<span class="property">enable</span>,</span><br><span class="line">      <span class="attr">dragDirection</span>: config.<span class="property">drag</span>.<span class="property">direction</span>,</span><br><span class="line">      <span class="attr">switchType</span>: config.<span class="property">switchType</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步加载外部资源的通用函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">loadExternalResource</span>(<span class="params">url, type</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> tag;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="string">&quot;css&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;link&quot;</span>);</span><br><span class="line">      tag.<span class="property">rel</span> = <span class="string">&quot;stylesheet&quot;</span>;</span><br><span class="line">      tag.<span class="property">href</span> = url;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&quot;js&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">      tag.<span class="property">src</span> = url;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (tag) &#123;</span><br><span class="line">      tag.<span class="property">onload</span> = <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(url);</span><br><span class="line">      tag.<span class="property">onerror</span> = <span class="function">() =&gt;</span> <span class="title function_">reject</span>(url);</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(tag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、第四步：修改主题配置"><a href="#六、第四步：修改主题配置" class="headerlink" title="六、第四步：修改主题配置"></a>六、第四步：修改主题配置</h2><p>打开 <code>themes/butterfly/_config.yml</code>，找到 <code>inject:</code> 部分，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/live2d-widget-v3.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>这会在网页底部引入我们刚才写的脚本</li>
+<li>核心库（Pixi.js、Cubism 运行时等）会通过 CDN 自动加载</li>
+</ul>
+<hr>
+<h2 id="七、第五步：生成并预览"><a href="#七、第五步：生成并预览" class="headerlink" title="七、第五步：生成并预览"></a>七、第五步：生成并预览</h2><p>在 PowerShell 中执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问 <code>http://localhost:4000</code>，效果应该如右下角所示。</p>
+<hr>
+<h2 id="八、常见问题与优化"><a href="#八、常见问题与优化" class="headerlink" title="八、常见问题与优化"></a>八、常见问题与优化</h2><h3 id="1-模型太大或太小"><a href="#1-模型太大或太小" class="headerlink" title="1. 模型太大或太小"></a>1. 模型太大或太小</h3><p>修改 <code>source/Resources/model/yumi/config.json</code> 中的 <code>scale</code> 值：</p>
+<ul>
+<li>太大：调小（如 0.1、0.15）</li>
+<li>太小：调大（如 0.2、0.3）</li>
+</ul>
+<h3 id="2-模型位置不对"><a href="#2-模型位置不对" class="headerlink" title="2. 模型位置不对"></a>2. 模型位置不对</h3><p>修改 <code>config.json</code> 中的 <code>translate</code>：</p>
+<ul>
+<li><code>x</code>：正值向右移，负值向左移</li>
+<li><code>y</code>：正值向下移，负值向上移</li>
+</ul>
+<h3 id="3-看板娘不出现"><a href="#3-看板娘不出现" class="headerlink" title="3. 看板娘不出现"></a>3. 看板娘不出现</h3><ul>
+<li>检查浏览器控制台（F12）是否有报错</li>
+<li>确认 <code>source/js/live2d-widget-v3.js</code> 文件后缀是 <code>.js</code> 而不是 <code>.js.txt</code></li>
+<li>按 <code>Ctrl + F5</code> 强制刷新浏览器缓存</li>
+</ul>
+<h3 id="4-添加多个模型"><a href="#4-添加多个模型" class="headerlink" title="4. 添加多个模型"></a>4. 添加多个模型</h3><p>在 <code>model_list.json</code> 中添加更多模型：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model1&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model2&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model3&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model1！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model2！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model3！&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h2><ul>
+<li>原教程：<a href="https://lyrashore.com/computer-science/technical-sharing/2025-3-8-1/">【Hugo】博客引入 moc3 类型的 live2d 模型</a></li>
+<li>GitHub 仓库：<a href="https://github.com/letere-gzj/live2d-widget-v3">live2d-widget-v3</a></li>
+<li>模型来自：<a href="https://www.bilibili.com/video/BV1LM41137vK/?spm_id_from=333.337.search-card.all.click&vd_source=9c10ac145858bba2198e47bd934146b6">【免费模型】这么可爱的小狗免费带回家！_哔哩哔哩_bilibili</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>00.自我介绍喵</title>
+    <url>/2077/01/01/%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>您好，如你所见这里是 0utC45t 的个人博客网站。用于记录心得体会以及一些学习记录。</p>
+<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
+<p>(&#x3D;^･ω･^&#x3D;)و✧ 喵~</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

@@ -1,0 +1,29 @@
+/* ========== 1. 首页文章卡片（精准打击！） ========== */
+/* 去掉 > 符号，直接选中所有文章卡片，防止层级问题 */
+#recent-posts .recent-post-item {
+  /* 背景设为 0.80 的透明度 */
+  background-color: rgba(255, 255, 255, 0.80) !important;
+  
+  /* 🌟 喵的独家秘籍：毛玻璃特效！ */
+  /* 这会让透出来的背景变模糊，字依然清晰，超级高级！ */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* 加一点点阴影，让卡片浮起来 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ========== 2. 文章详情页（保持之前的效果） ========== */
+.layout_post > #post,
+#post {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ========== 3. 侧边栏卡片（保持之前的效果） ========== */
+#aside-content .card-widget {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
