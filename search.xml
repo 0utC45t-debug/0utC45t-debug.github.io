@@ -15,6 +15,56 @@
       </tags>
   </entry>
   <entry>
+    <title>03.Docker 入门教程</title>
+    <url>/2026/05/31/3.%20Docker/</url>
+    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows</td>
+<td>11 Insider Preview 26200.8457 (Canary)</td>
+</tr>
+<tr>
+<td>WSL</td>
+<td>Ubuntu 24.04.3 LTS (WSL2)</td>
+</tr>
+<tr>
+<td>Docker Desktop</td>
+<td>4.43.2</td>
+</tr>
+<tr>
+<td>Docker Engine</td>
+<td>28.3.2</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
+<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
+<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
+<ul>
+<li>✅ 使用系统托盘 🐳 图标管理</li>
+<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
+<li>✅ 命令行操作（推荐）</li>
+</ul>
+<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>01.Markdown语法</title>
     <url>/2025/09/21/1.%20Markdown/</url>
     <content><![CDATA[<blockquote>
@@ -823,56 +873,6 @@
 <div align="center">
   <strong>💡 记住：熟练来自实践，每天练习5个新命令！</strong>
 </div>]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>03.Docker 入门教程</title>
-    <url>/2026/05/31/3.%20Docker/</url>
-    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
-<thead>
-<tr>
-<th>组件</th>
-<th>版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Windows</td>
-<td>11 Insider Preview 26200.8457 (Canary)</td>
-</tr>
-<tr>
-<td>WSL</td>
-<td>Ubuntu 24.04.3 LTS (WSL2)</td>
-</tr>
-<tr>
-<td>Docker Desktop</td>
-<td>4.43.2</td>
-</tr>
-<tr>
-<td>Docker Engine</td>
-<td>28.3.2</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
-<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
-<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
-<ul>
-<li>✅ 使用系统托盘 🐳 图标管理</li>
-<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
-<li>✅ 命令行操作（推荐）</li>
-</ul>
-<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
       <categories>
         <category>技术教程</category>
       </categories>
