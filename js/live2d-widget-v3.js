@@ -33,6 +33,7 @@ if (screen.width >= 768) {
     loadExternalResource(config.path.tipsJsPath, "js")
   ]).then(() => {
     initWidget({
+      homePath: config.path.homePath,
       waifuPath: config.path.tipsJsonPath,
       cdnPath: config.path.modelPath,
       tools: config.tools,

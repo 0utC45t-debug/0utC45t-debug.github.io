@@ -4,6 +4,16 @@
   --glass-aside-bg: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(255, 255, 255, 0.52);
   --glass-shadow: 0 8px 24px rgba(13, 58, 90, 0.14);
+  --btn-hover-color: #00C4B6;
+  --pseudo-hover: #00C4B6;
+  --hl-bg: #fff;
+  --hl-color: #263238;
+  --hltools-bg: #fff;
+  --hltools-color: #52616b;
+  --hlnumber-bg: #fff;
+  --hlnumber-color: #84919a;
+  --hlscrollbar-bg: #d6dde2;
+  --hlexpand-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.95));
   --waline-theme-color: #286b9b;
 }
 
@@ -14,6 +24,16 @@ html[data-theme='dark'] {
   --glass-aside-bg: rgba(9, 43, 68, 0.95);
   --glass-border: rgba(184, 218, 239, 0.2);
   --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --btn-hover-color: #00C4B6;
+  --pseudo-hover: #00C4B6;
+  --hl-bg: #000;
+  --hl-color: #f3f4f6;
+  --hltools-bg: #000;
+  --hltools-color: #d1d5db;
+  --hlnumber-bg: #000;
+  --hlnumber-color: #8b949e;
+  --hlscrollbar-bg: #454545;
+  --hlexpand-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.95));
 }
 
 /* Keep the configured deep-blue background visible in dark mode. */
@@ -82,15 +102,68 @@ html[data-theme='dark'] #page-header.not-top-img > #nav {
 }
 
 #rightside #language-toggle {
-  width: auto;
-  min-width: 52px;
-  padding: 0 10px;
-  border-radius: 999px;
-  font-size: 12px;
+  width: 35px;
+  min-width: 35px;
+  max-width: 35px;
+  height: 35px;
+  padding: 0;
+  border-radius: 5px;
+  font-size: 11px;
   font-weight: 600;
 }
 
-html[data-theme='dark'] #rightside #language-toggle {
-  background-color: #0b3553;
-  color: #e7f1f8;
+#rightside #language-toggle:hover,
+#rightside #language-toggle:focus-visible {
+  background-color: #00C4B6 !important;
+  color: #fff !important;
+}
+
+/* Keep code blocks crisp white by day and black at night. */
+.container pre,
+.container figure.highlight {
+  background-color: var(--hl-bg) !important;
+}
+
+.container figure.highlight .highlight-tools {
+  background-color: var(--hltools-bg) !important;
+  border-bottom: 1px solid rgba(82, 97, 107, 0.14);
+}
+
+.container figure.highlight .comment,
+.container figure.highlight .token.comment {
+  color: #687782 !important;
+}
+
+[data-theme='dark'] .container figure.highlight .highlight-tools {
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+[data-theme='dark'] .container figure.highlight .comment,
+[data-theme='dark'] .container figure.highlight .token.comment {
+  color: #9aa4ad !important;
+}
+
+/* Give the Live2D speech bubble the same clear contrast as the blog. */
+#waifu #waifu-tips {
+  box-sizing: border-box;
+  width: 250px !important;
+  max-width: calc(100vw - 72px);
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(0, 196, 182, 0.42) !important;
+  color: #263238 !important;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16) !important;
+}
+
+#waifu #waifu-tips span {
+  color: #00A99D !important;
+}
+
+[data-theme='dark'] #waifu #waifu-tips {
+  background: rgba(8, 39, 63, 0.97) !important;
+  border-color: rgba(0, 196, 182, 0.48) !important;
+  color: #e7f1f8 !important;
+}
+
+[data-theme='dark'] #waifu #waifu-tips span {
+  color: #40dfd1 !important;
 }
