@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>My First Blog</title>
-    <url>/2025/09/01/0.first/</url>
-    <content><![CDATA[<p>您好，如你所见这里是一个个人博客网站。用于记录心得体会以及一些学习记录。</p>
-<p>这个网站会记录学习计算机至今的历程，尝试居多，难免缺漏，才疏学浅，欢迎指正。</p>
-<p>( ⓛ ω ⓛ *)</p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>01.Markdown语法</title>
     <url>/2025/09/21/1.%20Markdown/</url>
-    <content><![CDATA[<blockquote>
-<p>一份详细、结构清晰的 Markdown 语法笔记，适合快速查询与学习。<br>保持简洁，专注内容，让排版自然生效。</p>
-</blockquote>
+    <content><![CDATA[<p>这篇笔记整理常用 Markdown 写法，适合写文章时快速查阅。Markdown 语法有一部分由平台或渲染器扩展提供，因此发布前最好在目标网站预览一次。</p>
 <hr>
 <h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="1-标题（Headings）"><a href="#1-标题（Headings）" class="headerlink" title="1. 标题（Headings）"></a>1. 标题（Headings）</h3><p>使用 <code>#</code> 表示标题级别，从一级（最大）到六级（最小）。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
@@ -48,7 +32,8 @@
 <h3 id="4-链接与图片（Links-Images）"><a href="#4-链接与图片（Links-Images）" class="headerlink" title="4. 链接与图片（Links &amp; Images）"></a>4. 链接与图片（Links &amp; Images）</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>](<span class="link">URL &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>示例：<br><a href="https://www.google.com/" title="前往Google">Google</a></p>
 <h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">替代文本</span>](<span class="link">图片URL &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>示例：<br><img src="https://markdown-here.com/img/icon256.png" alt="Markdown标志" title="Logo"></p>
+<p>示例：<br><img src="/img/bg.jpg" alt="博客背景图" title="站点背景图"></p>
+<p>图片语法里的替代文本（alt）会在图片无法显示时提供说明，也能帮助使用辅助技术的读者理解图片内容。建议写清图片展示了什么，不要只写“图片”。</p>
 <h4 id="引用式链接"><a href="#引用式链接" class="headerlink" title="引用式链接"></a>引用式链接</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个[<span class="string">引用链接</span>][<span class="symbol">1</span>]的例子。</span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">https://example.com &quot;示例链接&quot;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="5-引用（Blockquotes）"><a href="#5-引用（Blockquotes）" class="headerlink" title="5. 引用（Blockquotes）"></a>5. 引用（Blockquotes）</h3><p>使用 <code>&gt;</code> 开头：</p>
@@ -96,7 +81,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>Markdown 是一种轻量级标记语言，通过简单的符号实现优雅的排版。掌握基础语法后，可以应对大多数写作场景，再根据需要学习扩展语法。</p>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>Markdown 是一种轻量级标记语言，通过简单的标记组织文章结构。掌握标题、段落、链接、图片和代码块后，就能覆盖大多数写作场景；脚注、定义列表等扩展语法则要先确认目标渲染器支持。</p>
 ]]></content>
       <categories>
         <category>技术教程</category>
@@ -106,9 +91,25 @@
       </tags>
   </entry>
   <entry>
+    <title>My First Blog</title>
+    <url>/2025/09/01/0.first/</url>
+    <content><![CDATA[<p>你好，欢迎来到我的博客喵。这里主要记录我学习计算机时整理的笔记、实践过程和遇到的问题。</p>
+<p>目前的内容包括 Linux、Docker、Hexo 博客搭建、Live2D 配置和老游戏兼容。文章大多来自实际尝试，环境和软件版本会影响结果；如果你发现错误或有更好的方法，欢迎留言交流。</p>
+<p>( ⓛ ω ⓛ *)</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>03.Docker 入门教程</title>
     <url>/2026/05/31/3.%20Docker/</url>
-    <content><![CDATA[<h2 id="一、Docker-Desktop-安装"><a href="#一、Docker-Desktop-安装" class="headerlink" title="一、Docker Desktop 安装"></a>一、Docker Desktop 安装</h2><h3 id="📋-环境信息"><a href="#📋-环境信息" class="headerlink" title="📋 环境信息"></a>📋 环境信息</h3><table>
+    <content><![CDATA[<p>这篇文章记录我在 Windows + WSL 2 上安装 Docker Desktop 后的验证过程，并补上最常用的容器命令和 Compose 入门示例。Docker Desktop 的界面和版本会更新，命令行概念相对稳定；遇到差异时以当前官方文档为准。</p>
+<h2 id="一、我的安装环境"><a href="#一、我的安装环境" class="headerlink" title="一、我的安装环境"></a>一、我的安装环境</h2><p>以下是我记录时使用的版本，不代表现在的最新版：</p>
+<table>
 <thead>
 <tr>
 <th>组件</th>
@@ -117,11 +118,11 @@
 </thead>
 <tbody><tr>
 <td>Windows</td>
-<td>11 Insider Preview 26200.8457 (Canary)</td>
+<td>11 Insider Preview 26200.8457（Canary）</td>
 </tr>
 <tr>
 <td>WSL</td>
-<td>Ubuntu 24.04.3 LTS (WSL2)</td>
+<td>Ubuntu 24.04.3 LTS（WSL 2）</td>
 </tr>
 <tr>
 <td>Docker Desktop</td>
@@ -132,22 +133,75 @@
 <td>28.3.2</td>
 </tr>
 </tbody></table>
-<hr>
-<h3 id="⚠️-遇到的问题"><a href="#⚠️-遇到的问题" class="headerlink" title="⚠️ 遇到的问题"></a>⚠️ 遇到的问题</h3><h3 id="1-安装时-DISM-报错"><a href="#1-安装时-DISM-报错" class="headerlink" title="1. 安装时 DISM 报错"></a>1. 安装时 DISM 报错</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
-<p><strong>原因</strong>：预览版系统移除了旧版功能名称，安装程序尝试启用 <code>Microsoft-Hyper-V</code> 失败。<br><strong>解决</strong>：忽略该错误，核心组件已安装完成。</p>
-<h3 id="2-桌面图标点击无反应-启动慢"><a href="#2-桌面图标点击无反应-启动慢" class="headerlink" title="2. 桌面图标点击无反应 &#x2F; 启动慢"></a>2. 桌面图标点击无反应 &#x2F; 启动慢</h3><p><strong>原因</strong>：Electron 前端与预览版系统兼容性差，静默崩溃。<br><strong>解决</strong>：</p>
-<ul>
-<li>✅ 使用系统托盘 🐳 图标管理</li>
-<li>✅ 使用网页版 <code>localhost:8888</code>（秒开）</li>
-<li>✅ 命令行操作（推荐）</li>
+<p>安装 Docker Desktop 后，首次启动时按向导完成设置，并在 Settings 中启用所需的 WSL 发行版集成。Docker Desktop 的 Dashboard 可以查看容器、镜像、卷和日志。</p>
+<h3 id="安装时遇到的问题"><a href="#安装时遇到的问题" class="headerlink" title="安装时遇到的问题"></a>安装时遇到的问题</h3><h4 id="DISM-提示功能名称未知"><a href="#DISM-提示功能名称未知" class="headerlink" title="DISM 提示功能名称未知"></a>DISM 提示功能名称未知</h4><p>我遇到过以下错误：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">错误: 0x800f080c</span><br><span class="line">功能名称 Microsoft-Hyper-V 未知。</span><br></pre></td></tr></table></figure>
+
+<p>这个错误本身不能证明 Docker 已经可用，也不建议一概忽略。先启动 Docker Desktop，等待引擎就绪，然后运行下面的检查；如果 <code>docker version</code> 只显示 Client、没有 Server 信息，说明命令行还没有连上引擎。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker version</span><br><span class="line">docker run <span class="literal">--rm</span> hello<span class="literal">-world</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hello-world</code> 能成功运行，才说明当前 Docker 引擎可以拉取并启动容器。若仍失败，查看 Docker Desktop 的 Troubleshoot 页面和 WSL 集成设置，再根据具体错误排查。</p>
+<h4 id="Docker-Desktop-窗口打不开或启动慢"><a href="#Docker-Desktop-窗口打不开或启动慢" class="headerlink" title="Docker Desktop 窗口打不开或启动慢"></a>Docker Desktop 窗口打不开或启动慢</h4><p>可以先从系统托盘重新打开 Docker Desktop，或在 Dashboard 的 Troubleshoot 页面重启引擎。命令行也能管理大多数日常任务。Docker Desktop 的 Dashboard 是它自带的图形界面；<code>localhost:8888</code> 不是通用的 Docker Desktop 地址，只有自己另外配置了对应服务时才会使用这个地址。</p>
+<h2 id="二、先认识三个概念"><a href="#二、先认识三个概念" class="headerlink" title="二、先认识三个概念"></a>二、先认识三个概念</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>可以先这样理解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>镜像（image）</td>
+<td>创建容器时使用的应用模板，例如 <code>nginx:alpine</code></td>
+</tr>
+<tr>
+<td>容器（container）</td>
+<td>镜像启动后的运行实例，可以启动、停止和删除</td>
+</tr>
+<tr>
+<td>卷（volume）</td>
+<td>独立于容器生命周期保存的数据，适合放需要保留的文件</td>
+</tr>
+</tbody></table>
+<p>容器被删除后，写在容器自身可写层里的数据通常也会一并丢失；需要长期保存的数据应放进卷或绑定挂载目录。</p>
+<h2 id="三、用命令行启动一个网页服务"><a href="#三、用命令行启动一个网页服务" class="headerlink" title="三、用命令行启动一个网页服务"></a>三、用命令行启动一个网页服务</h2><p>先用官方示例确认引擎正常：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker version</span><br><span class="line">docker run <span class="literal">--rm</span> hello<span class="literal">-world</span></span><br></pre></td></tr></table></figure>
+
+<p>再启动 Nginx。<code>-d</code> 表示后台运行，<code>-p 8080:80</code> 把电脑的 8080 端口转发到容器的 80 端口：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> blog<span class="literal">-nginx</span> <span class="literal">-p</span> <span class="number">8080</span>:<span class="number">80</span> nginx:alpine</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问 <code>http://localhost:8080</code>，应该会看到 Nginx 欢迎页。常用管理命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">ps</span>                         <span class="comment"># 查看正在运行的容器</span></span><br><span class="line">docker <span class="built_in">ps</span> <span class="literal">-a</span>                      <span class="comment"># 查看所有容器，包括已停止的</span></span><br><span class="line">docker logs <span class="operator">-f</span> blog<span class="literal">-nginx</span>         <span class="comment"># 实时查看容器日志，按 Ctrl+C 停止跟随</span></span><br><span class="line">docker exec <span class="literal">-it</span> blog<span class="literal">-nginx</span> sh     <span class="comment"># 进入运行中的容器</span></span><br><span class="line">docker stop blog<span class="literal">-nginx</span>            <span class="comment"># 停止容器</span></span><br><span class="line">docker <span class="built_in">start</span> blog<span class="literal">-nginx</span>           <span class="comment"># 再次启动已有容器</span></span><br><span class="line">docker <span class="built_in">rm</span> blog<span class="literal">-nginx</span>              <span class="comment"># 删除已停止的容器</span></span><br><span class="line">docker image <span class="built_in">ls</span>                   <span class="comment"># 查看本机镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>退出容器内部的 Shell 可输入 <code>exit</code>。<code>docker stop</code> 只停止容器，<code>docker rm</code> 才会删除容器；如果容器还在运行，先停止再删除。<code>docker logs -f</code> 中按 <code>Ctrl+C</code> 只会停止查看日志，不会停止容器。</p>
+<p>如果 8080 端口已被占用，可以把端口映射改成 <code>8081:80</code>，然后访问 <code>http://localhost:8081</code>。左边是电脑上的端口，右边是容器内应用监听的端口。</p>
+<h2 id="四、用数据卷保存文件"><a href="#四、用数据卷保存文件" class="headerlink" title="四、用数据卷保存文件"></a>四、用数据卷保存文件</h2><p>创建一个叫 <code>demo-data</code> 的卷，并写入一个文件：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker volume create demo<span class="literal">-data</span></span><br><span class="line">docker run <span class="literal">--rm</span> <span class="literal">--mount</span> <span class="built_in">type</span>=volume,source=demo<span class="literal">-data</span>,target=/<span class="keyword">data</span> alpine sh <span class="literal">-c</span> <span class="string">&#x27;printf &quot;%s\n&quot; &quot;数据仍在&quot; &gt; /data/message.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>再启动一个新容器读取同一个卷：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">--rm</span> <span class="literal">--mount</span> <span class="built_in">type</span>=volume,source=demo<span class="literal">-data</span>,target=/<span class="keyword">data</span> alpine <span class="built_in">cat</span> /<span class="keyword">data</span>/message.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果看到“数据仍在”，说明文件保存在卷里，而不是只保存在前一个容器中。可以用 <code>docker volume ls</code> 查看卷。不要随手运行 <code>docker volume prune</code>，它会清理未被容器使用的卷，可能删除你想保留的数据。</p>
+<h2 id="五、用-Docker-Compose-管理服务"><a href="#五、用-Docker-Compose-管理服务" class="headerlink" title="五、用 Docker Compose 管理服务"></a>五、用 Docker Compose 管理服务</h2><p>单条 <code>docker run</code> 适合快速试用；项目需要记录端口和服务配置时，可以把配置写进 <code>compose.yaml</code>。新建一个目录，在里面创建以下文件：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:alpine</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:80&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在该目录执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker compose up <span class="literal">-d</span>       <span class="comment"># 根据 compose.yaml 创建并启动服务</span></span><br><span class="line">docker compose <span class="built_in">ps</span>          <span class="comment"># 查看服务状态</span></span><br><span class="line">docker compose logs <span class="operator">-f</span> web <span class="comment"># 查看 web 服务日志</span></span><br><span class="line">docker compose down        <span class="comment"># 停止并删除容器和网络</span></span><br></pre></td></tr></table></figure>
+
+<p>启动后访问 <code>http://localhost:8080</code>。<code>docker compose down</code> 默认不会删除命名卷；带 <code>-v</code> 会连卷一起删除，只有确定不再需要持久化数据时才使用。</p>
+<h2 id="六、日常排查顺序"><a href="#六、日常排查顺序" class="headerlink" title="六、日常排查顺序"></a>六、日常排查顺序</h2><ol>
+<li><code>docker version</code>：确认客户端和 Server 都能显示。</li>
+<li><code>docker ps -a</code>：确认容器是否启动或已经退出。</li>
+<li><code>docker logs 容器名</code>：查看应用报错和启动日志。</li>
+<li>检查端口映射：宿主机端口可能已被其他程序占用。</li>
+<li>检查数据位置：容器删除后仍需保留的内容应放进卷或绑定挂载目录。</li>
+</ol>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Docker 的基本工作流可以记成：准备镜像、启动容器、映射端口、查看日志；需要保存数据时挂载卷，需要复现项目配置时使用 Compose。先用 <code>hello-world</code> 和 Nginx 做小实验，再逐步尝试自己的应用会更容易定位问题。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://docs.docker.com/desktop/use-desktop/">Docker Desktop Dashboard</a></li>
+<li><a href="https://docs.docker.com/reference/cli/docker/container/run/">Docker <code>run</code> 命令参考</a></li>
+<li><a href="https://docs.docker.com/compose/gettingstarted/">Docker Compose 快速入门</a></li>
 </ul>
-<h3 id="✅-验证成功"><a href="#✅-验证成功" class="headerlink" title="✅ 验证成功"></a>✅ 验证成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 28.3.2, build 578ccf6</span><br><span class="line"></span><br><span class="line">$ docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line">Hello from Docker!  ✅</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="🎯-最终工作流"><a href="#🎯-最终工作流" class="headerlink" title="🎯 最终工作流"></a>🎯 最终工作流</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 日常开发（90% 时间）</span></span><br><span class="line">wsl                          <span class="comment"># 进入终端</span></span><br><span class="line">docker run -d -p 8080:80 nginx  <span class="comment"># 跑服务</span></span><br><span class="line">docker ps / logs / <span class="built_in">exec</span>    <span class="comment"># 管理容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图形管理（10% 时间）</span></span><br><span class="line"><span class="comment"># 浏览器访问 Docker Desktop 网页版，或点系统托盘 🐳</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、命令行学习"><a href="#二、命令行学习" class="headerlink" title="二、命令行学习"></a>二、命令行学习</h2><h2 id="三、图形化界面学习"><a href="#三、图形化界面学习" class="headerlink" title="三、图形化界面学习"></a>三、图形化界面学习</h2>]]></content>
+]]></content>
       <categories>
         <category>技术教程</category>
       </categories>
@@ -156,15 +210,247 @@
       </tags>
   </entry>
   <entry>
+    <title>04.基于github的个人博客搭建教程</title>
+    <url>/2026/06/03/4.%20github-blog-tutorial/</url>
+    <content><![CDATA[<p>这篇文章以 Windows PowerShell 为例，记录从本地创建 Hexo 站点到发布到 GitHub Pages 的流程。命令和界面会随 Hexo、GitHub 的版本变化，开始前先确认本机已安装 Node.js 和 Git。</p>
+<h2 id="0-前置条件"><a href="#0-前置条件" class="headerlink" title="0.前置条件"></a>0.前置条件</h2><p>在安装 Hexo 之前，需要先安装 Git 和 Node.js。安装后重新打开 PowerShell，确认 <code>git --version</code> 和 <code>node --version</code> 能输出版本号。</p>
+<h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>Hexo 是一个使用 Node.js 的静态博客框架：文章用 Markdown 编写，生成后成为可部署的静态网页。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
+
+<p>安装验证</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+
+<p>显示版号即可</p>
+<hr>
+<h2 id="2-本地搭建"><a href="#2-本地搭建" class="headerlink" title="2.本地搭建"></a>2.本地搭建</h2><p>(1) 初始化</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><code>myblog</code> 会创建在运行 <code>hexo init</code> 时 PowerShell 当前所在的目录下；可以先用 <code>Get-Location</code> 确认位置。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>_config.yml 存放的是博客配置信息， source&#x2F;_posts 是存放文章的地方</p>
+</blockquote>
+<p>(2) 运行默认主题</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npx hexo generate  <span class="comment"># 生成 public 文件夹</span></span><br><span class="line">npx hexo server    <span class="comment"># 启动本地预览服务器</span></span><br></pre></td></tr></table></figure>
+
+<p>运行后访问 <code>http://localhost:4000</code> 查看本地效果。修改文章后重新生成即可；只有缓存或生成结果异常时才需要先运行 <code>npx hexo clean</code>。</p>
+<hr>
+<h2 id="3-使用github-pages"><a href="#3-使用github-pages" class="headerlink" title="3.使用github pages"></a>3.使用github pages</h2><p> (1) 配置 SSH key</p>
+<blockquote>
+<p>目的：实现免密上传到 GitHub，无需每次都输入账号密码</p>
+</blockquote>
+<p>先检查本机是否已有密钥，避免覆盖正在使用的文件：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="string">&quot;<span class="variable">$HOME</span>\.ssh&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果目录不存在或没有可用密钥，再生成一组新的。</p>
+<p>(2) 生成 SSH key。GitHub 文档目前推荐 Ed25519：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;你的GitHub邮箱@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示保存路径时按回车使用默认路径；建议设置密钥口令。如果不想每次连接都输入口令，可以按 GitHub 文档将密钥加入 ssh-agent。</p>
+<p>默认会生成两个文件：<code>id_ed25519</code> 是私钥，只留在自己的电脑上；<code>id_ed25519.pub</code> 是公钥，可以添加到 GitHub。不要把私钥上传到仓库、发给别人或放进博客文章。</p>
+<p>(3) 获取公钥内容：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-Content</span> <span class="string">&quot;<span class="variable">$HOME</span>\.ssh\id_ed25519.pub&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>复制整行公钥内容。添加到 GitHub：头像 → <strong>Settings</strong> → <strong>SSH and GPG keys</strong> → <strong>New SSH key</strong>，粘贴公钥并保存。</p>
+<p><strong>添加到 GitHub：</strong></p>
+<p>给密钥起一个能认出设备的标题，例如 <code>MyBlog-PC</code>。</p>
+<p><strong>测试连接：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次连接可能会提示确认 GitHub 主机指纹；确认来源可信后再输入 <code>yes</code>。如果看到类似提示，说明 SSH 身份验证成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi 你的用户名! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<p>(4) 创建 GitHub 仓库</p>
+<ol>
+<li>登录 GitHub，点击右上角 <strong>+</strong> → <strong>New repository</strong></li>
+<li><strong>Repository name</strong>（仓库名）：<strong>必须填写 <code>你的用户名.github.io</code></strong>,否则没有用喵。这个仓库名将作为你博客的访问地址</li>
+<li>按账号方案选择仓库可见性；公开博客的网页内容最终都会被访问者看到</li>
+<li>点击 <strong>Create repository</strong></li>
+</ol>
+<p>(5) 配置 Hexo 部署信息</p>
+<p>打开博客根目录（<code>myblog</code> 文件夹）下的 <strong><code>_config.yml</code></strong> 文件（注意是根目录的，不是 themes 里的），拉到<strong>文件最底部</strong>，添加或修改以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<p>这表示 <code>hexo deploy</code> 会把生成好的静态网页发布到目标仓库的 <code>main</code> 分支。GitHub 仓库的 <strong>Settings → Pages</strong> 中，发布来源要与这里的分支和目录相匹配。不要把唯一一份文章源文件只放在部署分支里；建议另行备份 Hexo 项目源文件（文章、配置和 <code>package-lock.json</code>）。</p>
+<p>(6) 安装部署插件</p>
+<p>在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>(7) 部署到 GitHub</p>
+<p>在 Hexo 项目根目录依次执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npx hexo generate  <span class="comment"># 生成静态网页（写入 public 文件夹）</span></span><br><span class="line">npx hexo deploy    <span class="comment"># 部署 public 中的网页</span></span><br></pre></td></tr></table></figure>
+
+<p>只有缓存或生成结果异常时，再先单独运行 <code>npx hexo clean</code>。分开执行这些命令，也能避免不同 PowerShell 版本对 <code>&amp;&amp;</code> 的支持差异。</p>
+<p>第一次部署时，会提示确认连接，输入 <code>yes</code> 回车。</p>
+<p>看到 <code>INFO Deploy done: git</code> 说明部署成功！</p>
+<p>(8) 访问你的博客</p>
+<p>打开浏览器，访问：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://你的用户名.github.io</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意：</strong> 首次发布需要等待 GitHub Pages 完成部署。如果仍显示 404，先检查 Pages 的发布分支和目录，再查看仓库的 Actions&#x2F;Pages 部署状态。</p>
+</blockquote>
+<hr>
+<h2 id="4-编写和发布文章"><a href="#4-编写和发布文章" class="headerlink" title="4. 编写和发布文章"></a>4. 编写和发布文章</h2><p>(1) 新建文章</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>文章会创建在 <code>source/_posts/文章标题.md</code></p>
+<p>(2) 编辑文章</p>
+<p>用 Markdown 编辑器（推荐 <strong>Typora</strong> 或 <strong>VS Code</strong>）打开 <code>.md</code> 文件，你会看到：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2026-06-03 22:40:00</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 <code>tags:</code> 后面可以添加标签，如：<code>tags: [网络安全, 学习笔记]</code></li>
+<li>在 <code>---</code> 下方写正文内容（使用 Markdown 语法）</li>
+<li>可以在正文中插入 <code>&lt;!-- more --&gt;</code>，实现首页摘要显示</li>
+</ul>
+<h3 id="给文章添加图片"><a href="#给文章添加图片" class="headerlink" title="给文章添加图片"></a>给文章添加图片</h3><p>当前博客的 <code>_config.yml</code> 设置了 <code>post_asset_folder: false</code>，可以把图片统一放在 <code>source</code> 目录下。比如新建目录并复制图片到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">source/</span><br><span class="line">└── img/</span><br><span class="line">    └── posts/</span><br><span class="line">        └── docker/</span><br><span class="line">            └── container-flow.webp</span><br></pre></td></tr></table></figure>
+
+<p>在 Markdown 正文中使用以 <code>/</code> 开头的站点路径：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Docker 容器启动流程示意图</span>](<span class="link">/img/posts/docker/container-flow.webp</span>)</span><br></pre></td></tr></table></figure>
+
+<p>图片文件名尽量用英文、数字和连字符，并给图片写有意义的替代文本。保存后在项目根目录运行 <code>npm run build</code>，或执行 <code>npx hexo generate</code>；生成结果应包含 <code>public/img/posts/docker/container-flow.webp</code>。再运行 <code>npx hexo server</code> 打开文章预览，确认图片显示后执行 <code>npx hexo deploy</code>，图片就会和网页一起上传，访客浏览文章时也能看到。</p>
+<p>上传前先压缩过大的图片，并确认自己有权公开使用图片。GitHub Pages 会像提供其他静态网页文件一样提供已部署的图片文件。</p>
+<p>不要把图片只放进 <code>public</code>：<code>public</code> 是生成目录，清理或重新生成时会被覆盖。更完整的图片目录方案见 <a href="https://hexo.io/docs/asset-folders">Hexo 图片资源目录文档</a>。</p>
+<p>(3) 发布文章</p>
+<p>写完文章后，先生成网页并本地预览；确认效果后再部署：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-常用命令速查"><a href="#5-常用命令速查" class="headerlink" title="5. 常用命令速查"></a>5. 常用命令速查</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npx hexo new &quot;文章名&quot;</code></td>
+<td>新建文章</td>
+</tr>
+<tr>
+<td><code>npx hexo clean</code></td>
+<td>清除缓存和生成目录</td>
+</tr>
+<tr>
+<td><code>npx hexo generate</code></td>
+<td>生成静态网页</td>
+</tr>
+<tr>
+<td><code>npx hexo server</code></td>
+<td>本地预览（<code>http://localhost:4000</code>）</td>
+</tr>
+<tr>
+<td><code>npx hexo deploy</code></td>
+<td>部署到 GitHub</td>
+</tr>
+<tr>
+<td><code>npx hexo version</code></td>
+<td>查看 Hexo 版本</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="6-常见问题解决"><a href="#6-常见问题解决" class="headerlink" title="6. 常见问题解决"></a>6. 常见问题解决</h2><p>问题1：部署时提示 <code>Permission denied (publickey)</code></p>
+<p><strong>解决方法：</strong> 先运行 <code>ssh -T git@github.com</code>，确认 GitHub 账号中添加了对应的 <code>.pub</code> 公钥；检查 SSH 客户端是否能找到私钥，再重新部署。不要公开或复制私钥内容。</p>
+<p>问题2：访问博客显示 404</p>
+<p><strong>解决方法：</strong> 确认用户站点仓库名是 <code>用户名.github.io</code>，并在 <strong>Settings → Pages</strong> 检查发布来源、分支和目录；再查看 Pages&#x2F;Actions 部署是否成功。</p>
+<p>问题3：文章发布时间差8小时</p>
+<p><strong>原因：</strong> 时区设置问题</p>
+<p><strong>解决方法：</strong> 在 <code>_config.yml</code> 中设置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>问题4：本地预览正常，但部署后样式丢失</p>
+<p><strong>解决方法：</strong> 打开浏览器开发者工具检查 CSS 请求是否 404；确认 <code>_config.yml</code> 里的 <code>url</code> 和 <code>root</code> 与部署路径一致，再重新生成并部署。确认为生成缓存异常时才运行 <code>npx hexo clean</code>。</p>
+<hr>
+<h2 id="7-进阶：更换主题"><a href="#7-进阶：更换主题" class="headerlink" title="7. 进阶：更换主题"></a>7. 进阶：更换主题</h2><p>Hexo 默认主题比较简陋，可以更换更美观的主题。推荐主题：</p>
+<ul>
+<li><strong>Butterfly</strong>：功能最全、最华丽</li>
+<li><strong>NexT</strong>：经典、简洁、优雅</li>
+<li><strong>Fluid</strong>：现代化、高颜值</li>
+</ul>
+<p>以 NexT 为例：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载主题</span></span><br><span class="line">git clone https://github.com/next<span class="literal">-theme</span>/hexo<span class="literal">-theme-next</span> themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用主题（修改 _config.yml）</span></span><br><span class="line"><span class="comment"># 找到 theme: landscape，改成 theme: next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新生成并部署（在 PowerShell 中分开执行）</span></span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
+</blockquote>
+<hr>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>Hexo 的发布流程是：在 <code>source</code> 中维护文章和图片，用 <code>hexo generate</code> 生成 <code>public</code>，本地预览确认后再部署。博客源文件要单独备份；部署目录只负责提供浏览器访问的静态页面。祝你写作顺利喵。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub：生成并添加 SSH key</a></li>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub Pages：创建站点与选择发布来源</a></li>
+<li><a href="https://hexo.io/docs/asset-folders">Hexo：图片资源目录</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>06.dgVoodoo2：关于老游戏现代兼容指南</title>
+    <url>/2026/10/01/6.%20dgVoodoo2/</url>
+    <content><![CDATA[<p>我最近两次处理老游戏黑屏或图形初始化报错时都用到了 dgVoodoo2，于是把自己的排查步骤记下来。以下是通用起点，具体游戏可能需要不同配置；操作前先备份游戏目录中同名的 DLL 和配置文件。</p>
+<h2 id="dgVoodoo2-是什么"><a href="#dgVoodoo2-是什么" class="headerlink" title="dgVoodoo2 是什么"></a>dgVoodoo2 是什么</h2><p>dgVoodoo2 是一款 Glide&#x2F;DirectX 图形包装器，可把部分较旧的图形接口调用转换为现代系统可用的渲染路径。作者仓库列出的接口包括 Glide、DirectDraw 和 Direct3D 3&#x2F;5&#x2F;6&#x2F;7&#x2F;8&#x2F;9，并使用 Direct3D 11&#x2F;12 作为后端。它能帮助排查一部分黑屏、花屏或图形初始化问题，但不能修复缺失的游戏文件、错误的注册表、损坏的安装包或所有闪退问题。</p>
+<h2 id="什么时候可以尝试"><a href="#什么时候可以尝试" class="headerlink" title="什么时候可以尝试"></a>什么时候可以尝试</h2><p>可以在以下情况中把它作为一个排查选项：</p>
+<ul>
+<li>游戏提示图形接口初始化失败，例如 <code>Direct3D initializing failed</code>。</li>
+<li>游戏能启动，但出现黑屏、花屏、贴图异常或画面闪烁。</li>
+<li>老游戏只提供较低分辨率，或在宽屏显示器上显示比例不合适。</li>
+</ul>
+<p>如果游戏在图形初始化前就因缺少 DLL、运行库或游戏文件而退出，应先处理对应问题；dgVoodoo2 并不能代替这些依赖。</p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><h3 id="1-下载并备份"><a href="#1-下载并备份" class="headerlink" title="1. 下载并备份"></a>1. 下载并备份</h3><p>从<a href="https://github.com/dege-diosg/dgVoodoo2/releases">作者的 GitHub Releases</a>下载发行包。不同版本的压缩包目录可能会变化，先阅读包内说明。下载后先复制一份游戏目录作为备份，尤其要保留原有同名 DLL 和配置文件。</p>
+<p>如果发行包里有 <code>MS</code> 目录，常见架构目录可能包括：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">MS/</span><br><span class="line">├── x86/  # 32 位程序</span><br><span class="line">├── x64/  # 64 位程序</span><br><span class="line">└── 其他架构目录/  # 按当前发行包说明选择</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-确认游戏位数和图形接口"><a href="#2-确认游戏位数和图形接口" class="headerlink" title="2. 确认游戏位数和图形接口"></a>2. 确认游戏位数和图形接口</h3><p>选择 DLL 时看<strong>游戏程序本身的位数</strong>，不要只看 Windows 是 64 位还是 ARM：32 位游戏选 x86 文件，64 位游戏选 x64 文件。ARM 设备上的兼容目录名称和适用条件以当前发行包说明为准，不要仅凭设备品牌猜测。</p>
+<p>可以在任务管理器的“详细信息”页查看运行中进程的位数；若游戏无法启动，可查游戏官方说明或可信的兼容性资料来确认架构和图形接口。不要因为不确定就把所有 DLL 都复制进去。</p>
+<h3 id="3-放置匹配的包装-DLL"><a href="#3-放置匹配的包装-DLL" class="headerlink" title="3. 放置匹配的包装 DLL"></a>3. 放置匹配的包装 DLL</h3><p>先确认游戏使用的图形接口，再从对应架构目录中挑选匹配的包装 DLL，放到游戏主程序 <code>.exe</code> 所在的目录。只放当前排查需要的文件，一次增加一个接口文件，便于观察效果和回滚。</p>
+<p>不要把包装 DLL 放进 <code>System32</code> 或 <code>SysWOW64</code>。也不要用来源不明的 DLL 覆盖游戏文件；如果目录已有同名文件，先备份原文件。</p>
+<h3 id="4-配置并验证"><a href="#4-配置并验证" class="headerlink" title="4. 配置并验证"></a>4. 配置并验证</h3><p>将发行包中的 <code>dgVoodooCpl.exe</code> 复制到游戏目录并运行。在控制面板中确认目标路径指向当前游戏目录，再按以下顺序尝试：</p>
+<ol>
+<li>在 <code>General</code> 标签页先保留默认输出设置。</li>
+<li>点击 <code>Apply</code> → <code>OK</code>，启动游戏确认是否改善。</li>
+<li>只有默认设置不适用时，才根据游戏和显卡情况调整 <code>Output API</code>、显存模拟值或分辨率。</li>
+<li>每次只改一项，记下调整前后的效果，避免无法判断是哪项设置造成变化。</li>
+</ol>
+<p>显存模拟值和输出 API 不适用于所有游戏，不要把某个固定数值当作通用答案。</p>
+<h3 id="5-处理水印"><a href="#5-处理水印" class="headerlink" title="5. 处理水印"></a>5. 处理水印</h3><p>如果游戏画面出现 dgVoodoo 水印，可关闭游戏，打开控制面板的 <code>DirectX</code> 选项卡，在 <code>Miscellaneous</code> 中找到 <code>dgVoodoo Watermark</code> 并按需关闭，然后点击 <code>Apply</code> 再启动游戏。</p>
+<h2 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h2><ul>
+<li><strong>放了 DLL 仍无变化：</strong>核对游戏位数、图形接口、DLL 所在目录和控制面板目标路径。</li>
+<li><strong>加入 DLL 后更不稳定：</strong>汉化、宽屏补丁或其他图形包装器可能发生冲突。一次只启用一种方案。</li>
+<li><strong>游戏仍无法启动：</strong>确认问题是否发生在图形接口初始化阶段；缺少运行库、文件损坏或权限问题需要单独处理。</li>
+<li><strong>需要撤销修改：</strong>关闭游戏，移除刚加入的包装 DLL 和 dgVoodoo 配置文件，再从备份恢复同名原文件。</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://github.com/dege-diosg/dgVoodoo2">dgVoodoo2 作者仓库与支持接口说明</a></li>
+<li><a href="https://github.com/dege-diosg/dgVoodoo2/releases">dgVoodoo2 Releases</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>02.Linux 操作系统指令</title>
     <url>/2025/09/22/2.%20Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="📋-一、基础环境与操作准备"><a href="#📋-一、基础环境与操作准备" class="headerlink" title="📋 一、基础环境与操作准备"></a>📋 一、基础环境与操作准备</h2><h3 id="1-虚拟机连接与配置"><a href="#1-虚拟机连接与配置" class="headerlink" title="1. 虚拟机连接与配置"></a>1. 虚拟机连接与配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 查看虚拟机IP地址</span></span><br><span class="line">ifconfig</span><br><span class="line"><span class="comment"># 或使用新命令</span></span><br><span class="line">ip addr show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通过FinalShell连接</span></span><br><span class="line"><span class="comment"># IP地址: 虚拟机IP</span></span><br><span class="line"><span class="comment"># 端口: 22 (默认SSH端口)</span></span><br><span class="line"><span class="comment"># 用户名: 虚拟机用户名</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>本文按“查看目录、处理文件、搜索文本、组合命令、编辑文件”的顺序整理常用操作。示例主要面向 Ubuntu、Debian 等 GNU&#x2F;Linux 环境；不同发行版预装的工具可能不同，遇到差异时可用 <code>命令 --help</code> 或 <code>man 命令</code> 查阅本机说明。</p>
+<blockquote>
+<p><strong>安全提示：</strong> 删除、覆盖和提权命令可能造成数据丢失。先确认当前目录和目标路径，重要文件先备份；不确定时先运行只显示结果的预览命令。</p>
+</blockquote>
+<h2 id="一、基础环境与操作准备"><a href="#一、基础环境与操作准备" class="headerlink" title="一、基础环境与操作准备"></a>一、基础环境与操作准备</h2><h3 id="1-虚拟机连接与配置"><a href="#1-虚拟机连接与配置" class="headerlink" title="1. 虚拟机连接与配置"></a>1. 虚拟机连接与配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 查看网络接口和 IP 地址（推荐）</span></span><br><span class="line">ip addr show</span><br><span class="line"><span class="comment"># 某些精简系统没有 ifconfig；安装 net-tools 后才可使用</span></span><br><span class="line"><span class="comment"># ifconfig</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通过FinalShell连接</span></span><br><span class="line"><span class="comment"># IP地址: 虚拟机IP</span></span><br><span class="line"><span class="comment"># 端口: 22 (默认SSH端口)</span></span><br><span class="line"><span class="comment"># 用户名: 虚拟机用户名</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-连接验证"><a href="#2-连接验证" class="headerlink" title="2. 连接验证"></a>2. 连接验证</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输入以下命令验证连接</span></span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 若显示结果与虚拟机终端一致，则连接成功</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="3-重要注意事项"><a href="#3-重要注意事项" class="headerlink" title="3. 重要注意事项"></a>3. 重要注意事项</h3><ul>
-<li><strong>虚拟机IP变化</strong>：重启后需重新运行 <code>ifconfig</code> 检查IP</li>
-<li>WSL子系统**：硬件虚拟化，资源占用较少</li>
+<li><strong>虚拟机 IP 变化</strong>：重启或网络切换后地址可能变化，可用 <code>ip addr</code> 查看；WSL 的网络行为也会随版本和配置有所不同。</li>
+<li><strong>WSL 2</strong>：通过轻量级虚拟机运行 Linux，与传统虚拟机的网络和文件访问方式略有区别。</li>
 <li><strong>快照功能</strong>：保存系统状态，便于恢复<ul>
 <li>制作快照：虚拟机管理界面操作</li>
 <li>查看快照：快照列表查看历史状态</li>
@@ -312,7 +598,7 @@
 
 <h3 id="2-目录创建与管理"><a href="#2-目录创建与管理" class="headerlink" title="2. 目录创建与管理"></a>2. 目录创建与管理</h3><h4 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir - 创建目录"></a><strong>mkdir</strong> - 创建目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本创建</span></span><br><span class="line"><span class="built_in">mkdir</span> new_folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个目录</span></span><br><span class="line"><span class="built_in">mkdir</span> dir1 dir2 dir3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归创建多级目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p parent/child/grandchild</span><br><span class="line"><span class="comment"># 创建结构：parent/ → child/ → grandchild/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建带权限的目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -m 755 secure_dir</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-📄-文件操作命令"><a href="#3-📄-文件操作命令" class="headerlink" title="3. 📄 文件操作命令"></a>3. 📄 文件操作命令</h3><h4 id="touch-创建空文件-更新时间戳"><a href="#touch-创建空文件-更新时间戳" class="headerlink" title="touch - 创建空文件&#x2F;更新时间戳"></a><strong>touch</strong> - 创建空文件&#x2F;更新时间戳</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建单个文件</span></span><br><span class="line"><span class="built_in">touch</span> file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个文件</span></span><br><span class="line"><span class="built_in">touch</span> file1.txt file2.txt file3.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新时间戳（文件不存在则创建）</span></span><br><span class="line"><span class="built_in">touch</span> existing_file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="3-文件操作命令"><a href="#3-文件操作命令" class="headerlink" title="3. 文件操作命令"></a>3. 文件操作命令</h3><h4 id="touch-创建空文件-更新时间戳"><a href="#touch-创建空文件-更新时间戳" class="headerlink" title="touch - 创建空文件&#x2F;更新时间戳"></a><strong>touch</strong> - 创建空文件&#x2F;更新时间戳</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建单个文件</span></span><br><span class="line"><span class="built_in">touch</span> file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个文件</span></span><br><span class="line"><span class="built_in">touch</span> file1.txt file2.txt file3.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新时间戳（文件不存在则创建）</span></span><br><span class="line"><span class="built_in">touch</span> existing_file.txt</span><br></pre></td></tr></table></figure>
 
 <h4 id="文件类型识别"><a href="#文件类型识别" class="headerlink" title="文件类型识别"></a><strong>文件类型识别</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用ls -l查看文件类型</span></span><br><span class="line"><span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 输出示例：</span></span><br><span class="line"><span class="comment"># -rw-r--r-- 1 user group 1234 Jan 1 10:00 file.txt   # - 表示普通文件</span></span><br><span class="line"><span class="comment"># drwxr-xr-x 2 user group 4096 Jan 1 10:00 directory/  # d 表示目录</span></span><br><span class="line"><span class="comment"># lrwxrwxrwx 1 user group    7 Jan 1 10:00 link -&gt; target  # l 表示链接</span></span><br></pre></td></tr></table></figure>
 
@@ -335,46 +621,47 @@
 <tbody><tr>
 <td><code>-r</code></td>
 <td>递归删除目录</td>
-<td>⚠️</td>
+<td>注意</td>
 </tr>
 <tr>
 <td><code>-f</code></td>
 <td>强制删除（无提示）</td>
-<td>⚠️⚠️</td>
+<td>高风险</td>
 </tr>
 <tr>
 <td><code>-i</code></td>
 <td>交互模式（删除前确认）</td>
-<td>✅</td>
+<td>推荐</td>
 </tr>
 <tr>
 <td><code>-v</code></td>
 <td>显示删除过程</td>
-<td>✅</td>
+<td>推荐</td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安全删除示例</span></span><br><span class="line"><span class="built_in">rm</span> file.txt                    <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -i important.txt           <span class="comment"># 删除前确认</span></span><br><span class="line"><span class="built_in">rm</span> -r directory/              <span class="comment"># 删除目录（有提示）</span></span><br><span class="line"><span class="built_in">rm</span> -rf empty_dir/             <span class="comment"># 强制删除空目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ⚠️ 危险命令（绝对不要执行！）</span></span><br><span class="line"><span class="comment"># rm -rf /                    # 删除整个系统！</span></span><br><span class="line"><span class="comment"># rm -rf /*                   # 删除根目录所有文件！</span></span><br><span class="line"><span class="comment"># rm -rf .                    # 删除当前目录所有内容！</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除前确认目标；-r 本身不会保证逐项询问</span></span><br><span class="line"><span class="built_in">pwd</span>                            <span class="comment"># 先检查当前目录</span></span><br><span class="line"><span class="built_in">ls</span> -la ./test-dir              <span class="comment"># 再确认目标内容</span></span><br><span class="line"><span class="built_in">rm</span> -i ./file.txt               <span class="comment"># 删除单个文件前询问</span></span><br><span class="line"><span class="built_in">rm</span> -ri ./test-dir/             <span class="comment"># 递归删除目录并逐项询问</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="4-🔍-查找命令"><a href="#4-🔍-查找命令" class="headerlink" title="4. 🔍 查找命令"></a>4. 🔍 查找命令</h3><h4 id="which-查找命令位置"><a href="#which-查找命令位置" class="headerlink" title="which - 查找命令位置"></a><strong>which</strong> - 查找命令位置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> <span class="built_in">ls</span>      <span class="comment"># 输出：/bin/ls</span></span><br><span class="line"><span class="built_in">which</span> python  <span class="comment"># 查看python命令位置</span></span><br><span class="line"><span class="built_in">which</span> -a bash <span class="comment"># 显示所有匹配的路径</span></span><br></pre></td></tr></table></figure>
+<p>不要把未经检查的变量、通配符或复制粘贴来的路径直接交给 <code>rm -rf</code>。需要清理批量文件时，先用 <code>find ... -print</code> 检查清单，再决定是否执行删除。</p>
+<h3 id="4-查找命令"><a href="#4-查找命令" class="headerlink" title="4. 查找命令"></a>4. 查找命令</h3><h4 id="which-查找命令位置"><a href="#which-查找命令位置" class="headerlink" title="which - 查找命令位置"></a><strong>which</strong> - 查找命令位置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> <span class="built_in">ls</span>      <span class="comment"># 输出：/bin/ls</span></span><br><span class="line"><span class="built_in">which</span> python  <span class="comment"># 查看python命令位置</span></span><br><span class="line"><span class="built_in">type</span> -a bash  <span class="comment"># Bash 内置命令：显示所有匹配项（部分 shell 不支持）</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="find-高级文件查找"><a href="#find-高级文件查找" class="headerlink" title="find - 高级文件查找"></a><strong>find</strong> - 高级文件查找</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按名称查找</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span>          <span class="comment"># 查找.txt文件</span></span><br><span class="line">find / -name <span class="string">&quot;config.*&quot;</span>           <span class="comment"># 查找config.*文件</span></span><br><span class="line">find . -iname <span class="string">&quot;readme.txt&quot;</span>        <span class="comment"># 忽略大小写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按类型查找</span></span><br><span class="line">find /home -<span class="built_in">type</span> f                <span class="comment"># 只找文件</span></span><br><span class="line">find /home -<span class="built_in">type</span> d                <span class="comment"># 只找目录</span></span><br><span class="line">find /home -<span class="built_in">type</span> l                <span class="comment"># 只找链接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按大小查找</span></span><br><span class="line">find / -size +100M                <span class="comment"># 大于100MB</span></span><br><span class="line">find / -size -1k                  <span class="comment"># 小于1KB</span></span><br><span class="line">find /var/log -size +10M -size -100M  <span class="comment"># 10MB到100MB之间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按时间查找</span></span><br><span class="line">find /home -mtime -7              <span class="comment"># 7天内修改过</span></span><br><span class="line">find /home -mtime +30             <span class="comment"># 30天前修改过</span></span><br><span class="line">find /var/log -amin -60           <span class="comment"># 60分钟内访问过</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按权限查找</span></span><br><span class="line">find /home -perm 644              <span class="comment"># 权限为644</span></span><br><span class="line">find / -perm /u=s                 <span class="comment"># 查找SUID文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组合条件</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span> -<span class="built_in">type</span> f -size +1M</span><br><span class="line">find /var/log -name <span class="string">&quot;*.log&quot;</span> -mtime +30 -delete  <span class="comment"># 找到并删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">exec</span> <span class="built_in">rm</span> &#123;&#125; \;      <span class="comment"># 删除所有.tmp文件</span></span><br><span class="line">find . -name <span class="string">&quot;*.jpg&quot;</span> -<span class="built_in">exec</span> <span class="built_in">cp</span> &#123;&#125; /backup \;  <span class="comment"># 复制所有jpg文件</span></span><br></pre></td></tr></table></figure>
+<h4 id="find-高级文件查找"><a href="#find-高级文件查找" class="headerlink" title="find - 高级文件查找"></a><strong>find</strong> - 高级文件查找</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按名称查找</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span>          <span class="comment"># 查找.txt文件</span></span><br><span class="line">find / -name <span class="string">&quot;config.*&quot;</span> 2&gt;/dev/null <span class="comment"># 搜索全系统；忽略无权访问目录的提示</span></span><br><span class="line">find . -iname <span class="string">&quot;readme.txt&quot;</span>        <span class="comment"># 忽略大小写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按类型查找</span></span><br><span class="line">find /home -<span class="built_in">type</span> f                <span class="comment"># 只找文件</span></span><br><span class="line">find /home -<span class="built_in">type</span> d                <span class="comment"># 只找目录</span></span><br><span class="line">find /home -<span class="built_in">type</span> l                <span class="comment"># 只找链接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按大小查找</span></span><br><span class="line">find / -size +100M                <span class="comment"># 大于100MB</span></span><br><span class="line">find / -size -1k                  <span class="comment"># 小于1KB</span></span><br><span class="line">find /var/log -size +10M -size -100M  <span class="comment"># 10MB到100MB之间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按时间查找</span></span><br><span class="line">find /home -mtime -7              <span class="comment"># 7天内修改过</span></span><br><span class="line">find /home -mtime +30             <span class="comment"># 30天前修改过</span></span><br><span class="line">find /var/log -amin -60           <span class="comment"># 60分钟内访问过</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按权限查找</span></span><br><span class="line">find /home -perm 644              <span class="comment"># 权限为644</span></span><br><span class="line">find / -perm /u=s                 <span class="comment"># 查找SUID文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组合条件</span></span><br><span class="line">find /home -name <span class="string">&quot;*.txt&quot;</span> -<span class="built_in">type</span> f -size +1M</span><br><span class="line"><span class="comment"># 批量删除前先预览：</span></span><br><span class="line">find /var/log -<span class="built_in">type</span> f -name <span class="string">&quot;*.log&quot;</span> -mtime +30 -<span class="built_in">print</span></span><br><span class="line"><span class="comment"># 确认清单无误后，才将 -print 改为 -delete</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">print</span>              <span class="comment"># 先列出将要处理的文件</span></span><br><span class="line"><span class="comment"># 确认无误后，可将 -print 改为 -delete</span></span><br><span class="line">find . -name <span class="string">&quot;*.jpg&quot;</span> -<span class="built_in">exec</span> <span class="built_in">cp</span> &#123;&#125; /backup \;  <span class="comment"># 复制所有jpg文件</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="grep-文本搜索"><a href="#grep-文本搜索" class="headerlink" title="grep - 文本搜索"></a><strong>grep</strong> - 文本搜索</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本搜索</span></span><br><span class="line">grep <span class="string">&quot;keyword&quot;</span> file.txt</span><br><span class="line">grep -n <span class="string">&quot;error&quot;</span> logfile.log      <span class="comment"># 显示行号</span></span><br><span class="line">grep -i <span class="string">&quot;warning&quot;</span> file.txt       <span class="comment"># 忽略大小写</span></span><br><span class="line">grep -v <span class="string">&quot;exclude&quot;</span> file.txt       <span class="comment"># 反向匹配（不包含）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归搜索</span></span><br><span class="line">grep -r <span class="string">&quot;function&quot;</span> /project/     <span class="comment"># 递归搜索目录</span></span><br><span class="line">grep -r -l <span class="string">&quot;TODO&quot;</span> src/           <span class="comment"># 只显示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正则表达式</span></span><br><span class="line">grep <span class="string">&quot;^Start&quot;</span> file.txt           <span class="comment"># 以Start开头</span></span><br><span class="line">grep <span class="string">&quot;end$&quot;</span> file.txt             <span class="comment"># 以end结尾</span></span><br><span class="line">grep <span class="string">&quot;file[0-9]&quot;</span> data.txt        <span class="comment"># file后跟数字</span></span><br><span class="line">grep -E <span class="string">&quot;(error|warning)&quot;</span> log.txt  <span class="comment"># 扩展正则</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下文显示</span></span><br><span class="line">grep -B2 -A2 <span class="string">&quot;crash&quot;</span> log.txt     <span class="comment"># 显示前后2行</span></span><br><span class="line">grep -C3 <span class="string">&quot;exception&quot;</span> log.txt     <span class="comment"># 显示前后3行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 与管道结合</span></span><br><span class="line">ps aux | grep python             <span class="comment"># 查找Python进程</span></span><br><span class="line"><span class="built_in">history</span> | grep <span class="string">&quot;ssh&quot;</span>             <span class="comment"># 查找历史命令中的ssh</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="5-📊-文本处理"><a href="#5-📊-文本处理" class="headerlink" title="5. 📊 文本处理"></a>5. 📊 文本处理</h3><h4 id="wc-文本统计"><a href="#wc-文本统计" class="headerlink" title="wc - 文本统计"></a><strong>wc</strong> - 文本统计</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本统计</span></span><br><span class="line"><span class="built_in">wc</span> file.txt</span><br><span class="line"><span class="comment"># 输出：行数 单词数 字节数 文件名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 选项</span></span><br><span class="line"><span class="built_in">wc</span> -l file.txt      <span class="comment"># 只统计行数</span></span><br><span class="line"><span class="built_in">wc</span> -w file.txt      <span class="comment"># 只统计单词数</span></span><br><span class="line"><span class="built_in">wc</span> -c file.txt      <span class="comment"># 只统计字节数</span></span><br><span class="line"><span class="built_in">wc</span> -m file.txt      <span class="comment"># 只统计字符数</span></span><br><span class="line"><span class="built_in">wc</span> -L file.txt      <span class="comment"># 最长行的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计多个文件</span></span><br><span class="line"><span class="built_in">wc</span> *.txt            <span class="comment"># 统计所有txt文件</span></span><br><span class="line"><span class="built_in">wc</span> -l *.<span class="built_in">log</span>         <span class="comment"># 统计所有log文件行数</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-文本处理"><a href="#5-文本处理" class="headerlink" title="5. 文本处理"></a>5. 文本处理</h3><h4 id="wc-文本统计"><a href="#wc-文本统计" class="headerlink" title="wc - 文本统计"></a><strong>wc</strong> - 文本统计</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本统计</span></span><br><span class="line"><span class="built_in">wc</span> file.txt</span><br><span class="line"><span class="comment"># 输出：行数 单词数 字节数 文件名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 选项</span></span><br><span class="line"><span class="built_in">wc</span> -l file.txt      <span class="comment"># 只统计行数</span></span><br><span class="line"><span class="built_in">wc</span> -w file.txt      <span class="comment"># 只统计单词数</span></span><br><span class="line"><span class="built_in">wc</span> -c file.txt      <span class="comment"># 只统计字节数</span></span><br><span class="line"><span class="built_in">wc</span> -m file.txt      <span class="comment"># 只统计字符数</span></span><br><span class="line"><span class="built_in">wc</span> -L file.txt      <span class="comment"># 最长行的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计多个文件</span></span><br><span class="line"><span class="built_in">wc</span> *.txt            <span class="comment"># 统计所有txt文件</span></span><br><span class="line"><span class="built_in">wc</span> -l *.<span class="built_in">log</span>         <span class="comment"># 统计所有log文件行数</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="echo-输出文本"><a href="#echo-输出文本" class="headerlink" title="echo - 输出文本"></a><strong>echo</strong> - 输出文本</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本输出</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello Linux&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Path is: <span class="variable">$PATH</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不换行输出</span></span><br><span class="line"><span class="built_in">echo</span> -n <span class="string">&quot;Processing...&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 转义特殊字符</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;Line1\nLine2\tTab&quot;</span></span><br><span class="line"><span class="comment"># \n: 换行  \t: 制表符  \\: 反斜杠</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出到文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;content&quot;</span> &gt; file.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;追加内容&quot;</span> &gt;&gt; file.txt</span><br></pre></td></tr></table></figure>
 
-<h3 id="6-🔄-重定向与管道"><a href="#6-🔄-重定向与管道" class="headerlink" title="6. 🔄 重定向与管道"></a>6. 🔄 重定向与管道</h3><h4 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 覆盖写入</span></span><br><span class="line"><span class="built_in">ls</span> -l &gt; list.txt          <span class="comment"># 将ls结果写入文件（覆盖）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;New content&quot;</span> &gt; file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加写入</span></span><br><span class="line"><span class="built_in">date</span> &gt;&gt; log.txt           <span class="comment"># 追加日期到日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;DEBUG&quot;</span> &gt;&gt; output.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误重定向</span></span><br><span class="line"><span class="built_in">command</span> 2&gt; error.log      <span class="comment"># 错误信息重定向到文件</span></span><br><span class="line"><span class="built_in">command</span> 2&gt;&amp;1              <span class="comment"># 错误和标准输出合并</span></span><br><span class="line"><span class="built_in">command</span> &amp;&gt; all_output.txt <span class="comment"># 所有输出重定向</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-重定向与管道"><a href="#6-重定向与管道" class="headerlink" title="6. 重定向与管道"></a>6. 重定向与管道</h3><h4 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 覆盖写入</span></span><br><span class="line"><span class="built_in">ls</span> -l &gt; list.txt          <span class="comment"># 将ls结果写入文件（覆盖）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;New content&quot;</span> &gt; file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加写入</span></span><br><span class="line"><span class="built_in">date</span> &gt;&gt; log.txt           <span class="comment"># 追加日期到日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;DEBUG&quot;</span> &gt;&gt; output.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误重定向</span></span><br><span class="line"><span class="built_in">command</span> 2&gt; error.log      <span class="comment"># 错误信息重定向到文件</span></span><br><span class="line"><span class="built_in">command</span> 2&gt;&amp;1              <span class="comment"># 错误和标准输出合并</span></span><br><span class="line"><span class="built_in">command</span> &amp;&gt; all_output.txt <span class="comment"># 所有输出重定向</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="管道符应用"><a href="#管道符应用" class="headerlink" title="管道符应用"></a>管道符应用</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基本管道</span></span><br><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;.txt&quot;</span>       <span class="comment"># 查找txt文件</span></span><br><span class="line">ps aux | grep python      <span class="comment"># 查找Python进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多重管道</span></span><br><span class="line"><span class="built_in">cat</span> log.txt | grep <span class="string">&quot;ERROR&quot;</span> | <span class="built_in">wc</span> -l</span><br><span class="line"><span class="comment"># 1. 查看文件 → 2. 过滤ERROR → 3. 统计行数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序和去重</span></span><br><span class="line"><span class="built_in">cat</span> data.txt | <span class="built_in">sort</span> | <span class="built_in">uniq</span></span><br><span class="line"><span class="built_in">cat</span> log.txt | <span class="built_in">cut</span> -d<span class="string">&#x27; &#x27;</span> -f1 | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -nr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实用组合</span></span><br><span class="line"><span class="comment"># 统计最常用的10个命令</span></span><br><span class="line"><span class="built_in">history</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -rn | <span class="built_in">head</span> -10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 监视日志变化</span></span><br><span class="line"><span class="built_in">tail</span> -f access.log | grep <span class="string">&quot;404&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="7-📈-文件尾部查看"><a href="#7-📈-文件尾部查看" class="headerlink" title="7. 📈 文件尾部查看"></a>7. 📈 文件尾部查看</h3><h4 id="tail-查看文件尾部"><a href="#tail-查看文件尾部" class="headerlink" title="tail - 查看文件尾部"></a><strong>tail</strong> - 查看文件尾部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看最后10行（默认）</span></span><br><span class="line"><span class="built_in">tail</span> file.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定行数</span></span><br><span class="line"><span class="built_in">tail</span> -n 20 file.log</span><br><span class="line"><span class="built_in">tail</span> -20 file.log          <span class="comment"># 简写形式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时监控文件变化</span></span><br><span class="line"><span class="built_in">tail</span> -f access.log         <span class="comment"># 实时查看日志</span></span><br><span class="line"><span class="built_in">tail</span> -f -n 50 app.log      <span class="comment"># 实时查看最后50行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监控多个文件</span></span><br><span class="line"><span class="built_in">tail</span> -f log1.log log2.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从指定行开始显示</span></span><br><span class="line"><span class="built_in">tail</span> -n +50 file.log       <span class="comment"># 从第50行显示到末尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示文件名标题</span></span><br><span class="line"><span class="built_in">tail</span> -q -f *.<span class="built_in">log</span>           <span class="comment"># -q: 不显示文件名</span></span><br><span class="line"><span class="built_in">tail</span> -F server.log         <span class="comment"># -F: 跟踪文件（文件重命名后继续跟踪）</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-文件尾部查看"><a href="#7-文件尾部查看" class="headerlink" title="7. 文件尾部查看"></a>7. 文件尾部查看</h3><h4 id="tail-查看文件尾部"><a href="#tail-查看文件尾部" class="headerlink" title="tail - 查看文件尾部"></a><strong>tail</strong> - 查看文件尾部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看最后10行（默认）</span></span><br><span class="line"><span class="built_in">tail</span> file.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定行数</span></span><br><span class="line"><span class="built_in">tail</span> -n 20 file.log</span><br><span class="line"><span class="built_in">tail</span> -20 file.log          <span class="comment"># 简写形式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实时监控文件变化</span></span><br><span class="line"><span class="built_in">tail</span> -f access.log         <span class="comment"># 实时查看日志</span></span><br><span class="line"><span class="built_in">tail</span> -f -n 50 app.log      <span class="comment"># 实时查看最后50行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监控多个文件</span></span><br><span class="line"><span class="built_in">tail</span> -f log1.log log2.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从指定行开始显示</span></span><br><span class="line"><span class="built_in">tail</span> -n +50 file.log       <span class="comment"># 从第50行显示到末尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监控多个文件；默认会显示文件名标题</span></span><br><span class="line"><span class="built_in">tail</span> -f *.<span class="built_in">log</span></span><br><span class="line"><span class="built_in">tail</span> -q -f *.<span class="built_in">log</span>           <span class="comment"># -q: 隐藏文件名标题</span></span><br><span class="line"><span class="built_in">tail</span> -F server.log         <span class="comment"># -F: 跟踪文件（文件重命名后继续跟踪）</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="head-查看文件头部"><a href="#head-查看文件头部" class="headerlink" title="head - 查看文件头部"></a><strong>head</strong> - 查看文件头部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">head</span> file.log              <span class="comment"># 查看前10行</span></span><br><span class="line"><span class="built_in">head</span> -n 20 file.log        <span class="comment"># 查看前20行</span></span><br><span class="line"><span class="built_in">head</span> -c 100 file.log       <span class="comment"># 查看前100字节</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="✏️-四、Vim编辑器完全指南"><a href="#✏️-四、Vim编辑器完全指南" class="headerlink" title="✏️ 四、Vim编辑器完全指南"></a>✏️ 四、Vim编辑器完全指南</h2><h3 id="1-Vim模式说明"><a href="#1-Vim模式说明" class="headerlink" title="1. Vim模式说明"></a>1. Vim模式说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通模式（命令模式） → 按 i,a,o,I,A,O 进入 → 插入模式</span><br><span class="line">      ↓                                      ↓</span><br><span class="line">  按 : 进入                              按 ESC 返回</span><br><span class="line">      ↓</span><br><span class="line">  命令行模式</span><br></pre></td></tr></table></figure>
+<h2 id="四、Vim-编辑器完全指南"><a href="#四、Vim-编辑器完全指南" class="headerlink" title="四、Vim 编辑器完全指南"></a>四、Vim 编辑器完全指南</h2><h3 id="1-Vim模式说明"><a href="#1-Vim模式说明" class="headerlink" title="1. Vim模式说明"></a>1. Vim模式说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通模式（命令模式） → 按 i,a,o,I,A,O 进入 → 插入模式</span><br><span class="line">      ↓                                      ↓</span><br><span class="line">  按 : 进入                              按 ESC 返回</span><br><span class="line">      ↓</span><br><span class="line">  命令行模式</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-模式切换快捷键"><a href="#2-模式切换快捷键" class="headerlink" title="2. 模式切换快捷键"></a>2. 模式切换快捷键</h3><table>
 <thead>
@@ -633,10 +920,10 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; 显示设置</span><br><span class="line">set number              &quot; 显示行号</span><br><span class="line">set relativenumber      &quot; 显示相对行号</span><br><span class="line">set cursorline          &quot; 高亮当前行</span><br><span class="line">set showmatch           &quot; 显示匹配的括号</span><br><span class="line">set ruler               &quot; 显示光标位置</span><br><span class="line"></span><br><span class="line">&quot; 搜索设置</span><br><span class="line">set hlsearch            &quot; 高亮搜索结果</span><br><span class="line">set ignorecase          &quot; 搜索忽略大小写</span><br><span class="line">set smartcase           &quot; 智能大小写</span><br><span class="line"></span><br><span class="line">&quot; 缩进设置</span><br><span class="line">set autoindent          &quot; 自动缩进</span><br><span class="line">set tabstop=4           &quot; Tab宽度</span><br><span class="line">set shiftwidth=4        &quot; 自动缩进宽度</span><br><span class="line">set expandtab           &quot; Tab转空格</span><br><span class="line">set smarttab            &quot; 智能Tab</span><br><span class="line"></span><br><span class="line">&quot; 其他设置</span><br><span class="line">set mouse=a             &quot; 启用鼠标</span><br><span class="line">set clipboard=unnamed   &quot; 共享剪贴板</span><br><span class="line">syntax on               &quot; 语法高亮</span><br><span class="line">filetype on             &quot; 文件类型检测</span><br><span class="line">filetype plugin on      &quot; 加载文件类型插件</span><br><span class="line">filetype indent on      &quot; 加载缩进文件</span><br><span class="line"></span><br><span class="line">&quot; 快捷键映射</span><br><span class="line">nnoremap &lt;C-s&gt; :w&lt;CR&gt;   &quot; Ctrl+s保存</span><br><span class="line">inoremap &lt;C-s&gt; &lt;Esc&gt;:w&lt;CR&gt;i</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="🎯-五、实用技巧与最佳实践"><a href="#🎯-五、实用技巧与最佳实践" class="headerlink" title="🎯 五、实用技巧与最佳实践"></a>🎯 五、实用技巧与最佳实践</h2><h3 id="1-命令组合技巧"><a href="#1-命令组合技巧" class="headerlink" title="1. 命令组合技巧"></a>1. 命令组合技巧</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 备份当前目录</span></span><br><span class="line">tar -czf backup_$(<span class="built_in">date</span> +%Y%m%d).tar.gz .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 查找并处理文件</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">exec</span> <span class="built_in">rm</span> &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 统计代码行数</span></span><br><span class="line">find . -name <span class="string">&quot;*.py&quot;</span> -<span class="built_in">exec</span> <span class="built_in">wc</span> -l &#123;&#125; + | <span class="built_in">tail</span> -1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 监控目录变化</span></span><br><span class="line">watch -n 1 <span class="string">&#x27;ls -l | tail -20&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 快速返回常用目录</span></span><br><span class="line"><span class="built_in">alias</span> cdproj=<span class="string">&#x27;cd /home/user/projects&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、实用技巧与最佳实践"><a href="#五、实用技巧与最佳实践" class="headerlink" title="五、实用技巧与最佳实践"></a>五、实用技巧与最佳实践</h2><h3 id="1-命令组合技巧"><a href="#1-命令组合技巧" class="headerlink" title="1. 命令组合技巧"></a>1. 命令组合技巧</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 在当前项目的上级目录创建归档，避免把归档文件本身打包进去</span></span><br><span class="line">tar -czf <span class="string">&quot;../backup_<span class="subst">$(date +%Y%m%d)</span>.tar.gz&quot;</span> .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 先预览匹配文件，确认后再把 -print 改为 -delete</span></span><br><span class="line">find . -name <span class="string">&quot;*.tmp&quot;</span> -<span class="built_in">print</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 统计代码行数</span></span><br><span class="line">find . -name <span class="string">&quot;*.py&quot;</span> -<span class="built_in">exec</span> <span class="built_in">wc</span> -l &#123;&#125; + | <span class="built_in">tail</span> -1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 监控目录变化</span></span><br><span class="line">watch -n 1 <span class="string">&#x27;ls -l | tail -20&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 快速返回常用目录</span></span><br><span class="line"><span class="built_in">alias</span> cdproj=<span class="string">&#x27;cd /home/user/projects&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-安全操作建议"><a href="#2-安全操作建议" class="headerlink" title="2. 安全操作建议"></a>2. 安全操作建议</h3><ol>
-<li>**谨慎使用 <code>rm -rf</code>**：先使用 <code>ls</code> 确认文件，再删除</li>
+<li>**谨慎使用 <code>rm -rf</code>**：先用 <code>pwd</code> 和 <code>ls</code> 确认位置与目标；批量删除先预览文件清单</li>
 <li><strong>使用别名保护</strong>：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> <span class="built_in">rm</span>=<span class="string">&#x27;rm -i&#x27;</span>      <span class="comment"># 删除前确认</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">cp</span>=<span class="string">&#x27;cp -i&#x27;</span>      <span class="comment"># 覆盖前确认</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">mv</span>=<span class="string">&#x27;mv -i&#x27;</span>      <span class="comment"># 移动前确认</span></span><br></pre></td></tr></table></figure></li>
 <li><strong>重要文件备份</strong>：定期备份配置文件和数据</li>
 <li><strong>权限最小化</strong>：不要随意使用 <code>sudo</code> 或 <code>root</code></li>
@@ -656,7 +943,7 @@
 <li><strong>内置帮助</strong>：Vim中输入 <code>:help</code></li>
 </ul>
 <hr>
-<h2 id="📚-附录：常用命令速查表"><a href="#📚-附录：常用命令速查表" class="headerlink" title="📚 附录：常用命令速查表"></a>📚 附录：常用命令速查表</h2><table>
+<h2 id="附录：常用命令速查表"><a href="#附录：常用命令速查表" class="headerlink" title="附录：常用命令速查表"></a>附录：常用命令速查表</h2><table>
 <thead>
 <tr>
 <th>分类</th>
@@ -823,15 +1110,21 @@
 </tr>
 <tr>
 <td></td>
-<td><code>ifconfig</code></td>
-<td>网络配置</td>
-<td></td>
+<td><code>ip</code></td>
+<td>查看网络接口</td>
+<td><code>addr</code>, <code>route</code></td>
 </tr>
 <tr>
 <td></td>
-<td><code>netstat</code></td>
-<td>网络状态</td>
+<td><code>ss</code></td>
+<td>查看套接字</td>
 <td><code>-tuln</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>ifconfig</code></td>
+<td>旧式网络工具</td>
+<td>需安装 <code>net-tools</code></td>
 </tr>
 <tr>
 <td>压缩解压</td>
@@ -854,7 +1147,7 @@
 </tbody></table>
 <hr>
 <blockquote>
-<p><strong>📌 使用提示</strong>：</p>
+<p><strong>使用提示</strong>：</p>
 <ol>
 <li>新命令先在测试环境尝试</li>
 <li>善用 <code>--help</code> 查看帮助</li>
@@ -863,268 +1156,45 @@
 </ol>
 </blockquote>
 <hr>
-<p><strong>最后更新</strong>：2026年1月<br><strong>适用系统</strong>：Ubuntu&#x2F;CentOS&#x2F;Debian等主流Linux发行版  </p>
+<p><strong>整理日期</strong>：2026年10月<br><strong>适用范围</strong>：以常见 GNU&#x2F;Linux 命令行为主；BusyBox、macOS 和不同发行版的选项可能不同。  </p>
 <hr>
 <div align="center">
-  <strong>💡 记住：熟练来自实践，每天练习5个新命令！</strong>
-</div>]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>04.基于github的个人博客搭建教程</title>
-    <url>/2026/06/03/4.%20github-blog-tutorial/</url>
-    <content><![CDATA[<h2 id="0-前置条件"><a href="#0-前置条件" class="headerlink" title="0.前置条件"></a>0.前置条件</h2><p>在安装Hexo之前需要先安装好Git和Node.js</p>
-<h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h2><p>hexo是博客框架，具有简洁性</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-cli</span> <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
+  <strong>记住：熟练来自实践，每天练习 5 个新命令！</strong>
+</div>
 
-<p>安装验证</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-
-<p>显示版号即可</p>
-<hr>
-<h2 id="2-本地搭建"><a href="#2-本地搭建" class="headerlink" title="2.本地搭建"></a>2.本地搭建</h2><p>(1) 初始化</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powershellhexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>myblog的文件夹位置一般默认在C盘用户文件夹内</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>_config.yml 存放的是博客配置信息， source&#x2F;_posts 是存放文章的地方</p>
-</blockquote>
-<p>(2) 运行默认主题</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment">#清除缓存文件，建议写完文章之后再执行一次降低负荷</span></span><br><span class="line">hexo generate  <span class="comment">#生成 public 文件夹，写完文章执行</span></span><br><span class="line">hexo server    <span class="comment">#启动 hexo 服务</span></span><br></pre></td></tr></table></figure>
-
-<p>运行最后一个之后得出部署在本地的服务器上</p>
-<p>访问本地4000端口（默认）即可查看本地效果</p>
-<hr>
-<h2 id="3-使用github-pages"><a href="#3-使用github-pages" class="headerlink" title="3.使用github pages"></a>3.使用github pages</h2><p> (1) 配置 SSH key</p>
-<blockquote>
-<p>目的：实现免密上传到 GitHub，无需每次都输入账号密码</p>
-</blockquote>
-<p>检查本地是否已有 SSH key：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-
-<p>如果提示路径不存在，说明还没配置过，直接进行下一步。</p>
-<p>(2) 生成 SSH key：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-C</span> <span class="string">&quot;你的GitHub邮箱@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>连续按<strong>三次回车</strong>即可（使用默认设置，不设置密码）。</p>
-<p>生成成功后，会在 <code>C:\Users\你的用户名\.ssh</code> 目录下生成两个文件：</p>
-<ul>
-<li><code>id_rsa</code>（私钥，<strong>千万不要泄露</strong>）</li>
-<li><code>id_rsa.pub</code>（公钥，需要上传到 GitHub）</li>
-</ul>
-<p>(3) 获取公钥内容：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p>或者手动进入 <code>.ssh</code> 文件夹，用记事本打开 <code>id_rsa.pub</code>，<strong>复制全部内容</strong>（从 <code>ssh-rsa</code> 开头到邮箱结尾，不要有多余空格或换行）。</p>
-<p><strong>添加到 GitHub：</strong></p>
-<ol>
-<li>登录 GitHub，点击右上角头像 → <strong>Settings</strong></li>
-<li>左侧菜单选择 <strong>SSH and GPG keys</strong></li>
-<li>点击绿色按钮 <strong>New SSH key</strong></li>
-<li>Title 随便填（如 <code>MyBlog</code>），Key 粘贴刚才复制的公钥内容</li>
-<li>点击 <strong>Add SSH key</strong>（可能需要输入 GitHub 密码确认）</li>
-</ol>
-<p><strong>测试连接：</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>第一次连接会提示确认，输入 <code>yes</code> 回车。如果看到类似这样的提示，说明配置成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi 你的用户名! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-
-<p>(4) 创建 GitHub 仓库</p>
-<ol>
-<li>登录 GitHub，点击右上角 <strong>+</strong> → <strong>New repository</strong></li>
-<li><strong>Repository name</strong>（仓库名）：<strong>必须填写 <code>你的用户名.github.io</code></strong>,否则没有用喵。这个仓库名将作为你博客的访问地址</li>
-<li>保持 <strong>Public</strong>（公开）</li>
-<li><strong>不要勾选</strong> “Initialize this repository with a README”（保持空白）</li>
-<li>点击 <strong>Create repository</strong></li>
-</ol>
-<p>(5) 配置 Hexo 部署信息</p>
-<p>打开博客根目录（<code>myblog</code> 文件夹）下的 <strong><code>_config.yml</code></strong> 文件（注意是根目录的，不是 themes 里的），拉到<strong>文件最底部</strong>，添加或修改以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-
-<p>(6) 安装部署插件</p>
-<p>在 PowerShell 中执行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>(7) 部署到 GitHub</p>
-<p>依次执行以下命令：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除缓存（建议每次部署前都执行）</span></span><br><span class="line">hexo generate  <span class="comment"># 生成静态网页（生成 public 文件夹）</span></span><br><span class="line">hexo deploy    <span class="comment"># 部署到 GitHub</span></span><br></pre></td></tr></table></figure>
-
-<p>或者简写为：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<p>第一次部署时，会提示确认连接，输入 <code>yes</code> 回车。</p>
-<p>看到 <code>INFO Deploy done: git</code> 说明部署成功！</p>
-<p>(8) 访问你的博客</p>
-<p>打开浏览器，访问：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://你的用户名.github.io</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>⏱️ <strong>注意：</strong> 第一次部署后，GitHub 需要 1-2 分钟来生成网页。如果打开显示 404，请稍等片刻再刷新。</p>
-</blockquote>
-<hr>
-<h2 id="4-编写和发布文章"><a href="#4-编写和发布文章" class="headerlink" title="4. 编写和发布文章"></a>4. 编写和发布文章</h2><p>(1) 新建文章</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>文章会创建在 <code>source/_posts/文章标题.md</code></p>
-<p>(2) 编辑文章</p>
-<p>用 Markdown 编辑器（推荐 <strong>Typora</strong> 或 <strong>VS Code</strong>）打开 <code>.md</code> 文件，你会看到：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2026-06-03 22:40:00</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在 <code>tags:</code> 后面可以添加标签，如：<code>tags: [网络安全, 学习笔记]</code></li>
-<li>在 <code>---</code> 下方写正文内容（使用 Markdown 语法）</li>
-<li>可以在正文中插入 <code>&lt;!-- more --&gt;</code>，实现首页摘要显示</li>
-</ul>
-<p>(3) 发布文章</p>
-<p>写完文章后，再次执行”素质三连”：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="5-常用命令速查"><a href="#5-常用命令速查" class="headerlink" title="5. 常用命令速查"></a>5. 常用命令速查</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>hexo new &quot;文章名&quot;</code></td>
-<td>新建文章</td>
-</tr>
-<tr>
-<td><code>hexo clean</code></td>
-<td>清除缓存</td>
-</tr>
-<tr>
-<td><code>hexo generate</code> (或 <code>hexo g</code>)</td>
-<td>生成静态网页</td>
-</tr>
-<tr>
-<td><code>hexo server</code> (或 <code>hexo s</code>)</td>
-<td>本地预览(<a href="http://localhost:4000/">http://localhost:4000</a>)</td>
-</tr>
-<tr>
-<td><code>hexo deploy</code> (或 <code>hexo d</code>)</td>
-<td>部署到 GitHub</td>
-</tr>
-<tr>
-<td><code>hexo version</code></td>
-<td>查看 Hexo 版本</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="6-常见问题解决"><a href="#6-常见问题解决" class="headerlink" title="6. 常见问题解决"></a>6. 常见问题解决</h2><p>问题1：部署时提示 <code>Permission denied</code></p>
-<p><strong>原因：</strong> SSH 配置问题或中文用户名导致的乱码</p>
-<p><strong>解决方法：</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;C:/Windows/System32/OpenSSH/ssh.exe&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后重新执行 <code>hexo d</code></p>
-<p>问题2：访问博客显示 404</p>
-<p><strong>原因：</strong> GitHub Pages 需要时间生成</p>
-<p><strong>解决方法：</strong> 等待 1-2 分钟后刷新，检查仓库名是否正确（必须是 <code>用户名.github.io</code>）</p>
-<p>问题3：文章发布时间差8小时</p>
-<p><strong>原因：</strong> 时区设置问题</p>
-<p><strong>解决方法：</strong> 在 <code>_config.yml</code> 中设置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>问题4：本地预览正常，但部署后样式丢失</p>
-<p><strong>原因：</strong> 可能是缓存问题或部署不完整</p>
-<p><strong>解决方法：</strong> 执行 <code>hexo clean</code> 后重新 <code>hexo g &amp;&amp; hexo d</code></p>
-<hr>
-<h2 id="7-进阶：更换主题"><a href="#7-进阶：更换主题" class="headerlink" title="7. 进阶：更换主题"></a>7. 进阶：更换主题</h2><p>Hexo 默认主题比较简陋，可以更换更美观的主题。推荐主题：</p>
-<ul>
-<li><strong>Butterfly</strong>：功能最全、最华丽</li>
-<li><strong>NexT</strong>：经典、简洁、优雅</li>
-<li><strong>Fluid</strong>：现代化、高颜值</li>
-</ul>
-<p>以 NexT 为例：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载主题</span></span><br><span class="line">git clone https://github.com/next<span class="literal">-theme</span>/hexo<span class="literal">-theme-next</span> themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用主题（修改 _config.yml）</span></span><br><span class="line"><span class="comment"># 找到 theme: landscape，改成 theme: next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新生成并部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
-</blockquote>
-<hr>
-<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>谢谢你看到这里喵</p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>06.dgVoodoo2：关于老游戏现代兼容指南</title>
-    <url>/2026/10/01/6.%20dgVoodoo2/</url>
-    <content><![CDATA[<p>关于两次解决网上找的游戏资源黑屏以及出现报错的问题都用到了 dgVoodoo2 喵，逐记录一下。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h2><p>dgVoodoo2 是一款图形 API 转译工具喵。当老游戏（如基于 DirectDraw、Direct3D 8&#x2F;9 开发的游戏）在新系统（Win10&#x2F;11）上出现黑屏、花屏或报错 <code>Direct3D initializing failed</code> 时，它能将老旧的图形调用实时翻译成现代显卡支持的 Direct3D 11 指令，让老游戏重新亮起来。</p>
-<h2 id="什么时候需要用到-dgVoodoo2？"><a href="#什么时候需要用到-dgVoodoo2？" class="headerlink" title="什么时候需要用到 dgVoodoo2？"></a><strong>什么时候需要用到 dgVoodoo2？</strong></h2><p>如果你在 Win10&#x2F;11 系统上运行老游戏时遇到以下问题，就可以考虑使用这个工具喵：</p>
-<ul>
-<li><strong>启动报错</strong>：提示 <code>Direct3D initializing failed</code>、<code>Failed to initialize DirectDraw</code> 等图形接口初始化失败的错误。</li>
-<li><strong>黑屏&#x2F;闪退</strong>：游戏双击后没反应，或者刚打开窗口就闪退，连主菜单都进不去。</li>
-<li><strong>画面异常</strong>：能进游戏但画面花屏、贴图错位、颜色偏暗、闪烁或出现严重撕裂。</li>
-<li><strong>分辨率问题</strong>：游戏分辨率被锁死在低分辨率（如 640x480），或者宽屏显示器上被强制拉伸变形。</li>
-<li><strong>兼容模式无效</strong>：尝试了 Windows 兼容模式、管理员运行，依然无法解决图形问题。</li>
-</ul>
-<p><em>注意：如果游戏在图形初始化之前（如缺少 DLL、注册表报错）就崩了，那大概率不是图形接口的问题，这个工具也无能为力喵。</em></p>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a><strong>使用步骤</strong></h2><h3 id="1-下载与解压"><a href="#1-下载与解压" class="headerlink" title="1. 下载与解压"></a><strong>1. 下载与解压</strong></h3><p>从 <a href="https://github.com/dege-diosg/dgVoodoo2/releases">GitHub Releases</a> 下载 dgVoodoo2 的基础包。解压后会看到 <code>MS</code> 文件夹，得到以下文件结构喵：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">MS/</span><br><span class="line">├── arm64_chpe_x86/    # ARM 设备运行 x86 游戏使用（如骁龙笔记本）</span><br><span class="line">├── arm64x/            # 原生 ARM64 版本</span><br><span class="line">├── x64/               # 64位版本（常规 Intel/AMD 电脑）</span><br><span class="line">└── x86/               # 32位版本（绝大多数老游戏选这个喵）</span><br></pre></td></tr></table></figure>
-
-<p><strong>如何判断该选哪个？</strong></p>
-<ul>
-<li><strong>绝大多数普通用户</strong>：直接选 **<code>x86</code>**（大多数老游戏都是32位的），如果游戏是64位的（极少见），则选 <code>x64</code>。</li>
-<li><strong>ARM 设备用户</strong>（比如用 Surface Pro X 或骁龙笔记本）：如果跑的是老游戏，通常选 <code>arm64_chpe_x86</code>。</li>
-</ul>
-<h3 id="2-检查版本与放置核心文件"><a href="#2-检查版本与放置核心文件" class="headerlink" title="2. 检查版本与放置核心文件"></a><strong>2. 检查版本与放置核心文件</strong></h3><p>很多人会在这里卡住，不知道该选 x86 还是 x64。<strong>关键看游戏程序本身，而不是看你的电脑系统喵。</strong></p>
-<ul>
-<li><strong>查看方法</strong>：启动游戏（或随便一个游戏进程），打开任务管理器（Ctrl+Shift+Esc），在“详细信息”里找到游戏的 <code>.exe</code> 进程。如果名字后面标注了 <code>(32 位)</code>，或者你打不开游戏，<strong>无脑选 <code>x86</code> 文件夹</strong>（绝大多数老游戏都是32位的）；如果是64位程序，则选 <code>x64</code>。</li>
-<li><strong>放置文件</strong>：进入对应的文件夹，将里面的 <code>D3D9.dll</code>、<code>D3D8.dll</code>、<code>D3DImm.dll</code>、<code>DDraw.dll</code>（如果不确定游戏用哪个接口，就全选）复制到<strong>游戏主程序（.exe）所在的根目录</strong>。<br><em>注意：不要把 DLL 复制到系统目录（System32），只放在游戏自己的文件夹里。</em></li>
-</ul>
-<h3 id="3-配置与运行"><a href="#3-配置与运行" class="headerlink" title="3. 配置与运行"></a><strong>3. 配置与运行</strong></h3><p>将解压包里的 <code>dgVoodooCpl.exe</code> 也复制到游戏目录并双击运行。</p>
-<ul>
-<li>点击右上角的 <code>.\</code> 按钮，确保配置只作用于当前游戏目录。</li>
-<li>在 <code>General</code> 标签页，确认 <code>Output API</code> 为 <code>Best available one</code>，<code>VRAM</code> 设为 <code>256 MB</code> 或 <code>512 MB</code> 即可。</li>
-<li>点击 <code>Apply</code> -&gt; <code>OK</code>，然后直接启动游戏。</li>
-</ul>
-<h3 id="4-去除右下角水印"><a href="#4-去除右下角水印" class="headerlink" title="4. 去除右下角水印"></a><strong>4. 去除右下角水印</strong></h3><p>由于水印显示选项是默认开启的，在成功进入游戏后，屏幕右下角会有彩色的 dgVoodoo 水印，显得非常影响观感喵。关掉正在运行的游戏，双击 <code>dgVoodooCpl.exe</code> 文件，切换到 <strong><code>DirectX</code></strong> 选项卡，找到 <code>Miscellaneous</code> 区域，**取消勾选 <code>dgVoodoo Watermark</code>**（即水印），点击 <code>Apply</code> 并再次打开游戏即可。</p>
-<h2 id="💡-避坑提示"><a href="#💡-避坑提示" class="headerlink" title="💡 避坑提示"></a><strong>💡 避坑提示</strong></h2><ul>
-<li>如果放了 DLL 没反应，大概率是位数不对（32位游戏误放了64位文件），请务必根据游戏进程的位数来选取 x86 或 x64 中的文件喵。</li>
-<li>老游戏若本身有汉化或宽屏补丁，可能会冲突。建议一次只加一个补丁，确认稳定后再加下一个。</li>
-<li>如果上述方法都无效，可以检查一下游戏目录下是否生成了日志文件（如 <code>dgVoodoo.log</code>），通过日志里的详细报错信息来进一步排查其他问题喵。</li>
+<h3 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h3><ul>
+<li><a href="https://www.gnu.org/software/coreutils/manual/coreutils.html">GNU Coreutils 手册</a></li>
+<li><a href="https://www.gnu.org/software/findutils/manual/">GNU Findutils 手册</a></li>
 </ul>
 ]]></content>
       <categories>
         <category>技术教程</category>
       </categories>
       <tags>
-        <tag>杂项</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
     <title>05.Hexo Butterfly 主题引入自定义 Live2D 看板娘</title>
     <url>/2026/06/13/5.%20Hexo%20Butterfly%20%E4%B8%BB%E9%A2%98%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%20Live2D%20%E7%9C%8B%E6%9D%BF%E5%A8%98/</url>
-    <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本文旨在解决 Hexo Butterfly 主题下引入新版 <strong>moc3 格式（Cubism 3&#x2F;4）</strong> Live2D 模型的技术痛点。传统的 <code>hexo-helper-live2d</code> 插件已无法兼容新版模型，导致许多博主无法使用自己心仪的自定义看板娘。</p>
-<p>本教程基于 <code>live2d-widget-v3</code> 开源方案，通过 <strong>“核心库 CDN 加载 + 模型资源本地化”</strong> 的混合架构，手把手教你在 Hexo 博客中完美部署自定义 moc3 模型。</p>
+    <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>这篇文章记录如何在 Hexo Butterfly 主题中接入 <strong>moc3 格式（Cubism 3&#x2F;4）</strong> 的 Live2D 模型。不同插件支持的模型版本不同；本文使用 <code>live2d-widget-v3</code>，并把模型文件放在站点的 <code>source</code> 目录中。</p>
+<p>本教程采用“核心库从 CDN 加载、模型资源由博客本地提供”的方式。模型文件较大，首次打开时需要下载；CDN 或模型路径不可用时，看板娘也会无法加载。</p>
 <p><strong>通过本文，你将实现以下效果：</strong></p>
 <ol>
-<li><strong>完美兼容新模型</strong>：支持 <code>.moc3</code> 和 <code>.model3.json</code> 格式的 Live2D 模型。</li>
+<li><strong>加载新版模型</strong>：使用 <code>.moc3</code> 和 <code>.model3.json</code> 文件。</li>
 <li><strong>丰富的交互体验</strong>：看板娘不仅会跟随鼠标转动头部和眼睛，还支持鼠标拖拽、点击触发动作。</li>
 <li><strong>多功能工具栏</strong>：自带一言、截图、切换表情、隐藏看板娘等实用按钮。</li>
-<li><strong>性能优化</strong>：核心库通过 CDN 加速，模型文件本地托管，兼顾加载速度与稳定性。</li>
+<li><strong>本地托管模型</strong>：模型随站点一起生成和部署，方便管理路径和版本。</li>
 </ol>
 <hr>
-<h2 id="二、-准备工作"><a href="#二、-准备工作" class="headerlink" title="二、 准备工作"></a>二、 准备工作</h2><h3 id="1-准备模型文件"><a href="#1-准备模型文件" class="headerlink" title="1. 准备模型文件"></a>1. 准备模型文件</h3><p>确保你已经下载了 moc3 格式的 Live2D 模型，模型文件夹内应包含：</p>
+<h2 id="二、-准备工作"><a href="#二、-准备工作" class="headerlink" title="二、 准备工作"></a>二、 准备工作</h2><h3 id="1-准备模型文件"><a href="#1-准备模型文件" class="headerlink" title="1. 准备模型文件"></a>1. 准备模型文件</h3><p>确保你有权在网站上使用该模型，并准备好模型所引用的所有文件。常见文件包括：</p>
 <ul>
 <li><code>xxx.model3.json</code>（模型主文件）</li>
 <li><code>xxx.moc3</code>（模型核心数据）</li>
 <li><code>xxx.physics3.json</code>（物理效果文件）</li>
-<li>其他相关配置文件</li>
+<li><code>xxx.exp3.json</code>（表情，可选）</li>
+<li><code>xxx.motion3.json</code>（动作，可选）</li>
+<li>模型引用的纹理图片和其他配置文件</li>
 </ul>
 <h3 id="2-确认博客环境"><a href="#2-确认博客环境" class="headerlink" title="2. 确认博客环境"></a>2. 确认博客环境</h3><ul>
 <li>Hexo 框架</li>
@@ -1153,17 +1223,19 @@
 
 <p><strong>参数说明：</strong></p>
 <ul>
-<li><code>scale</code>：模型缩放倍率（0.15 表示缩小到 15%，根据模型大小调整）</li>
+<li><code>scale</code>：模型缩放倍率，根据模型和组件的坐标系调整</li>
 <li><code>translate.x</code>：模型 X 轴偏移量</li>
 <li><code>translate.y</code>：模型 Y 轴偏移量</li>
 </ul>
+<p>参数范围取决于模型和组件的坐标系；每次小幅调整后在浏览器里预览。</p>
 <hr>
 <h2 id="五、第三步：编写核心脚本"><a href="#五、第三步：编写核心脚本" class="headerlink" title="五、第三步：编写核心脚本"></a>五、第三步：编写核心脚本</h2><h3 id="1-创建-JS-文件"><a href="#1-创建-JS-文件" class="headerlink" title="1. 创建 JS 文件"></a>1. 创建 JS 文件</h3><p>在 <code>source/js/</code> 目录下（如果没有 <code>js</code> 文件夹就新建即可），新建文件 <code>live2d-widget-v3.js</code>。</p>
 <h3 id="2-写入代码"><a href="#2-写入代码" class="headerlink" title="2. 写入代码"></a>2. 写入代码</h3><p>用记事本打开该文件，复制粘贴以下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义 CDN 路径（使用原作者的 CDN 加载核心库和样式）</span></span><br><span class="line"><span class="keyword">const</span> cdnPath = <span class="string">&quot;https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="comment">// 资源路径配置</span></span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">homePath</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">    <span class="comment">// 关键修改：把模型路径指向我们本地的 source/Resources/</span></span><br><span class="line">    <span class="attr">modelPath</span>: <span class="string">&quot;/Resources/&quot;</span>, </span><br><span class="line">    <span class="attr">cssPath</span>: cdnPath + <span class="string">&quot;/waifu.css&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsonPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.json&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dCorePath</span>: cdnPath + <span class="string">&quot;/Core/live2dcubismcore.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dSdkPath</span>: cdnPath + <span class="string">&quot;/live2d-sdk.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 工具栏按钮</span></span><br><span class="line">  <span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;express&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>],</span><br><span class="line">  <span class="comment">// 允许拖拽模型</span></span><br><span class="line">  <span class="attr">drag</span>: &#123;</span><br><span class="line">    <span class="attr">enable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">direction</span>: [<span class="string">&quot;x&quot;</span>, <span class="string">&quot;y&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 切换模式</span></span><br><span class="line">  <span class="attr">switchType</span>: <span class="string">&quot;order&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 仅在电脑端（屏幕宽度大于768px）加载，防止手机端挡视线</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">  <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">cssPath</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dCorePath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dSdkPath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">tipsJsPath</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">  ]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">initWidget</span>(&#123;</span><br><span class="line">      <span class="attr">waifuPath</span>: config.<span class="property">path</span>.<span class="property">tipsJsonPath</span>,</span><br><span class="line">      <span class="attr">cdnPath</span>: config.<span class="property">path</span>.<span class="property">modelPath</span>,</span><br><span class="line">      <span class="attr">tools</span>: config.<span class="property">tools</span>,</span><br><span class="line">      <span class="attr">dragEnable</span>: config.<span class="property">drag</span>.<span class="property">enable</span>,</span><br><span class="line">      <span class="attr">dragDirection</span>: config.<span class="property">drag</span>.<span class="property">direction</span>,</span><br><span class="line">      <span class="attr">switchType</span>: config.<span class="property">switchType</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步加载外部资源的通用函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">loadExternalResource</span>(<span class="params">url, type</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> tag;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="string">&quot;css&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;link&quot;</span>);</span><br><span class="line">      tag.<span class="property">rel</span> = <span class="string">&quot;stylesheet&quot;</span>;</span><br><span class="line">      tag.<span class="property">href</span> = url;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&quot;js&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">      tag.<span class="property">src</span> = url;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (tag) &#123;</span><br><span class="line">      tag.<span class="property">onload</span> = <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(url);</span><br><span class="line">      tag.<span class="property">onerror</span> = <span class="function">() =&gt;</span> <span class="title function_">reject</span>(url);</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(tag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义 CDN 路径（使用原作者的 CDN 加载核心库和样式）</span></span><br><span class="line"><span class="keyword">const</span> cdnPath = <span class="string">&quot;https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="comment">// 资源路径配置</span></span><br><span class="line">  <span class="attr">path</span>: &#123;</span><br><span class="line">    <span class="attr">homePath</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">    <span class="comment">// 关键修改：把模型路径指向我们本地的 source/Resources/</span></span><br><span class="line">    <span class="attr">modelPath</span>: <span class="string">&quot;/Resources/&quot;</span>, </span><br><span class="line">    <span class="attr">cssPath</span>: cdnPath + <span class="string">&quot;/waifu.css&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsonPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.json&quot;</span>,</span><br><span class="line">    <span class="attr">tipsJsPath</span>: cdnPath + <span class="string">&quot;/waifu-tips.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dCorePath</span>: cdnPath + <span class="string">&quot;/Core/live2dcubismcore.js&quot;</span>,</span><br><span class="line">    <span class="attr">live2dSdkPath</span>: cdnPath + <span class="string">&quot;/live2d-sdk.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 工具栏按钮</span></span><br><span class="line">  <span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;express&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>],</span><br><span class="line">  <span class="comment">// 允许拖拽模型</span></span><br><span class="line">  <span class="attr">drag</span>: &#123;</span><br><span class="line">    <span class="attr">enable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">direction</span>: [<span class="string">&quot;x&quot;</span>, <span class="string">&quot;y&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 切换模式</span></span><br><span class="line">  <span class="attr">switchType</span>: <span class="string">&quot;order&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 仅在电脑端（屏幕宽度大于768px）加载，防止手机端挡视线</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">  <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">cssPath</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dCorePath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">live2dSdkPath</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">    <span class="title function_">loadExternalResource</span>(config.<span class="property">path</span>.<span class="property">tipsJsPath</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">  ]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">initWidget</span>(&#123;</span><br><span class="line">      <span class="attr">waifuPath</span>: config.<span class="property">path</span>.<span class="property">tipsJsonPath</span>,</span><br><span class="line">      <span class="attr">cdnPath</span>: config.<span class="property">path</span>.<span class="property">modelPath</span>,</span><br><span class="line">      <span class="attr">tools</span>: config.<span class="property">tools</span>,</span><br><span class="line">      <span class="attr">dragEnable</span>: config.<span class="property">drag</span>.<span class="property">enable</span>,</span><br><span class="line">      <span class="attr">dragDirection</span>: config.<span class="property">drag</span>.<span class="property">direction</span>,</span><br><span class="line">      <span class="attr">switchType</span>: config.<span class="property">switchType</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Live2D resources failed to load:&quot;</span>, error);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步加载外部资源的通用函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">loadExternalResource</span>(<span class="params">url, type</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> tag;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="string">&quot;css&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;link&quot;</span>);</span><br><span class="line">      tag.<span class="property">rel</span> = <span class="string">&quot;stylesheet&quot;</span>;</span><br><span class="line">      tag.<span class="property">href</span> = url;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&quot;js&quot;</span>) &#123;</span><br><span class="line">      tag = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">      tag.<span class="property">src</span> = url;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (tag) &#123;</span><br><span class="line">      tag.<span class="property">onload</span> = <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(url);</span><br><span class="line">      tag.<span class="property">onerror</span> = <span class="function">() =&gt;</span> <span class="title function_">reject</span>(url);</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(tag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>此示例沿用上游仓库的 <code>@main</code> 地址，主分支更新可能改变资源内容。正式发布时建议固定到已验证的版本或提交号；资源加载失败时，浏览器控制台会显示具体 URL，便于排查 CDN 或路径问题。</p>
 <hr>
-<h2 id="六、第四步：修改主题配置"><a href="#六、第四步：修改主题配置" class="headerlink" title="六、第四步：修改主题配置"></a>六、第四步：修改主题配置</h2><p>打开 <code>themes/butterfly/_config.yml</code>，找到 <code>inject:</code> 部分，修改为：</p>
+<h2 id="六、第四步：修改主题配置"><a href="#六、第四步：修改主题配置" class="headerlink" title="六、第四步：修改主题配置"></a>六、第四步：修改主题配置</h2><p>在 Hexo 项目根目录的 <code>_config.butterfly.yml</code> 中找到 <code>inject:</code> 部分，把脚本放到 <code>bottom</code> 列表。若没有这个覆盖文件，也可以在 <code>themes/butterfly/_config.yml</code> 中配置；根目录覆盖文件更方便保留主题更新时的自定义设置。</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/live2d-widget-v3.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>说明：</strong></p>
@@ -1171,13 +1243,14 @@
 <li>这会在网页底部引入我们刚才写的脚本</li>
 <li>核心库（Pixi.js、Cubism 运行时等）会通过 CDN 自动加载</li>
 </ul>
+<p>上面的模型路径以站点部署在域名根目录为前提；如果博客部署在 <code>/项目名/</code> 这样的子路径，需要让脚本中的站点根路径和模型资源路径也带上该前缀。</p>
 <hr>
 <h2 id="七、第五步：生成并预览"><a href="#七、第五步：生成并预览" class="headerlink" title="七、第五步：生成并预览"></a>七、第五步：生成并预览</h2><p>在 PowerShell 中执行：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
 <p>打开浏览器访问 <code>http://localhost:4000</code>，效果应该如右下角所示。</p>
 <hr>
-<h2 id="八、常见问题与优化"><a href="#八、常见问题与优化" class="headerlink" title="八、常见问题与优化"></a>八、常见问题与优化</h2><h3 id="1-模型太大或太小"><a href="#1-模型太大或太小" class="headerlink" title="1. 模型太大或太小"></a>1. 模型太大或太小</h3><p>修改 <code>source/Resources/model/yumi/config.json</code> 中的 <code>scale</code> 值：</p>
+<h2 id="八、动作、表情与常见问题"><a href="#八、动作、表情与常见问题" class="headerlink" title="八、动作、表情与常见问题"></a>八、动作、表情与常见问题</h2><h3 id="1-模型太大或太小"><a href="#1-模型太大或太小" class="headerlink" title="1. 模型太大或太小"></a>1. 模型太大或太小</h3><p>修改 <code>source/Resources/model/yumi/config.json</code> 中的 <code>scale</code> 值：</p>
 <ul>
 <li>太大：调小（如 0.1、0.15）</li>
 <li>太小：调大（如 0.2、0.3）</li>
@@ -1195,11 +1268,18 @@
 <h3 id="4-添加多个模型"><a href="#4-添加多个模型" class="headerlink" title="4. 添加多个模型"></a>4. 添加多个模型</h3><p>在 <code>model_list.json</code> 中添加更多模型：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model1&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model2&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;model3&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model1！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model2！&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">[</span><span class="string">&quot;你好，我是 model3！&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="5-配置表情和动作"><a href="#5-配置表情和动作" class="headerlink" title="5. 配置表情和动作"></a>5. 配置表情和动作</h3><p>模型目录里有 <code>.exp3.json</code> 或 <code>.motion3.json</code> 文件，并不表示组件会自动使用它们。还需要在模型主文件 <code>xxx.model3.json</code> 的 <code>FileReferences</code> 中登记路径。把下面的字段合并到已有的 <code>FileReferences</code> 对象里，保留原来的 <code>Moc</code>、<code>Textures</code>、<code>Physics</code> 等字段：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;FileReferences&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Expressions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span> <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;星星眼&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;File&quot;</span><span class="punctuation">:</span> <span class="string">&quot;星星眼.exp3.json&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span> <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;爱心眼&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;File&quot;</span><span class="punctuation">:</span> <span class="string">&quot;爱心眼.exp3.json&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Motions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;Idle&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span> <span class="attr">&quot;File&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tear.motion3.json&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;TapBody&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span> <span class="attr">&quot;File&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wave.motion3.json&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Idle</code> 用于待机动作，<code>TapBody</code> 用于点击模型时触发的动作。表情和动作文件名必须与磁盘上的文件名完全一致（大小写也要一致）。如果点击动作只应播放一次，确认对应 motion 文件的 <code>Meta.Loop</code> 为 <code>false</code>；需要循环的待机动作则设为 <code>true</code>。</p>
+<p>工具栏配置中要保留 <code>express</code> 表情按钮，模型配置里也必须登记至少一个表情。动作和表情仍不生效时，打开浏览器开发者工具的 Network 面板，检查 <code>.exp3.json</code>、<code>.motion3.json</code> 是否请求成功，再检查控制台里的 JSON 解析错误。</p>
+<p>本博客的 <code>yumi</code> 模型已按此方式登记 17 个表情，以 <code>tear.motion3.json</code> 作为待机动作，并在点击模型时播放一次 <code>wave.motion3.json</code>。</p>
 <hr>
 <h2 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h2><ul>
 <li>原教程：<a href="https://lyrashore.com/computer-science/technical-sharing/2025-3-8-1/">【Hugo】博客引入 moc3 类型的 live2d 模型</a></li>
+<li>动作与表情配置参考：<a href="https://letere-gzj.github.io/hugo-stack/p/hugo/live2d-moc3/">〖Hugo〗博客引入 moc3 类型的 live2d 模型</a></li>
 <li>GitHub 仓库：<a href="https://github.com/letere-gzj/live2d-widget-v3">live2d-widget-v3</a></li>
-<li>模型来自：<a href="https://www.bilibili.com/video/BV1LM41137vK/?spm_id_from=333.337.search-card.all.click&vd_source=9c10ac145858bba2198e47bd934146b6">【免费模型】这么可爱的小狗免费带回家！_哔哩哔哩_bilibili</a></li>
+<li>模型来源：<a href="https://www.bilibili.com/video/BV1LM41137vK/">【免费模型】这么可爱的小狗免费带回家！_哔哩哔哩_bilibili</a></li>
 </ul>
 ]]></content>
       <categories>

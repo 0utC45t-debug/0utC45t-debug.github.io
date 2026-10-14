@@ -27,3 +27,15 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+#rightside #language-toggle {
+  width: auto;
+  min-width: 52px;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+:root {
+  --waline-theme-color: #286b9b;
+}
