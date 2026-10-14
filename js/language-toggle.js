@@ -187,7 +187,9 @@
 
     const toggle = document.getElementById('language-toggle')
     if (toggle) {
+      const label = language === 'zh' ? 'EN' : '中'
       const title = language === 'en' ? 'Switch interface to Chinese' : 'Switch interface to English'
+      if (toggle.textContent !== label) toggle.textContent = label
       if (toggle.title !== title) toggle.title = title
       if (toggle.getAttribute('aria-label') !== title) toggle.setAttribute('aria-label', title)
     }
@@ -202,7 +204,7 @@
     const button = document.createElement('button')
     button.id = 'language-toggle'
     button.type = 'button'
-    button.textContent = '（中/EN）'
+    button.textContent = language === 'zh' ? 'EN' : '中'
     button.addEventListener('click', () => {
       language = language === 'zh' ? 'en' : 'zh'
       try {

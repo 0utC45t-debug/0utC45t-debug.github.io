@@ -1,41 +1,96 @@
-/* ========== 1. 首页文章卡片（精准打击！） ========== */
-/* 去掉 > 符号，直接选中所有文章卡片，防止层级问题 */
-#recent-posts .recent-post-item {
-  /* 背景设为 0.80 的透明度 */
-  background-color: rgba(255, 255, 255, 0.80) !important;
-  
-  /* 🌟 喵的独家秘籍：毛玻璃特效！ */
-  /* 这会让透出来的背景变模糊，字依然清晰，超级高级！ */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  
-  /* 加一点点阴影，让卡片浮起来 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+:root {
+  --glass-home-bg: rgba(255, 255, 255, 0.8);
+  --glass-post-bg: rgba(255, 255, 255, 0.9);
+  --glass-aside-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.52);
+  --glass-shadow: 0 8px 24px rgba(13, 58, 90, 0.14);
+  --waline-theme-color: #286b9b;
 }
 
-/* ========== 2. 文章详情页（保持之前的效果） ========== */
+html[data-theme='dark'] {
+  --global-bg: #1A5380;
+  --glass-home-bg: rgba(8, 39, 63, 0.94);
+  --glass-post-bg: rgba(8, 39, 63, 0.96);
+  --glass-aside-bg: rgba(9, 43, 68, 0.95);
+  --glass-border: rgba(184, 218, 239, 0.2);
+  --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Keep the configured deep-blue background visible in dark mode. */
+html[data-theme='dark'] #web_bg::before {
+  background-color: rgba(4, 18, 31, 0.24) !important;
+}
+
+/* Frosted surfaces use light glass by day and a blue-tinted glass at night. */
+#recent-posts .recent-post-item {
+  background-color: var(--glass-home-bg) !important;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .layout_post > #post,
 #post {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--glass-post-bg) !important;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ========== 3. 侧边栏卡片（保持之前的效果） ========== */
 #aside-content .card-widget {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--glass-aside-bg) !important;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Force the frosted cards to stay deep blue when Butterfly switches themes. */
+[data-theme='dark'] #recent-posts .recent-post-item {
+  background-color: #08273f !important;
+  color: #e7f1f8;
+}
+
+[data-theme='dark'] .layout_post > #post,
+[data-theme='dark'] #post {
+  background-color: #08273f !important;
+  color: #e7f1f8;
+}
+
+[data-theme='dark'] #aside-content .card-widget {
+  background-color: #092b44 !important;
+  color: #e7f1f8;
+}
+
+[data-theme='dark'] #recent-posts .recent-post-item,
+[data-theme='dark'] .layout_post > #post,
+[data-theme='dark'] #post,
+[data-theme='dark'] #aside-content .card-widget {
+  border-color: rgba(184, 218, 239, 0.2);
+}
+
+html[data-theme='dark'] #page-header.nav-fixed > #nav,
+html[data-theme='dark'] #page-header.not-top-img > #nav {
+  background: rgba(10, 32, 50, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 #rightside #language-toggle {
   width: auto;
   min-width: 52px;
-  padding: 0 5px;
-  font-size: 11px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 600;
 }
 
-:root {
-  --waline-theme-color: #286b9b;
+html[data-theme='dark'] #rightside #language-toggle {
+  background-color: #0b3553;
+  color: #e7f1f8;
 }
