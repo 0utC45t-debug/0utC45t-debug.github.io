@@ -14,7 +14,6 @@
   --hlnumber-color: #84919a;
   --hlscrollbar-bg: #d6dde2;
   --hlexpand-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.95));
-  --waline-theme-color: #286b9b;
 }
 
 html[data-theme='dark'] {

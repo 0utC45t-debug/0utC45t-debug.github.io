@@ -19,11 +19,9 @@
     '阅读时长': 'Reading time',
     '分钟': 'min',
     '浏览量': 'Page views',
-    '评论数': 'Comments',
     '相关推荐': 'Related posts',
     '编辑': 'Edit',
     '返回首页': 'Back to home',
-    '评论': 'Comments',
     '公告': 'Announcement',
     '最新文章': 'Recent posts',
     '网站信息': 'Site information',
@@ -36,10 +34,7 @@
     '本站总浏览量': 'Page views',
     '查看更多': 'View more',
     '加载更多': 'Load more',
-    '最新评论': 'Recent comments',
     '加载中...': 'Loading...',
-    '无法获取评论，请确认相关配置是否正确': 'Unable to load comments. Check the comment service settings.',
-    '暂无评论': 'No comments yet',
     '图片': 'Image',
     '链接': 'Link',
     '代码': 'Code',
@@ -55,7 +50,6 @@
     '阅读模式': 'Reading mode',
     '日间和夜间模式切换': 'Toggle light/dark mode',
     '回到顶部': 'Back to top',
-    '前往评论': 'Go to comments',
     '设置': 'Settings',
     '单栏和双栏切换': 'Toggle sidebar',
     '聊天': 'Chat',
@@ -76,8 +70,7 @@
     '页面未找到': 'Page not found',
     '本博客所有文章除特别声明外，均采用': 'Unless otherwise noted, articles on this blog are licensed under',
     '许可协议。转载请注明来源': ' . Please credit the source when reposting:',
-    '著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。': 'Copyright belongs to the author. Contact the author for commercial reuse; credit the source for non-commercial reuse.',
-    '欢迎聊聊这篇文章。评论无需登录，审核后公开。': 'Share your thoughts on this article. No login required; comments appear after moderation.'
+    '著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。': 'Copyright belongs to the author. Contact the author for commercial reuse; credit the source for non-commercial reuse.'
   }
   const monthMap = {
     '一月': 'January', '二月': 'February', '三月': 'March', '四月': 'April',
