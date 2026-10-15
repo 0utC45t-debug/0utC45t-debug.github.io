@@ -91,20 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My First Blog</title>
-    <url>/2025/09/01/0.first/</url>
-    <content><![CDATA[<p>你好，欢迎来到我的博客喵。这里主要记录我学习计算机时整理的笔记、实践过程和遇到的问题。</p>
-<p>目前的内容包括 Linux、Docker、Hexo 博客搭建、Live2D 配置和老游戏兼容。文章大多来自实际尝试，环境和软件版本会影响结果；如果你发现错误或有更好的方法，欢迎留言交流。</p>
-<p>( ⓛ ω ⓛ *)</p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>03.Docker 入门教程</title>
     <url>/2026/05/31/3.%20Docker/</url>
     <content><![CDATA[<p>这篇文章记录我在 Windows + WSL 2 上安装 Docker Desktop 后的验证过程，并补上最常用的容器命令和 Compose 入门示例。Docker Desktop 的界面和版本会更新，命令行概念相对稳定；遇到差异时以当前官方文档为准。</p>
