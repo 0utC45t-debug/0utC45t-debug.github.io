@@ -166,3 +166,30 @@ html[data-theme='dark'] #page-header.not-top-img > #nav {
 [data-theme='dark'] #waifu #waifu-tips span {
   color: #40dfd1 !important;
 }
+
+/* Friendly 404 actions stay readable in both color modes. */
+.type-404 .error-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 1rem 0;
+}
+
+.type-404 .error-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 0.95rem;
+  border-radius: 8px;
+  background: var(--btn-bg, #1A5380);
+  color: var(--btn-color, #fff);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.type-404 .error-action:hover,
+.type-404 .error-action:focus-visible {
+  background: #00C4B6;
+  color: #fff;
+  transform: translateY(-1px);
+}
