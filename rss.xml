@@ -30,7 +30,7 @@
     <item>
       <title>04.基于github的个人博客搭建教程</title>
       <link>https://0utc45t-debug.github.io/2026/06/03/4.%20github-blog-tutorial/</link>
-      <description>用 Hexo 在本地搭建博客，并通过 GitHub Pages 发布；包含 SSH、文章、图片和常见故障处理。</description>
+      <description>用 Hexo 和 GitHub Pages 搭建博客，并配置 Butterfly 主题、本地搜索、双语界面、Live2D、友链与 RSS。</description>
       <author>0utC45t</author>
       <category domain="https://0utc45t-debug.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</category>
       <category domain="https://0utc45t-debug.github.io/tags/%E7%AC%94%E8%AE%B0/">笔记</category>

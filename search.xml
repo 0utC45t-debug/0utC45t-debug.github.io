@@ -249,7 +249,7 @@
 <p>(4) 创建 GitHub 仓库</p>
 <ol>
 <li>登录 GitHub，点击右上角 <strong>+</strong> → <strong>New repository</strong></li>
-<li><strong>Repository name</strong>（仓库名）：<strong>必须填写 <code>你的用户名.github.io</code></strong>,否则没有用喵。这个仓库名将作为你博客的访问地址</li>
+<li><strong>Repository name</strong>（仓库名）：对于 GitHub Pages 用户站点，仓库名使用 <code>你的用户名.github.io</code>，它对应站点主域名</li>
 <li>按账号方案选择仓库可见性；公开博客的网页内容最终都会被访问者看到</li>
 <li>点击 <strong>Create repository</strong></li>
 </ol>
@@ -349,24 +349,92 @@
 <p>问题4：本地预览正常，但部署后样式丢失</p>
 <p><strong>解决方法：</strong> 打开浏览器开发者工具检查 CSS 请求是否 404；确认 <code>_config.yml</code> 里的 <code>url</code> 和 <code>root</code> 与部署路径一致，再重新生成并部署。确认为生成缓存异常时才运行 <code>npx hexo clean</code>。</p>
 <hr>
-<h2 id="7-进阶：更换主题"><a href="#7-进阶：更换主题" class="headerlink" title="7. 进阶：更换主题"></a>7. 进阶：更换主题</h2><p>Hexo 默认主题比较简陋，可以更换更美观的主题。推荐主题：</p>
-<ul>
-<li><strong>Butterfly</strong>：功能最全、最华丽</li>
-<li><strong>NexT</strong>：经典、简洁、优雅</li>
-<li><strong>Fluid</strong>：现代化、高颜值</li>
-</ul>
-<p>以 NexT 为例：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载主题</span></span><br><span class="line">git clone https://github.com/next<span class="literal">-theme</span>/hexo<span class="literal">-theme-next</span> themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用主题（修改 _config.yml）</span></span><br><span class="line"><span class="comment"># 找到 theme: landscape，改成 theme: next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新生成并部署（在 PowerShell 中分开执行）</span></span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="7-配置-Butterfly-主题"><a href="#7-配置-Butterfly-主题" class="headerlink" title="7. 配置 Butterfly 主题"></a>7. 配置 Butterfly 主题</h2><p>本博客使用 Butterfly 主题。Hexo 根目录的 <code>_config.yml</code> 管理站点地址、生成器和部署方式；Butterfly 的显示选项放在 Hexo 根目录的 <code>_config.butterfly.yml</code>。两份文件用途不同，不要把主题设置误写进 Hexo 的配置文件。</p>
+<h3 id="7-1-启用主题并分开放置配置"><a href="#7-1-启用主题并分开放置配置" class="headerlink" title="7.1 启用主题并分开放置配置"></a>7.1 启用主题并分开放置配置</h3><p>在 Hexo 根目录的 <code>_config.yml</code> 中选择主题：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>💡 <strong>提示：</strong> 每个主题都有自己的配置文件（在 <code>themes/主题名/_config.yml</code>），可以自定义菜单、头像、背景等。</p>
-</blockquote>
+<p>Butterfly 自带的默认配置位于 <code>themes/butterfly/_config.yml</code>。在项目根目录单独维护 <code>_config.butterfly.yml</code>，可以覆盖主题默认值，也能降低升级主题时覆盖个人配置的风险。不要删除主题自己的默认配置文件。</p>
+<p>Butterfly 快速开始文档说明了主题选择和独立配置文件的合并规则；升级时仍要查看对应版本的更新说明，因为主题版本可能新增、弃用或调整配置项。</p>
+<h3 id="7-2-菜单、站点信息和侧栏"><a href="#7-2-菜单、站点信息和侧栏" class="headerlink" title="7.2 菜单、站点信息和侧栏"></a>7.2 菜单、站点信息和侧栏</h3><p>菜单标题、链接和图标写在 <code>_config.butterfly.yml</code> 的 <code>menu</code> 下。<code>||</code> 后面是 Font Awesome 图标类名：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="string">友链:</span> <span class="string">/link/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure>
+
+<p>菜单链接要与实际生成的页面路径一致。比如把链接写成 <code>/tags/</code>，就要有标签页面；页面空白时，应同时检查页面文件、Front-matter 类型和生成结果。</p>
+<p>站点名称、作者、简介、域名和 <code>root</code> 路径位于 Hexo 根目录的 <code>_config.yml</code>。Butterfly 的 <code>aside</code> 配置负责侧栏：可以单独启用作者卡片、公告、最新文章、分类、标签和归档卡片。GitHub 按钮的地址也应填写自己的真实主页地址。卡片是否显示由对应的 <code>enable</code> 控制，不需要的卡片可以关闭。</p>
+<h3 id="7-3-背景、封面和图片路径"><a href="#7-3-背景、封面和图片路径" class="headerlink" title="7.3 背景、封面和图片路径"></a>7.3 背景、封面和图片路径</h3><p>Butterfly 的 <code>background</code> 控制全站背景，<code>index_img</code> 设置首页顶部图。颜色值建议使用引号，避免 YAML 把特殊字符解析成其他类型：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">background:</span> <span class="string">&#x27;#1A5380&#x27;</span></span><br><span class="line"><span class="attr">index_img:</span> <span class="string">/img/bg.jpg</span></span><br></pre></td></tr></table></figure>
+
+<p>图片放在 Hexo 项目的 <code>source</code> 中，例如 <code>source/img/bg.jpg</code>；发布时 Hexo 会把它复制到 <code>public/img/bg.jpg</code>，网页再通过 <code>/img/bg.jpg</code> 引用。不要把个人图片放进 <code>themes/butterfly/source</code>，主题升级时该目录内容可能被覆盖。也不要只把文件放在 <code>public</code>，因为它是生成目录，重新生成时会被清理或覆盖。</p>
+<h3 id="7-4-文章目录、字号和代码块"><a href="#7-4-文章目录、字号和代码块" class="headerlink" title="7.4 文章目录、字号和代码块"></a>7.4 文章目录、字号和代码块</h3><p>文章目录是否显示、是否给目录标题自动编号，是两项独立设置。若文章标题已经手动编号，可关闭目录的自动编号，避免重复：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>Butterfly 的 <code>font.global_font_size</code> 控制主题全局字号；<code>code_blocks</code> 控制代码块的基础配色、复制按钮、语言标签和折叠按钮。例如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">global_font_size:</span> <span class="string">16px</span></span><br><span class="line"></span><br><span class="line"><span class="attr">code_blocks:</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">light</span></span><br><span class="line">  <span class="attr">copy:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">shrink:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果还要让日间代码块为白底、夜间为黑底，可以在自定义 CSS 中分别覆盖 <code>html[data-theme=&#39;dark&#39;]</code> 下的背景和文字颜色。主题配置决定基础行为，自定义 CSS 则用于补足主题没有提供的样式细节；两者同时修改时，CSS 选择器优先级也会影响最终显示效果。</p>
+<h3 id="7-5-使用自定义-CSS-调整主题外观"><a href="#7-5-使用自定义-CSS-调整主题外观" class="headerlink" title="7.5 使用自定义 CSS 调整主题外观"></a>7.5 使用自定义 CSS 调整主题外观</h3><p>个人样式放在 <code>source/css/custom.css</code>，再通过 Butterfly 的 <code>inject.head</code> 引入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/custom.css&quot;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>例如，可以用 CSS 变量统一维护毛玻璃卡片、边框、阴影和强调色，再用 <code>html[data-theme=&#39;dark&#39;]</code> 为夜间模式设置另一组颜色。不要只改白天样式：切换主题后要检查卡片背景、正文文字、目录、代码块、悬浮按钮和对话框的对比度。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--panel-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.86</span>);</span><br><span class="line">  <span class="attr">--accent-color</span>: <span class="number">#00C4B6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[data-theme=<span class="string">&#x27;dark&#x27;</span>]</span> &#123;</span><br><span class="line">  <span class="attr">--panel-bg</span>: <span class="built_in">rgba</span>(<span class="number">8</span>, <span class="number">39</span>, <span class="number">63</span>, <span class="number">0.94</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Butterfly 会在根元素上用 <code>data-theme</code> 标记当前主题，因此可按该属性分别设置日间和夜间样式。改 CSS 后重新生成站点，并在浏览器中切换两种主题检查文字是否仍清晰；如果看不到修改，检查 CSS 请求是否成功以及浏览器缓存。</p>
+<h2 id="8-在主题上加入站点功能"><a href="#8-在主题上加入站点功能" class="headerlink" title="8. 在主题上加入站点功能"></a>8. 在主题上加入站点功能</h2><p>以下内容记录的是本博客实际使用的配置组合。Butterfly 的主题功能、Hexo 生成器和自行编写的脚本各有职责；排查时先确认功能属于哪一层，再检查相应配置。</p>
+<h3 id="8-1-本地搜索"><a href="#8-1-本地搜索" class="headerlink" title="8.1 本地搜索"></a>8.1 本地搜索</h3><p>本地搜索不需要单独的评论或搜索服务器。<code>hexo-generator-searchdb</code> 根据文章生成 <code>search.xml</code>，浏览器端脚本读取该索引并匹配标题或正文。根目录 <code>_config.yml</code> 负责生成索引：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+
+<p>Butterfly 的 <code>_config.butterfly.yml</code> 负责启用搜索窗口及分页：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">local_search</span></span><br><span class="line">  <span class="attr">local_search:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">preload:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">pagination:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">hitsPerPage:</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>两边都要配置：只生成索引而没有启用主题搜索，页面不会出现可用的搜索入口；只启用主题搜索而没有索引文件，搜索窗口也没有数据。<code>content: true</code> 会把文章正文放进公开索引，适合全文搜索，但不能用它存放不想公开的内容。</p>
+<h3 id="8-2-只切换界面文字的中英文按钮"><a href="#8-2-只切换界面文字的中英文按钮" class="headerlink" title="8.2 只切换界面文字的中英文按钮"></a>8.2 只切换界面文字的中英文按钮</h3><p>Butterfly 自带的语言设置主要决定主题内置文案；如果只想翻译框架文字而保留文章原文，可以通过站点自己的 JavaScript 增加切换逻辑。本博客把映射表和切换按钮放在 <code>source/js/language-toggle.js</code>，并在 <code>inject.bottom</code> 中载入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/language-toggle.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>脚本把导航、搜索提示、按钮和部分卡片文字映射为英文或中文，并记住访客选择。它不是自动翻译器，不会翻译 Markdown 文章内容；新增界面文案时，要在映射表里补上对应词条。若换了 Butterfly 版本或修改了右下角按钮结构，也要确认脚本仍能找到插入按钮的位置。</p>
+<h3 id="8-3-加入-Live2D-看板娘"><a href="#8-3-加入-Live2D-看板娘" class="headerlink" title="8.3 加入 Live2D 看板娘"></a>8.3 加入 Live2D 看板娘</h3><p>看板娘由自定义加载脚本和模型文件组成。本博客的加载器位于 <code>source/js/live2d-widget-v3.js</code>，模型资源放在 <code>source/Resources/</code>，发布后对应 <code>/Resources/</code> 路径。Butterfly 通过 <code>inject.bottom</code> 加载该脚本：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/live2d-widget-v3.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当前脚本从 jsDelivr 加载 Live2D SDK、样式和提示语文件，模型资源则从博客自己的 <code>/Resources/</code> 读取。它只在 <code>screen.width &gt;= 768</code> 时初始化，因此手机屏幕不会加载看板娘。若改为项目子路径部署，模型和脚本路径也要随 Hexo 的 <code>root</code> 调整。</p>
+<p>模型能否显示，取决于模型配置引用的文件是否齐全、文件名大小写是否一致，以及浏览器是否成功下载 SDK 和模型资源。动作和表情也不是只添加一个工具栏按钮就会自动生成：动作、表情资源必须存在，并由模型配置正确引用。模型无法移动或动作无响应时，先检查开发者工具的 Console 和 Network，确认 <code>model3.json</code>、动作文件、表情文件和纹理没有 404，再检查模型配置中的资源名称。</p>
+<h3 id="8-4-友链页的数据结构"><a href="#8-4-友链页的数据结构" class="headerlink" title="8.4 友链页的数据结构"></a>8.4 友链页的数据结构</h3><p>Butterfly 的友链页需要页面类型标记和站点数据文件。页面 <code>source/link/index.md</code> 的 Front-matter 中设置 <code>type: link</code>，友链条目放在 <code>source/_data/link.yml</code>。每条至少包含名称、目标地址、头像路径和简短介绍：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">示例博客</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://example.com/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">/img/friends/example.jpg</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">技术笔记</span></span><br></pre></td></tr></table></figure>
+
+<p>头像图片应放在 <code>source/img/friends/</code>，例如 <code>source/img/friends/example.jpg</code> 对应网页路径 <code>/img/friends/example.jpg</code>。编辑 YAML 时要注意缩进；如果卡片没出现，依次确认 <code>type: link</code>、数据文件路径、<code>link_list</code> 结构和图片是否进入生成目录。</p>
+<h3 id="8-5-404-页面、RSS、站点地图和爬虫说明"><a href="#8-5-404-页面、RSS、站点地图和爬虫说明" class="headerlink" title="8.5 404 页面、RSS、站点地图和爬虫说明"></a>8.5 404 页面、RSS、站点地图和爬虫说明</h3><p>Butterfly 的 404 开关、提示和背景图写在主题配置中：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">error_404:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">subtitle:</span> <span class="string">页面暂时无法找到，请返回首页或搜索文章。</span></span><br><span class="line">  <span class="attr">background:</span> <span class="string">/img/bg-404-blur.jpg</span></span><br></pre></td></tr></table></figure>
+
+<p>若要做全屏布局、隐藏普通导航和侧栏，单独的 CSS 也必须匹配 404 页面；仅设置 <code>error_404.enable: true</code> 不会自动得到自定义的全屏排版。这里的背景图仍要放在 <code>source/img/</code>，确保部署后能通过 <code>/img/bg-404-blur.jpg</code> 访问。</p>
+<p>RSS&#x2F;Atom 和 sitemap 由 Hexo 插件生成。若新项目尚未安装生成器，可在项目根目录安装：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-feed</span> hexo<span class="literal">-generator-sitemap</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>根目录 <code>_config.yml</code> 中的最小配置示例：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">type:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">atom</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">rss2</span></span><br><span class="line">  <span class="attr">path:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">atom.xml</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">rss.xml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">template:</span> <span class="string">./sitemap_template.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>RSS 文件是给订阅器读取的 XML，直接在浏览器访问时看到 XML 内容属于正常现象。<code>robots.txt</code> 可以公布 sitemap 地址并给爬虫提供抓取规则，例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line"></span><br><span class="line">Sitemap: https://你的用户名.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
+
+<p><code>robots.txt</code> 不是访问控制机制：不要把密码、令牌或不应公开的数据放进公开站点，也不要指望它保护私密文件。</p>
+<p>部署前检查 <code>public/atom.xml</code>、<code>public/rss.xml</code>、<code>public/sitemap.xml</code> 和 <code>public/robots.txt</code> 是否生成；在浏览器打开时，前三类文件分别应是有效的 XML 或纯文本规则。站点地图只应列出希望搜索引擎发现的页面，不必把模型纹理等大型静态资源作为页面提交。</p>
+<h3 id="8-6-关闭评论和检查发布结果"><a href="#8-6-关闭评论和检查发布结果" class="headerlink" title="8.6 关闭评论和检查发布结果"></a>8.6 关闭评论和检查发布结果</h3><p>如果博客不提供评论，在 <code>_config.butterfly.yml</code> 中将 <code>comments.use</code> 留空即可全站关闭。不要把它写成 <code>[]</code>：空数组在 JavaScript 中仍是真值，部分主题模板会因此保留评论容器。若只想关闭某个独立页面，可在该页面 Front-matter 中设置 <code>comments: false</code>。</p>
+<p>配置完成后，建议按这个顺序检查：</p>
+<ol>
+<li>运行 <code>npm run build</code>，确认生成过程没有模板或 YAML 错误。</li>
+<li>运行 <code>npm run server</code>，检查首页、文章、搜索、友链、404、日间和夜间样式。</li>
+<li>用浏览器开发者工具检查缺失图片、脚本或样式对应的 404 请求。</li>
+<li>确认无误后运行 <code>npm run deploy</code>，再打开线上页面检查一次。</li>
+</ol>
+<p>自定义 CSS 和 JavaScript 都会进入公开网页。不要在其中写入访问令牌、私钥或其他服务端秘密；需要保密的数据不能放进静态站点。</p>
 <hr>
-<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>Hexo 的发布流程是：在 <code>source</code> 中维护文章和图片，用 <code>hexo generate</code> 生成 <code>public</code>，本地预览确认后再部署。博客源文件要单独备份；部署目录只负责提供浏览器访问的静态页面。祝你写作顺利喵。</p>
+<h2 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h2><p>Hexo 项目的主要内容位于 <code>source</code>，站点配置位于根目录的 <code>_config.yml</code>，Butterfly 的主题配置位于 <code>_config.butterfly.yml</code>。生成命令把源文件转换到 <code>public</code>，本地预览确认页面和资源路径正确后，再部署生成结果。主题功能可以逐项添加，但每多一个脚本或外部资源，就多一项需要维护的依赖；保留必要功能，并在主题升级后复查相关配置。</p>
+<p>以上步骤都完成后，博客就发布成功了喵。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub：生成并添加 SSH key</a></li>
 <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub Pages：创建站点与选择发布来源</a></li>
+<li><a href="https://hexo.io/docs/configuration">Hexo：配置</a></li>
+<li><a href="https://hexo.io/docs/one-command-deployment">Hexo：命令行部署</a></li>
 <li><a href="https://hexo.io/docs/asset-folders">Hexo：图片资源目录</a></li>
+<li><a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly：快速开始与配置文件</a></li>
+<li><a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly：主题配置参考</a></li>
+<li><a href="https://github.com/letere-gzj/live2d-widget-v3">Live2D Widget v3：项目仓库</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -379,16 +447,16 @@
   <entry>
     <title>06.dgVoodoo2：关于老游戏现代兼容指南</title>
     <url>/2026/10/01/6.%20dgVoodoo2/</url>
-    <content><![CDATA[<p>我最近两次处理老游戏黑屏或图形初始化报错时都用到了 dgVoodoo2，于是把自己的排查步骤记下来。以下是通用起点，具体游戏可能需要不同配置；操作前先备份游戏目录中同名的 DLL 和配置文件。</p>
-<h2 id="dgVoodoo2-是什么"><a href="#dgVoodoo2-是什么" class="headerlink" title="dgVoodoo2 是什么"></a>dgVoodoo2 是什么</h2><p>dgVoodoo2 是一款 Glide&#x2F;DirectX 图形包装器，可把部分较旧的图形接口调用转换为现代系统可用的渲染路径。作者仓库列出的接口包括 Glide、DirectDraw 和 Direct3D 3&#x2F;5&#x2F;6&#x2F;7&#x2F;8&#x2F;9，并使用 Direct3D 11&#x2F;12 作为后端。它能帮助排查一部分黑屏、花屏或图形初始化问题，但不能修复缺失的游戏文件、错误的注册表、损坏的安装包或所有闪退问题。</p>
-<h2 id="什么时候可以尝试"><a href="#什么时候可以尝试" class="headerlink" title="什么时候可以尝试"></a>什么时候可以尝试</h2><p>可以在以下情况中把它作为一个排查选项：</p>
+    <content><![CDATA[<p>关于最近两次处理老游戏黑屏或图形初始化报错时都使用到了 dgVoodoo2 这一工具，于是把自己的排查步骤记下来。以下是通用起点，具体游戏可能需要不同配置；操作前先备份游戏目录中同名的 DLL 和配置文件。</p>
+<h2 id="一、dgVoodoo2-是什么"><a href="#一、dgVoodoo2-是什么" class="headerlink" title="一、dgVoodoo2 是什么"></a>一、dgVoodoo2 是什么</h2><p>dgVoodoo2 是一款 Glide&#x2F;DirectX 图形包装器，可把部分较旧的图形接口调用转换为现代系统可用的渲染路径。作者仓库列出的接口包括 Glide、DirectDraw 和 Direct3D 3&#x2F;5&#x2F;6&#x2F;7&#x2F;8&#x2F;9，并使用 Direct3D 11&#x2F;12 作为后端。它能帮助排查一部分黑屏、花屏或图形初始化问题，但不能修复缺失的游戏文件、错误的注册表、损坏的安装包或所有闪退问题。</p>
+<h2 id="二、什么时候可以尝试"><a href="#二、什么时候可以尝试" class="headerlink" title="二、什么时候可以尝试"></a>二、什么时候可以尝试</h2><p>可以在以下情况中把它作为一个排查选项：</p>
 <ul>
 <li>游戏提示图形接口初始化失败，例如 <code>Direct3D initializing failed</code>。</li>
 <li>游戏能启动，但出现黑屏、花屏、贴图异常或画面闪烁。</li>
 <li>老游戏只提供较低分辨率，或在宽屏显示器上显示比例不合适。</li>
 </ul>
 <p>如果游戏在图形初始化前就因缺少 DLL、运行库或游戏文件而退出，应先处理对应问题；dgVoodoo2 并不能代替这些依赖。</p>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><h3 id="1-下载并备份"><a href="#1-下载并备份" class="headerlink" title="1. 下载并备份"></a>1. 下载并备份</h3><p>从<a href="https://github.com/dege-diosg/dgVoodoo2/releases">作者的 GitHub Releases</a>下载发行包。不同版本的压缩包目录可能会变化，先阅读包内说明。下载后先复制一份游戏目录作为备份，尤其要保留原有同名 DLL 和配置文件。</p>
+<h2 id="三、使用步骤"><a href="#三、使用步骤" class="headerlink" title="三、使用步骤"></a>三、使用步骤</h2><h3 id="1-下载并备份"><a href="#1-下载并备份" class="headerlink" title="1. 下载并备份"></a>1. 下载并备份</h3><p>从<a href="https://github.com/dege-diosg/dgVoodoo2/releases">作者的 GitHub Releases</a>下载发行包。不同版本的压缩包目录可能会变化，先阅读包内说明。下载后先复制一份游戏目录作为备份，尤其要保留原有同名 DLL 和配置文件。</p>
 <p>如果发行包里有 <code>MS</code> 目录，常见架构目录可能包括：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">MS/</span><br><span class="line">├── x86/  # 32 位程序</span><br><span class="line">├── x64/  # 64 位程序</span><br><span class="line">└── 其他架构目录/  # 按当前发行包说明选择</span><br></pre></td></tr></table></figure>
 
@@ -405,13 +473,13 @@
 </ol>
 <p>显存模拟值和输出 API 不适用于所有游戏，不要把某个固定数值当作通用答案。</p>
 <h3 id="5-处理水印"><a href="#5-处理水印" class="headerlink" title="5. 处理水印"></a>5. 处理水印</h3><p>如果游戏画面出现 dgVoodoo 水印，可关闭游戏，打开控制面板的 <code>DirectX</code> 选项卡，在 <code>Miscellaneous</code> 中找到 <code>dgVoodoo Watermark</code> 并按需关闭，然后点击 <code>Apply</code> 再启动游戏。</p>
-<h2 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h2><ul>
+<h2 id="四、常见问题排查"><a href="#四、常见问题排查" class="headerlink" title="四、常见问题排查"></a>四、常见问题排查</h2><ul>
 <li><strong>放了 DLL 仍无变化：</strong>核对游戏位数、图形接口、DLL 所在目录和控制面板目标路径。</li>
 <li><strong>加入 DLL 后更不稳定：</strong>汉化、宽屏补丁或其他图形包装器可能发生冲突。一次只启用一种方案。</li>
 <li><strong>游戏仍无法启动：</strong>确认问题是否发生在图形接口初始化阶段；缺少运行库、文件损坏或权限问题需要单独处理。</li>
 <li><strong>需要撤销修改：</strong>关闭游戏，移除刚加入的包装 DLL 和 dgVoodoo 配置文件，再从备份恢复同名原文件。</li>
 </ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="五、参考资料"><a href="#五、参考资料" class="headerlink" title="五、参考资料"></a>五、参考资料</h2><ul>
 <li><a href="https://github.com/dege-diosg/dgVoodoo2">dgVoodoo2 作者仓库与支持接口说明</a></li>
 <li><a href="https://github.com/dege-diosg/dgVoodoo2/releases">dgVoodoo2 Releases</a></li>
 </ul>
