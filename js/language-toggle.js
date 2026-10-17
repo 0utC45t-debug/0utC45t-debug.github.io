@@ -11,7 +11,7 @@
     '全部文章': 'All posts',
     '搜索': 'Search',
     '搜索文章': 'Search posts',
-    '这页暂时找不到啦，回首页看看，或搜索你想找的文章。': 'This page is unavailable. Return home or search for an article.',
+    '这页暂时找不到啦喵，回首页看看，或搜索你想找的文章。': 'This page is unavailable. Return home or search for an article.',
     'RSS 订阅': 'RSS feed',
     '搜索文章标题或正文': 'Search titles or article text',
     '数据加载中': 'Loading search data',

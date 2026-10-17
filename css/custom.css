@@ -147,10 +147,12 @@ html[data-theme='dark'] #page-header.not-top-img > #nav {
   box-sizing: border-box;
   width: 250px !important;
   max-width: calc(100vw - 72px);
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.84) !important;
   border: 1px solid rgba(0, 196, 182, 0.42) !important;
   color: #263238 !important;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 #waifu #waifu-tips span {
@@ -158,38 +160,189 @@ html[data-theme='dark'] #page-header.not-top-img > #nav {
 }
 
 [data-theme='dark'] #waifu #waifu-tips {
-  background: rgba(8, 39, 63, 0.97) !important;
+  background: rgba(8, 39, 63, 0.88) !important;
   border-color: rgba(0, 196, 182, 0.48) !important;
   color: #e7f1f8 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 [data-theme='dark'] #waifu #waifu-tips span {
   color: #40dfd1 !important;
 }
 
-/* Friendly 404 actions stay readable in both color modes. */
-.type-404 .error-actions {
+/* Make the 404 view a calm, full-screen page without the usual site chrome. */
+body.notfound-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow: hidden;
+  background: #1A5380 !important;
+}
+
+body.notfound-page #loading-box,
+body.notfound-page #web_bg,
+body.notfound-page #sidebar,
+body.notfound-page #page-header,
+body.notfound-page #footer,
+body.notfound-page #rightside,
+body.notfound-page #local-search,
+body.notfound-page #waifu,
+body.notfound-page #waifu-toggle,
+body.notfound-page .waifu-toggle {
+  display: none !important;
+}
+
+body.notfound-page #body-wrap.type-404 {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #1A5380;
+}
+
+body.notfound-page #content-inner.layout {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.notfound-page #page.nc {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.notfound-page .error-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+  border-radius: 0;
+  background: #1A5380;
+}
+
+body.notfound-page .error-img {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: none;
+}
+
+body.notfound-page .error-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none !important;
+  filter: brightness(0.58) saturate(0.82);
+}
+
+body.notfound-page .error-content::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 83, 128, 0.38), rgba(3, 23, 40, 0.54));
+  content: '';
+}
+
+body.notfound-page .error-info {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(720px, calc(100% - 2rem));
+  height: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(220, 239, 250, 0.3);
+  border-radius: 22px;
+  background: rgba(5, 28, 47, 0.68);
+  color: #f4f9fc;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.notfound-page .error_title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(5.5rem, 16vw, 9rem);
+  line-height: 0.95;
+}
+
+body.notfound-page .error_subtitle {
+  display: block;
+  max-width: 38ch;
+  margin: 0.8rem 0 0;
+  overflow: visible;
+  color: rgba(244, 249, 252, 0.94);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.75;
+  text-align: center;
+  -webkit-line-clamp: unset;
+}
+
+body.notfound-page .error-actions {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  margin: 1.25rem 1rem 0;
+  margin: 1.4rem 0 0;
 }
 
-.type-404 .error-action {
+body.notfound-page .error-action {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.6rem 0.95rem;
-  border-radius: 8px;
-  background: var(--btn-bg, #1A5380);
-  color: var(--btn-color, #fff);
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(230, 246, 255, 0.32);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.type-404 .error-action:hover,
-.type-404 .error-action:focus-visible {
+body.notfound-page .error-action:hover,
+body.notfound-page .error-action:focus-visible {
+  transform: translateY(-1px);
+  border-color: #00C4B6;
   background: #00C4B6;
   color: #fff;
-  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  body.notfound-page .error-info {
+    width: calc(100% - 1.5rem);
+    padding: 1.5rem 1.1rem;
+    border-radius: 18px;
+  }
+
+  body.notfound-page .error-actions {
+    gap: 0.55rem;
+  }
+
+  body.notfound-page .error-action {
+    padding: 0.6rem 0.8rem;
+  }
 }
