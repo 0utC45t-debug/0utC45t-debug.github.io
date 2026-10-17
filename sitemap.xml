@@ -3,6 +3,17 @@
 
 
   <url>
+    <loc>https://0utc45t-debug.github.io/link/index.html</loc>
+    
+    <lastmod>2026-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
+
+  <url>
     <loc>https://0utc45t-debug.github.io/about/index.html</loc>
     
     <lastmod>2026-10-15</lastmod>
@@ -106,17 +117,6 @@
   </url>
 
 
-
-
-
-  <url>
-    <loc>https://0utc45t-debug.github.io/link/index.html</loc>
-    
-    <lastmod>2026-06-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
 
 
